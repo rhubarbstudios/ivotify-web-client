@@ -1,0 +1,27 @@
+@import 'base_variables';
+
+
+
+html {
+  font-family: $futura-book-stack;
+  font-size: $base-font-size;
+  font-style: normal;
+  font-variant: normal;
+  // font-weight: 100;
+  // line-height: 26.4px;
+}
+
+.container {
+  position: relative;
+}
+
+.ivotify-red {
+  background-color: $red;
+}
+
+
+@media only screen and (min-width: 993px) {
+  .container {
+      width: 80%;
+  }
+}

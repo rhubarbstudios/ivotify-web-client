@@ -1,0 +1,91 @@
+.col.s12.m6.candidate-quote-module {
+  position: fixed;
+  @media #{$medium-and-down} {
+    display: block;
+    position: relative;
+    padding: 0;
+  }
+  @media #{$medium-and-up} {
+    left: 40%;
+  } 
+  bottom: 0;
+}
+
+#quote-body {
+  @extend .z-depth-2;
+  padding: 15px 0 0 0;
+  height: 87vh;
+  background-color: white;
+  margin: 0;
+  @media #{$medium-and-down} {
+    z-index: 0;
+    box-shadow: none;
+    height: 100vh;
+  }
+  @media #{$medium-and-up} {
+    overflow-y: scroll;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid #EBE9EC;
+  }
+}
+
+#candidate-name {
+  padding: 10px 0 10px 0;
+  font-size: 1.6875em;
+  position: relative;
+  color: $darkgrey;
+  font-family: $futura-stack;
+  letter-spacing: 1.5px;
+  @media #{$medium-and-down} {
+    font-size: 1.25em;
+  }
+
+}
+
+#rushmose-image {
+  height: 75vh;
+  width: 75vw;
+  right: 0;
+  position: fixed;
+  bottom: 0;
+}
+
+#source-bar {
+  background-color: #EFEFEF;
+  font-size: .8em;
+  margin-bottom: 10%;
+  margin-left: 15%;
+  padding-right: 2%;
+  color: $darkgrey;
+
+}
+
+#quote-one {
+  font-size: 1em;
+  padding: 5% 15% 5% 15%;
+  @media #{$small-and-down} {
+    font-family: $futura-light-stack;
+  }
+}
+
+.line-divider {
+  width: 100%;
+  height: 4px;
+  text-align: center;
+}
+
+#candidate-image {
+  position: absolute;
+  width: 18%;
+  height: auto;
+  z-index: 4;
+  top: -60%;
+  left: 10%;
+  @media #{$medium-and-down} {
+  top: -40%;
+  left: 3%;
+  width: 23%;
+  }
+}
+
+

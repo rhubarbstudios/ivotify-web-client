@@ -1,0 +1,29 @@
+#mobile-navbar {
+  position: fixed;
+  background-color: white;
+  bottom: 0;
+  z-index: 900;
+  width: 100vw;
+}
+
+#issue-nav-mobile {
+  background-color: $red;
+  border-radius: 0;
+  width: 41.7vw;
+}
+
+#logo-nav-mobile {
+  background-color: $red;
+  background-image: url(https://s3-us-west-1.amazonaws.com/ivotify-images/logo_square.jpg);
+  background-size: auto 38px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0;
+
+}
+
+#candidate-nav-mobile {
+  background-color: $red;
+  border-radius: 0;
+  width: 41vw;
+}

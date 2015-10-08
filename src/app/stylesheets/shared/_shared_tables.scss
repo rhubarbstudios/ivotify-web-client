@@ -1,0 +1,28 @@
+table {
+  th {
+    font-size: 1.3em;
+  }
+}
+
+@media #{$medium-and-down} {
+  table.responsive-table {
+    tbody {
+      white-space: normal;
+      tr {
+        display: block;
+        vertical-align: top;
+      }
+      tr:first-child {
+        display: none;
+      }
+    }
+  }
+  table.responsive-table.bordered {
+    tbody {
+      tr {
+        border-bottom: 1px solid #d0d0d0;
+        border-right: none;
+      }
+    }
+  }
+}

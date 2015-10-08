@@ -1,0 +1,14 @@
+.admin.issues.index.page {
+
+  table {
+    tr {
+      th:first-child, th:last-child {
+        width: 20%;
+      }
+      #issuetitle {
+        font-size: 20px;
+      }
+    }
+  }
+
+}
