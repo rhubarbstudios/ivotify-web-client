@@ -1,4 +1,5 @@
 (function(){
+'use strict';
 
 	angular
 		.module('ivotifyFrontend')
@@ -24,7 +25,7 @@
 
 		// Creates a candidate
 		$scope.save = function(){
-			console.log('trying to add candidate')
+			console.log('trying to add candidate');
 			CandidateResources.save({candidate: $scope.candidate}, function(data){
 
 				// Adds to candidate list

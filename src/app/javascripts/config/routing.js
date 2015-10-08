@@ -1,4 +1,5 @@
 (function(){
+'use strict';
 
   angular
     .module('ivotifyFrontend')
@@ -29,7 +30,7 @@
         url: '/issues',
         templateUrl: 'issues.html',
         controller: 'MainController'
-      })
+      });
      
       $urlRouterProvider.otherwise('/');
     }
