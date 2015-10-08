@@ -1,0 +1,127 @@
+// COLUMN NAV COMPONENT
+.row {
+  margin-bottom: 0;
+  position: relative;
+  .col.s12.l3.column-nav {
+    border-radius: 0 10px 0 0;
+    background-color: white;
+    min-height: 87vh;
+    padding: 0;
+    bottom: 0;
+    text-align: center;
+    @media #{$small-and-down} {
+      border-radius: 0 0 0 0;
+      min-height: 80vh;
+    }
+     @media #{$medium-and-up} {
+      position: fixed;
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border: 1px solid #EBE9EC;
+    }
+    a {
+      color: $darkgrey;
+    }
+    .collection {
+      margin: 0 auto;
+      border: none;
+      @media #{$medium-and-up} {
+        position: absolute;
+        width: 100%;
+      }
+      .collection-item {
+        border-bottom: none;
+      }
+      a.collection-item:not(.active):hover {
+        background-color: $button-color;
+        color: white;
+      }
+    }
+    ul {
+      padding: 3em;
+    }
+    .issue-items {
+      font-size: 1.3em;
+      font-family: $futura-light-stack !important;
+      margin: 1em;
+      @media #{$medium-and-up} {
+        line-height: 30px;
+        font-size: 1.5em;
+      }
+
+    }
+  }
+}
+
+.toggle-content {
+  padding: 10px;
+}
+
+.issue-body {
+  font-size: .5em;
+}
+
+#pick-issue-banner {
+  background-color: $brightgreen;
+  width: 100vw;
+  margin-bottom: 0;
+  font-size: 2.4em;
+  color: white;
+}
+
+.item-summary {
+  padding: 10px 40px 0px 40px;
+  text-align: left;
+  @media #{$medium-and-up} {
+    overflow-y: scroll;
+    font-family: $futura-book-stack;
+  }
+  @media #{$small-and-down} {
+    font-family: $futura-light-stack;
+  }
+}
+
+.collection-item-chosen {
+  background-color: $button-color;
+  font-family: $futura-book-stack !important;
+  font-size: 1.875em !important;
+  line-height: 28px;
+  color: white;
+  margin: 0;
+  font-size: 1.3em;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-right: 10px;
+  padding-left: 10px;
+  @media #{$small-and-down} {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+  }
+}
+
+.situtation-bar {
+  font-size: 1.375em;
+  background-color: $lightgrey;
+  font-family: $futura-stack;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  letter-spacing: 1.1px;
+  height: 5vh;
+  @media #{$small-and-down} {
+  margin-top: 20%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  }
+}
+#back-arrow {
+  width: 5%;
+  height: auto;
+  float: left;
+}
+
+#next-arrow {
+  width: 8%;
+  height: auto;
+  float: right;
+}

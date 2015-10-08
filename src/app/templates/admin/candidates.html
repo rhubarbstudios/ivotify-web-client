@@ -1,0 +1,145 @@
+<div class="admin candidates index page">
+
+<!-- Large Screen Nav -->
+  <div class="navbar-fixed hide-on-med-and-down">
+    <nav class="admin-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col s8">
+            <button class="btn" id="admin-nav-btn"><a ui-sref='admin.issues'>Issues</a></button>
+            <button class="btn" id="admin-nav-btn"><a ui-sref='admin.candidates'>Candidates</a></button>
+          </div>
+          <div class="col s4 right-align">
+            <a class="btn" id="add-candidate" ng-click="addCandidate = true" rel="leanModal" href="#candidate-modal"> + Candidates</a>
+         </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Tablet and Smaller Nav -->
+  <div class="navbar-fixed hide-on-large-only">
+    <nav class="admin-nav">
+      <div class="container">
+        <div class="row">
+          <div class="col s10">
+            <button class="btn" id="admin-btn-mobile">Issues</button>
+            <button class="btn" id="admin-btn-mobile-candidate">Candidates</button>
+          </div>
+          <div class="col s2 right-align">
+            <a class="btn" id="add-candidate-mobile" ng-click="addCandidate = true" rel="leanModal" href="#candidate-modal">+</a>
+         </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<!-- Index View of Candidates -->
+  <div class="container">
+    <div>
+      <table id="candidate-list" class="bordered responsive-table">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Quote</th>
+          <th>Quote Source</th>
+          <th>Bio</th>
+
+          
+        </tr>
+       
+        <tr ng-repeat="candidate in candidates">
+         <form>
+          <td id="candidateFirst">
+            <span ng-hide="editCandidate">{{candidate.first_name}}</span>
+            <textarea ng-show="editCandidate" type="text" ng-model="candidate.first_name"></textarea>
+          </td>
+
+          <td>
+            <span ng-hide="editCandidate">{{candidate.last_name}}</span>
+            <textarea ng-show="editCandidate" type="text" ng-model="candidate.last_name"></textarea>
+          </td>
+
+          <td>
+            <span ng-hide="editCandidate">{{candidate.quotes}}</span>
+            <textarea ng-show="editCandidate" type="text" ng-model="candidate.quotes"></textarea>
+          </td>
+
+          <td>
+            <span ng-hide="editCandidate">{{candidate.quotesource}}</span>
+            <textarea ng-show="editCandidate" type="text" ng-model="candidate.quotesource"></textarea>
+          </td>
+
+          <td>
+            <span ng-hide="editCandidate">{{candidate.bio}}</span>
+            <textarea ng-show="editCandidate" type="text" ng-model="candidate.bio"></textarea>
+          </td>
+          <td>
+            <button class="btn" id="edit-candidate-button" ng-click="editCandidate = true" ng-hide="editCandidate">Edit</button>
+            <button class="btn" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" type="submit">Save</button>
+          </td>
+        </form>
+        </tr>
+        
+      </table>
+    </div>
+  </div>
+
+  <!-- Create Candidate Modals -->
+  <div class="modal" id="candidate-modal">
+    <div class="modal-content">
+
+ <!-- Create Candidate Form -->
+        <form class="col s6 l12" ng-show="addCandidate" name="candidate_form" novalidate ng-submit="save()">
+          <div class="row">
+           <h4>New Candidate</h4>
+            <div class="col s12">
+            <h6>Candidate First Name</h6>
+              <textarea id="firstname" type="text" ng-model="candidate.first_name" required />
+          </div>
+          <div class="row">
+            <div class="col s12">
+            <h6>Candidate Last Name</h6>
+             <textarea id="lastname" ng-model="candidate.last_name" required ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+            <h6>Candidate Quotes</h6>
+             <textarea id="quotes" ng-model="candidate.quotes" required ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+            <h6>Candidate Quote Sources</h6>
+             <textarea id="quotesource" ng-model="candidate.quotesource" required ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+            <h6>Candidate Bio</h6>
+             <textarea id="bio" ng-model="candidate.bio" required ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+              <button class="modal-action modal-close btn waves-effect" id="modal-cancel" name="action" type="reset" >Cancel</button>
+              <button class="modal-action modal-close btn waves-effect waves-light" id="modal-save" ng-disabled="candidate_form.$invalid" type="submit" name="action" >Save</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  $(document).ready(function(){
+      $("a[rel*=leanModal]").leanModal({
+        dismissible: true,
+        opacity: .5,
+        in_duration: 300,
+        out_duration: 200,
+      });
+  });
+</script>

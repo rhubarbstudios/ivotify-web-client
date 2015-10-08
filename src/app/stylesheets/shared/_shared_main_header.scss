@@ -1,0 +1,32 @@
+.main-background {
+  min-height: 100vh;
+  background-color: #F6FAFD;
+  @media #{$medium-and-down} {
+    background-color: white;
+  }
+}
+
+.main-nav {
+  background-color: white;
+  border-bottom: 1px solid $lightgrey;
+}
+
+#logo-nav-btn {
+  width: 102px;
+  height: 41px;
+  background-color: $red;
+  background-image: url(https://s3-us-west-1.amazonaws.com/ivotify-images/logo.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#toggle-nav-btn {
+  padding: 0 5px 0 5px;
+  width: 120px;
+  background-color: $brightgreen;
+}
+
+// #main-body {
+//    @media #{$medium-and-down} {
+//     position: absolute;
+//     }
