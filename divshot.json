@@ -1,6 +1,6 @@
 {
   "name": "ivotify-web-client",
-  "root": "./app",
+  "root": "./src/app",
   "clean_urls": true,
   "error_page": "error.html"
 }
