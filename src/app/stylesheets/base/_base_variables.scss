@@ -16,19 +16,19 @@ $button-color: #FF6666;
 
 // Fonts ////////////////////////////////////////////////////////////////////////
 
-@include font-face(
-  "Futura Book",
-  "futura/futura-book",
-  $asset-pipeline: true,
-  $file-formats: eot woff ttf
-);
+@font-face {
+  font-family: 'Futura Book';
+  src: url('/src/app/assets/fonts/futura/futura-book') format('woff'),
+       url('/src/app/assets/fonts/futura/futura-book') format('eot'),
+       url('/src/app/assets/fonts/futura/futura-book') format('ttf');
+}
 
-@include font-face(
-  "Futura Light",
-  "futura/futura-light",
-  $asset-pipeline: true,
-  $file-formats: eot woff ttf
-);
+@font-face {
+  font-family: 'Futura Light';
+  src: url('/src/app/assets/fonts/futura/futura-light') format('woff'),
+       url('/src/app/assets/fonts/futura/futura-light') format('eot'),
+       url('/src/app/assets/fonts/futura/futura-light') format('ttf');
+}
 
 $futura-stack: Futura, 'Trebuchet MS', Arial, sans-serif;
 $futura-book-stack: 'Futura Book', Futura, 'Trebuchet MS', Arial, sans-serif;
