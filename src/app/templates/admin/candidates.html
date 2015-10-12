@@ -45,9 +45,9 @@
           <th>Quote Source</th>
           <th>Bio</th>
 
-          
+
         </tr>
-       
+
         <tr ng-repeat="candidate in candidates">
          <form>
           <td id="candidateFirst">
@@ -61,13 +61,17 @@
           </td>
 
           <td>
-            <span ng-hide="editCandidate">{{candidate.quotes}}</span>
-            <textarea ng-show="editCandidate" type="text" ng-model="candidate.quotes"></textarea>
+            <div ng-repeat="quote in candidate.quotes">
+              <span ng-hide="editCandidate">{{quote.body}}</span>
+              <textarea ng-show="editCandidate" type="text" ng-model="quote.body"></textarea>
+            </div>
           </td>
 
           <td>
-            <span ng-hide="editCandidate">{{candidate.quotesource}}</span>
-            <textarea ng-show="editCandidate" type="text" ng-model="candidate.quotesource"></textarea>
+            <div ng-repeat="quote in candidate.quotes">
+              <span ng-hide="editCandidate">{{quote.source}}</span>
+              <textarea ng-show="editCandidate" type="text" ng-model="quote.source"></textarea>
+            </div>
           </td>
 
           <td>
@@ -80,7 +84,7 @@
           </td>
         </form>
         </tr>
-        
+
       </table>
     </div>
   </div>

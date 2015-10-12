@@ -33,8 +33,7 @@
 
 				$scope.candidate_form.first_name = "";
 				$scope.candidate_form.last_name = "";
-				$scope.candidate_form.quotes = "";
-				$scope.candidate_form.quotesource = "";
+				$scope.candidate_form.quotes = {};
 				$scope.candidate_form.bio = "";
 				$scope.candidate_form.$setPristine();
 			});
