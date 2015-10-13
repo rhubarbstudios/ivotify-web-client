@@ -9,12 +9,25 @@ describe('MainController', function() {
     $controller = _$controller_;
   }));
 
-  describe('$scope.issues;' function() {
+  describe('$scope.issues + $scope.candidates' function() {
+
      it('makes sure that $scope.issues returns an array', function() {
       var $scope = {};
-      var controller = $controller('PasswordController', { $scope: $scope });
+      var controller = $controller('MainController', { $scope: $scope });
       $scope.issues = [{}];
       expect($scope.issues).toBeTruthy();
      });
+
+     it('makes sure that $scope.candidates returns an array', function() {
+      var $scope = {};
+      var controller = $controller('MainController', { $scope: $scope });
+      $scope.candidates = [{}];
+      expect($scope.candidates).toBeTruthy();
+     });
+
+  });
+
+  
+
   });
 });
