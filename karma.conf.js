@@ -42,11 +42,13 @@ module.exports = function(config) {
       moduleName: 'ivotifyFrontend'
     },
 
-    browsers : ['PhantomJS'],
+    browsers : ['Chrome', 'Safari'],
 
     plugins : [
-      'karma-phantomjs-launcher',
       'karma-angular-filesort',
+      // 'karma-firefox-launcher',
+      'karma-chrome-launcher',
+      'karma-safari-launcher',
       'karma-jasmine',
       'karma-ng-html2js-preprocessor'
     ],

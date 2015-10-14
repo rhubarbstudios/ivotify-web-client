@@ -18,7 +18,7 @@
 
       $scope.showSummary = function(item) {
         $scope.currentIssue = item;
-        console.log($scope.currentIssue);
+        // console.log($scope.currentIssue);
       };
 
       // Method for gaining access to ng-repeat="item in issues, <a> won't accept ng-click without it.
@@ -50,7 +50,7 @@
       CandidateResources.get({})
       .$promise.then(function(resp){
         $scope.candidates = resp.candidates;
-        console.log(resp.candidates);
+        // console.log(resp.candidates);
       });
      
       // Logic for setting canidate quote header colors
