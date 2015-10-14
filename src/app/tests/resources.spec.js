@@ -2,7 +2,7 @@
 describe('Resources', function () {
     var mockResource, 
         $httpBackend;
-
+    beforeEach(module('ivotifyFrontend'));
     beforeEach(angular.mock.module('ivotifyFrontend'));
 
     beforeEach(function () {
