@@ -36,8 +36,9 @@
 
       $scope.topScroll = function () {
         window = window.scrollTo(0, 0);
+        var summary = $('.summary').scrollTop(0);
         var quotes = $('#quote-body').scrollTop(0);
-        return [window, quotes];
+        return [window, quotes, summary];
       }
 
       // Using Resource Factory for all CRUD, the one below is specifically for candidates
