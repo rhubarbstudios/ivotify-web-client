@@ -19,9 +19,15 @@
       $scope.seeIssues = false;
       $scope.seeCandidates = false;
       
-
+      // Shows Issues Summary
       $scope.showSummary = function(item) {
         $scope.currentIssue = item;
+        // console.log($scope.currentIssue);
+      };
+
+      // Shows Candidate Bio
+      $scope.showBio = function(candidate) {
+        $scope.currentCandidate = candidate;
         // console.log($scope.currentIssue);
       };
 

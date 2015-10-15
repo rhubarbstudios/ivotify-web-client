@@ -33,8 +33,8 @@
         <!-- Toggle Buttons on Medium Screens and Up -->
         <div class="toggle-content hide-on-med-and-down">
           <div class="togglebox">
-            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-click="seeIssues = true">Issues</button>
-            <button class="btn hide-on-med-and-down" id="toggle-nav-btn">Candidates</button>
+            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-click="seeIssues = true; seeCandidates = false">Issues</button>
+            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-click="seeCandidates = true; seeIssues = false;">Candidates</button>
           </div>
         </div>
 
@@ -55,6 +55,29 @@
               <p class="situtation-bar"> THE SITUATION </p>
               <div class="summary">
                 <p ng-model="item.summary" class="item-summary">{{item.summary}}</p>
+              </div>
+            </div>
+            
+          </div>
+          </div>
+        </div> 
+
+        <!-- Candidate List for both mobile and desktop -->
+        <div class="item-body" ng-show="seeCandidates" ng-repeat="candidate in candidates">
+          <a href="javascript:void(0)" ng-click="getScope().pickIssue = true; showBio(candidate); getScope().hideSummary = true" ng-model="item.title" class="collection-item" ng-hide="pickIssue">
+            <h6 class="issue-items">{{candidate.full_name}}</h6>
+          </a>
+          <div ng-show="hideSummary">
+          <div class="summary-box" ng-show="currentCandidate == candidate">
+            <h6 class="collection-item-chosen" >
+              <a ng-click="getScope().pickIssue = false; getScope().hideSummary = false; topScroll()" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
+              {{candidate.full_name}}
+              <a ng-click="itemNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
+            </h6>
+            <div class="scroll-summary">
+              <p class="situtation-bar"> BIO </p>
+              <div class="summary">
+                <p ng-model="item.summary" class="item-summary">{{candidate.bio}}</p>
               </div>
             </div>
             
