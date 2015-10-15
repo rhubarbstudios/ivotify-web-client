@@ -36,6 +36,16 @@
          return $scope;   
       };
 
+      // Cycle method for candidate bios
+      $scope.bioNext = function (index) {
+        console.log('index:', index);
+        if ( index == $scope.candidates.length) {
+          return $scope.currentCandidate = $scope.candidates[0];
+        }
+          return $scope.currentCandidate = $scope.candidates[index];
+      };
+
+      // Cycle method for issue summaries
       $scope.itemNext = function (index) {
         console.log('index:', index);
         if ( index == $scope.issues.length) {
