@@ -35,8 +35,8 @@
       };
 
       $scope.topScroll = function () {
-        window = window.scrollTo(0, 0);
-        quotes = $('#quote-body').scrollTop(0);
+        var window = window.scrollTo(0, 0);
+        var quotes = $('#quote-body').scrollTop(0);
         return [window, quotes];
       }
 
