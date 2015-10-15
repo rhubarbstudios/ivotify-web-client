@@ -34,6 +34,10 @@
           return $scope.currentIssue = $scope.issues[index];
       };
 
+      $scope.topScroll = function () {
+        return window.scrollTo(0, 0);
+      }
+
       // Using Resource Factory for all CRUD, the one below is specifically for candidates
       // Access to CRUD for issues and candidates
       var CandidateResources = new Resources('candidates');
