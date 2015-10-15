@@ -102,8 +102,10 @@
 .summary {
   overflow: scroll;
   position: static;
-  height: 60vh;
-  padding-bottom: 24px;
+    @media #{$medium-and-up} {
+    height: 60vh;
+    padding-bottom: 24px;
+    }
 }
 
 .situtation-bar {
