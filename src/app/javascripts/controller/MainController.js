@@ -14,6 +14,10 @@
       // Boolean for ng-show/hide candidate quotes
       $scope.pickIssue = false;
       $scope.hideSummary = false;
+
+      // Boolean for issue or candiate list toggle
+      $scope.seeIssues = false;
+      $scope.seeCandidates = false;
       
 
       $scope.showSummary = function(item) {

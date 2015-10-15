@@ -1,6 +1,6 @@
 <div class="main-background">
 
-<!-- Large Screen Nav -->
+<!-- Large Screen Header -->
   <div class="navbar-fixed hide-on-med-and-down">
     <nav class="main-nav">
         <div class="row">
@@ -15,6 +15,7 @@
     </nav>
   </div>
 
+  <!--Navigation for Mobile -->
   <div class="hide-on-med-and-up center-align" id="mobile-navbar">
       <button class="btn" id="issue-nav-mobile">Issues</button>
       <button class="btn" id="logo-nav-mobile"></button>
@@ -22,23 +23,24 @@
   </div>
 
 
-  <!-- Issue Navigation for Mobile and Desktop -->
+  <!--Navigation for Desktop -->
   <div class="row" id="main-body">
     <div class="col s12 l3 column-nav">
       <div class="collection">
+        <!-- Below is only seen on mobile -->
         <p class="hide-on-med-and-up" id="pick-issue-banner" ng-hide="pickIssue">Pick an Issue</p>
 
         <!-- Toggle Buttons on Medium Screens and Up -->
         <div class="toggle-content hide-on-med-and-down">
           <div class="togglebox">
-            <button class="btn hide-on-med-and-down" id="toggle-nav-btn">Issues</button>
+            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-click="seeIssues = true">Issues</button>
             <button class="btn hide-on-med-and-down" id="toggle-nav-btn">Candidates</button>
           </div>
         </div>
 
-        <!-- Issue List  for both mobile and desktop -->
 
-        <div class="item-body" ng-repeat="item in issues">
+        <!-- Issue List  for both mobile and desktop -->
+        <div class="item-body" ng-show="seeIssues" ng-repeat="item in issues">
           <a href="javascript:void(0)" ng-click="getScope().pickIssue = true; showSummary(item); getScope().hideSummary = true" ng-model="item.title" class="collection-item" ng-hide="pickIssue">
             <h6 class="issue-items">{{item.title}}</h6>
           </a>
