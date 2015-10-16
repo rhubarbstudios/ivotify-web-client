@@ -17,9 +17,13 @@
 
   <!--Navigation for Mobile -->
   <div class="hide-on-med-and-up center-align" id="mobile-navbar">
-      <button class="btn" id="issue-nav-mobile">Issues</button>
+      <button class="btn" id="issue-nav-mobile"ng-dblclick="getScope().pickIssue = false; getScope().hideSummary = false" ng-click="seeIssues = true; seeCandidates = false">
+      Issues
+      </button>
       <button class="btn" id="logo-nav-mobile"></button>
-      <button class="btn" id="candidate-nav-mobile">Candidates</button>
+      <button class="btn" id="candidate-nav-mobile" ng-dblclick="getScope().pickCandidate = false; getScope().hideBio = false" ng-click="seeCandidates = true; seeIssues = false;">
+      Candidates
+      </button>
   </div>
 
 
@@ -29,17 +33,23 @@
       <div class="collection">
         <!-- Below is only seen on mobile -->
         <p class="hide-on-med-and-up" id="pick-issue-banner" ng-hide="pickIssue">Pick an Issue</p>
+        <!-- Below is only seen on mobile -->
+        <p class="hide-on-med-and-up" id="pick-issue-banner" ng-hide="pickCandidate">Pick a Candidate</p>
 
         <!-- Toggle Buttons on Medium Screens and Up -->
         <div class="toggle-content hide-on-med-and-down">
           <div class="togglebox">
-            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-click="seeIssues = true; seeCandidates = false">Issues</button>
-            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-click="seeCandidates = true; seeIssues = false;">Candidates</button>
+            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-dblclick="getScope().pickIssue = false; getScope().hideSummary = false" ng-click="seeIssues = true; seeCandidates = false">
+              Issues
+            </button>
+            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-dblclick="getScope().pickCandidate = false; getScope().hideBio = false" ng-click="seeCandidates = true; seeIssues = false;">
+            Candidates
+            </button>
           </div>
         </div>
 
 
-        <!-- Issue List  for both mobile and desktop -->
+        <!-- Issue List for both mobile and desktop -->
         <div class="item-body" ng-show="seeIssues" ng-repeat="item in issues">
           <a href="javascript:void(0)" ng-click="getScope().pickIssue = true; showSummary(item); getScope().hideSummary = true" ng-model="item.title" class="collection-item" ng-hide="pickIssue">
             <h6 class="issue-items">{{item.title}}</h6>
@@ -64,13 +74,13 @@
 
         <!-- Candidate List for both mobile and desktop -->
         <div class="item-body" ng-show="seeCandidates" ng-repeat="candidate in candidates">
-          <a href="javascript:void(0)" ng-click="getScope().pickIssue = true; showBio(candidate); getScope().hideSummary = true" ng-model="item.title" class="collection-item" ng-hide="pickIssue">
+          <a href="javascript:void(0)" ng-click="getScope().pickCandidate = true; showBio(candidate); getScope().hideBio = true" ng-model="item.title" class="collection-item" ng-hide="pickCandidate">
             <h6 class="issue-items">{{candidate.full_name}}</h6>
           </a>
-          <div ng-show="hideSummary">
+          <div ng-show="hideBio">
           <div class="summary-box" ng-show="currentCandidate == candidate">
             <h6 class="collection-item-chosen" >
-              <a ng-click="getScope().pickIssue = false; getScope().hideSummary = false; topScroll()" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
+              <a ng-click="getScope().pickCandidate = false; getScope().hideBio = false; topScroll()" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
               {{candidate.full_name}}
               <a ng-click="bioNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
             </h6>
@@ -80,17 +90,16 @@
                 <p ng-model="item.summary" class="item-summary">{{candidate.bio}}</p>
               </div>
             </div>
-            
           </div>
           </div>
         </div> 
 
 
       </div>
-    </div>
 
 
-      <!-- Candidate Quote Pop-up List -->
+
+  <!--Quote Pop-up List for Issues Page-->
   <div class="col s12 m6 candidate-quote-module">
       <img ng-hide="pickIssue" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
 
@@ -115,11 +124,31 @@
           </div>
         </div>
       </div>
+
+   <!--Quote Pop-up List for Candidates Page -->
+  <div class="col s12 m6 candidate-quote-module">
+      <img ng-hide="pickCandidate" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
+
+        <div class="ng-hide" id="quote-body" ng-show="pickCandidate">
+          <div id="candidate-quote" ng-repeat="item in issues">
+
+              <p class="center-align" id="issue-name">
+              {{item.title | uppercase}}
+              </p>
+                <div ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
+                  <div class="quote">
+                      <p class="center-align" id="quote-one">"{{quote.body}}"</p>
+                  </div>
+                  <div class="quote">
+                      <p class="right-align" id="source-bar">{{quote.source | uppercase}}</p>
+                  </div>
+                  <svg class="line-divider">
+                    <line x1="50" y1="0" x2="640" y2="0" style="stroke:rgb(100,100,100);stroke-width:2" />
+                  </svg>
+                </div>
+          </div>
+        </div>
+      </div>
       
   
-
-
-    </div>
-
-
 </div>

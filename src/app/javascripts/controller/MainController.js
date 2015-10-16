@@ -8,17 +8,25 @@
     MainController.$inject = ['Resources', '$scope', '$state', '$stateParams'];
 
     function MainController(Resources, $scope, $state, $stateParams){
+      // Empty Arrays for Issue and Candidate Objects
       $scope.issues = [];
       $scope.candidates = [];
 
-      // Boolean for ng-show/hide candidate quotes
+      // Boolean for ng-show/hide candidate quotes from issue list
       $scope.pickIssue = false;
       $scope.hideSummary = false;
 
+      // Boolean for ng-show/hide candidate quotes from candidate list
+      $scope.pickCandidate = false;
+      $scope.hideBio = false;
+
       // Boolean for issue or candiate list toggle
-      $scope.seeIssues = false;
+      $scope.seeIssues = true;
       $scope.seeCandidates = false;
-      
+
+      // Boolean for candidate banner
+      $scope.showBanner = true;
+
       // Shows Issues Summary
       $scope.showSummary = function(item) {
         $scope.currentIssue = item;
@@ -28,7 +36,7 @@
       // Shows Candidate Bio
       $scope.showBio = function(candidate) {
         $scope.currentCandidate = candidate;
-        // console.log($scope.currentIssue);
+        // console.log($scope.currentCandidate);
       };
 
       // Method for gaining access to ng-repeat="item in issues, <a> won't accept ng-click without it.
@@ -54,13 +62,14 @@
           return $scope.currentIssue = $scope.issues[index];
       };
 
+      // Scroll function for mobile and desktop, will be service soon
       $scope.topScroll = function () {
         window = window.scrollTo(0, 0);
         var summary = $('.summary').scrollTop(0);
         var quotes = $('#quote-body').scrollTop(0);
-        return [window, quotes, summary];
-      }
-
+          return [window, quotes, summary];
+      };
+         
       // Using Resource Factory for all CRUD, the one below is specifically for candidates
       // Access to CRUD for issues and candidates
       var CandidateResources = new Resources('candidates');
@@ -70,7 +79,7 @@
       IssueResources.get({})
       .$promise.then(function(resp) { 
         $scope.issues = resp.issues; 
-        console.log(resp.issues);
+        // console.log(resp.issues);
       });
 
        // Index of candidates

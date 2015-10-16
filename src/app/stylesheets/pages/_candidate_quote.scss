@@ -42,6 +42,20 @@
 
 }
 
+#issue-name {
+  background-color: $yellow;
+  padding: 10px 0 10px 0;
+  font-size: 1.6875em;
+  position: relative;
+  color: $darkgrey;
+  font-family: $futura-stack;
+  letter-spacing: 1.5px;
+  @media #{$medium-and-down} {
+    font-size: 1.25em;
+  }
+
+}
+
 #rushmose-image {
   height: 75vh;
   width: 75vw;
