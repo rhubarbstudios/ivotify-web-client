@@ -1,7 +1,7 @@
 <div class="main-background">
 
 <!-- Large Screen Header -->
-  <div class="navbar-fixed hide-on-med-and-down">
+  <div class="navbar-fixed hide-on-small-and-down">
     <nav class="main-nav">
         <div class="row">
           <div class="col s3">
@@ -29,7 +29,7 @@
 
   <!--Navigation for Desktop -->
   <div class="row" id="main-body">
-    <div class="col s12 l3 column-nav">
+    <div class="col s12 m4 l3 column-nav">
       <div class="collection">
         <!-- Below is only seen on mobile -->
         <p class="hide-on-med-and-up" id="pick-issue-banner" ng-show="bannerIssue">Pick an Issue</p>
@@ -37,12 +37,12 @@
         <p class="hide-on-med-and-up" id="pick-issue-banner" ng-show="bannerCandidate">Pick a Candidate</p>
 
         <!-- Toggle Buttons on Medium Screens and Up -->
-        <div class="toggle-content hide-on-med-and-down">
+        <div class="toggle-content hide-on-small-and-down">
           <div class="togglebox">
-            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-dblclick="getScope().pickIssue = false; getScope().hideSummary = false" ng-click="seeIssues = true; seeCandidates = false">
+            <button class="btn hide-on-small-and-down" id="toggle-nav-btn" ng-dblclick="getScope().pickIssue = false; getScope().hideSummary = false" ng-click="seeIssues = true; seeCandidates = false">
               Issues
             </button>
-            <button class="btn hide-on-med-and-down" id="toggle-nav-btn" ng-dblclick="getScope().pickCandidate = false; getScope().hideBio = false" ng-click="seeCandidates = true; seeIssues = false;">
+            <button class="btn hide-on-small-and-down" id="toggle-nav-btn" ng-dblclick="getScope().pickCandidate = false; getScope().hideBio = false" ng-click="seeCandidates = true; seeIssues = false;">
             Candidates
             </button>
           </div>
@@ -101,7 +101,7 @@
 
   <!--Quote Pop-up List for Issues Page-->
   <div class="col s12 m6 candidate-quote-module">
-      <img ng-hide="pickIssue" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
+      <img ng-hide="pickIssue" class="ng-hide hide-on-small-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickIssue">
           <div id="candidate-quote" ng-repeat="candidate in candidates">

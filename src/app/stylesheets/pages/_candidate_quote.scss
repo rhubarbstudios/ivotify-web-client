@@ -1,6 +1,6 @@
 .col.s12.m6.candidate-quote-module {
   position: fixed;
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
     display: block;
     position: relative;
     padding: 0;
@@ -17,7 +17,7 @@
   height: 87vh;
   background-color: white;
   margin: 0;
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
     z-index: 0;
     box-shadow: none;
     height: 100vh;
@@ -36,7 +36,7 @@
   color: $darkgrey;
   font-family: $futura-stack;
   letter-spacing: 1.5px;
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
     font-size: 1.25em;
   }
 
@@ -49,7 +49,7 @@
   color: $darkgrey;
   font-family: $futura-stack;
   letter-spacing: 1.5px;
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
     font-size: 1.25em;
   }
 
@@ -94,7 +94,7 @@
   z-index: 4;
   top: -60%;
   left: 10%;
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
   top: -40%;
   left: 3%;
   width: 23%;
