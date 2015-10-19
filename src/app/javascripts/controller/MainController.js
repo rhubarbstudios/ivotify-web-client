@@ -24,8 +24,10 @@
       $scope.seeIssues = true;
       $scope.seeCandidates = false;
 
-      // Boolean for candidate banner
+      // Boolean for banners across front-end
       $scope.showBanner = true;
+      $scope.bannerIssue = true
+      $scope.bannerCandidate = false
 
       // Shows Issues Summary
       $scope.showSummary = function(item) {
@@ -107,6 +109,28 @@
           return { 'background-color': "#FFC8CE" };
         }
         else if (candidate.first_name == "Jeb") {
+          return { 'background-color': "#0BECB8" };
+        }
+      };
+
+      // Logic for setting issue quote header colors
+      $scope.set_header = function(item){
+        if (item.title == "Gun Control") {
+          return {'background-color': "#F5E265" };
+        } 
+        else if (item.title == "Privacy Rights") {
+          return { 'background-color': "#B6D9FD" };
+        }
+        else if (item.title == "Campaign Finance") {
+          return { 'background-color': "#FF7552" };
+        }
+        else if (item.title == "Immigration") {
+          return { 'background-color': "#FFBDA0" };
+        }
+        else if (item.title == "Iran Deal") {
+          return { 'background-color': "#FFC8CE" };
+        }
+        else if (item.title == "Abortion") {
           return { 'background-color': "#0BECB8" };
         }
       };

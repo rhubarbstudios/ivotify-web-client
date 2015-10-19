@@ -9,7 +9,7 @@
     padding: 0;
     bottom: 0;
     text-align: center;
-    @media #{$small-and-down} {
+    @media #{$medium-and-down} {
       border-radius: 0 0 0 0;
       min-height: 80vh;
     }
