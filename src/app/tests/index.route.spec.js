@@ -114,7 +114,7 @@ describe('ivotifyFrontend/admin/candidates', function() {
 });
 
 // Route Tests for Issues (will be namespaced later)
-describe('ivotifyFrontend/issues', function() {
+describe('ivotifyFrontend/main/issues', function() {
   var $rootScope, $state, $injector
   beforeEach(module('ivotifyFrontend'));
   beforeEach(
@@ -125,18 +125,18 @@ describe('ivotifyFrontend/issues', function() {
 
         // We need add the template entry into the templateCache if we ever
         // specify a templateUrl
-        $templateCache.put('app/templates/issues.html', '');
+        $templateCache.put('app/templates/main/issues.html', '');
 
   }));
 
   it('should respond to URL', function() {
-    expect($state.href('issues')).toEqual('#/issues');
+    expect($state.href('main.issues')).toEqual('#/main/issues');
   });
 
   it('should activate the state', function() {
-    $state.go('issues');
+    $state.go('main.issues');
     $rootScope.$digest();
-    expect($state.current.name).toBe('issues');
+    expect($state.current.name).toBe('main.issues');
   });
 
 });
