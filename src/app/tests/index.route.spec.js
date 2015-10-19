@@ -113,7 +113,35 @@ describe('ivotifyFrontend/admin/candidates', function() {
 
 });
 
-// Route Tests for Issues (will be namespaced later)
+// Route Tests for Admin
+describe('ivotifyFrontend/main', function() {
+  var $rootScope, $state, $injector
+  beforeEach(module('ivotifyFrontend'));
+  beforeEach(
+
+  inject(function(_$rootScope_, _$state_, $templateCache) {
+        $rootScope = _$rootScope_;
+        $state = _$state_;
+
+        // We need add the template entry into the templateCache if we ever
+        // specify a templateUrl
+        $templateCache.put('app/templates/main.html', '');
+
+  }));
+
+  it('should respond to URL', function() {
+    expect($state.href('main')).toEqual('#/main');
+  });
+
+  it('should activate the state', function() {
+    $state.go('main');
+    $rootScope.$digest();
+    expect($state.current.name).toBe('main');
+  });
+
+});
+
+// Route Tests for Main.Issues 
 describe('ivotifyFrontend/main/issues', function() {
   var $rootScope, $state, $injector
   beforeEach(module('ivotifyFrontend'));
@@ -137,6 +165,34 @@ describe('ivotifyFrontend/main/issues', function() {
     $state.go('main.issues');
     $rootScope.$digest();
     expect($state.current.name).toBe('main.issues');
+  });
+
+});
+
+// Route Tests for Main.Candidate 
+describe('ivotifyFrontend/main/candidate', function() {
+  var $rootScope, $state, $injector
+  beforeEach(module('ivotifyFrontend'));
+  beforeEach(
+
+  inject(function(_$rootScope_, _$state_, $templateCache) {
+        $rootScope = _$rootScope_;
+        $state = _$state_;
+
+        // We need add the template entry into the templateCache if we ever
+        // specify a templateUrl
+        $templateCache.put('app/templates/main/candidate.html', '');
+
+  }));
+
+  it('should respond to URL', function() {
+    expect($state.href('main.candidate')).toEqual('#/main/candidate');
+  });
+
+  it('should activate the state', function() {
+    $state.go('main.candidate');
+    $rootScope.$digest();
+    expect($state.current.name).toBe('main.candidate');
   });
 
 });
