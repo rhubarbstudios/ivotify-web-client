@@ -77,7 +77,7 @@
 
         <!-- Candidate List for both mobile and desktop -->
         <div class="item-body" ng-show="seeCandidates" ng-repeat="candidate in candidates">
-          <a href="javascript:void(0)" ng-click="getScope().pickCandidate = true; showBio(candidate); getScope().hideBio = true; getScope().bannerCandidate = false" ng-model="item.title" class="collection-item" ng-hide="pickCandidate">
+          <a href="javascript:void(0)" ng-click="getScope().showBanner = false; getScope().pickCandidate = true; showBio(candidate); getScope().hideBio = true; getScope().bannerCandidate = false" ng-model="item.title" class="collection-item" ng-hide="pickCandidate">
             <h6 class="issue-items">{{candidate.full_name}}</h6>
           </a>
           <div ng-show="hideBio">
