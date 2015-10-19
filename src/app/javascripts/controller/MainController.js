@@ -20,10 +20,6 @@
       $scope.pickCandidate = false;
       $scope.hideBio = false;
 
-      // Boolean for issue or candiate list toggle
-      // $scope.seeIssues = true;
-      // $scope.seeCandidates = false;
-
       // Boolean for banners across front-end
       $scope.showBanner = true;
       $scope.bannerIssue = true

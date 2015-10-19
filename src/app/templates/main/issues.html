@@ -17,13 +17,9 @@
 
   <!--Navigation for Mobile -->
   <div class="hide-on-med-and-up center-align" id="mobile-navbar">
-      <button class="btn" id="issue-nav-mobile">
-        <a ui-sref='main.issues'>Issues</a>
-      </button>
-      <button class="btn" id="logo-nav-mobile"></button>
-      <button class="btn" id="candidate-nav-mobile">
-        <a ui-sref='main.candidate'>Candidates</a>
-      </button>
+    <a class="btn" id="issue-nav-mobile" ui-sref='main.issues'>Issues</a>
+    <button class="btn" id="logo-nav-mobile"></button>
+    <a class="btn" id="candidate-nav-mobile" ui-sref='main.candidate'>Candidates</a>
   </div>
 
   <!--Navigation for Desktop -->
@@ -36,26 +32,21 @@
         <!-- Toggle Buttons on Medium Screens and Up -->
         <div class="toggle-content hide-on-small-and-down">
           <div class="togglebox">
-            <button class="btn hide-on-small-and-down" id="toggle-nav-btn">
-              <a ui-sref='main.issues'>Issues</a>
-            </button>
-
-            <button class="btn hide-on-small-and-down" id="toggle-nav-btn">
-              <a ui-sref='main.candidate'>Candidates</a>
-            </button>
+            <a class="btn hide-on-small-and-down" id="toggle-nav-btn" ui-sref='main.issues'>Issues</a>
+            <a class="btn hide-on-small-and-down" id="toggle-nav-btn" ui-sref='main.candidate'>Candidates</a>
           </div>
         </div>
 
 
         <!-- Issue List for both mobile and desktop -->
         <div class="item-body" ng-repeat="item in issues">
-          <a href="javascript:void(0)" ng-click="getScope().showBanner = false; getScope().pickIssue = true; showSummary(item); getScope().hideSummary = true; getScope().bannerIssue = false" ng-model="item.title" class="collection-item" ng-hide="pickIssue">
+          <a href="javascript:void(0)" ng-click="getScope().showBanner = false; getScope().bannerIssue = false; getScope().pickIssue = true; showSummary(item); getScope().hideSummary = true; " ng-model="item.title" class="collection-item" ng-hide="pickIssue">
             <h6 class="issue-items">{{item.title}}</h6>
           </a>
           <div ng-show="hideSummary">
           <div class="summary-box" ng-show="currentIssue == item">
             <h6 class="collection-item-chosen" >
-              <a ng-click="getScope().showBanner = true; getScope().pickIssue = false; getScope().hideSummary = false; topScroll(); getScope().bannerIssue = true" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
+              <a ng-click="getScope().bannerIssue = true; getScope().showBanner = true; getScope().pickIssue = false; getScope().hideSummary = false; topScroll(); " class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
               {{item.title}}
               <a ng-click="itemNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
             </h6>

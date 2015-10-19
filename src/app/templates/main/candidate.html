@@ -1,6 +1,3 @@
-<!-- ng-dblclick="getScope().pickIssue = false; getScope().hideSummary = false" 
-ng-dblclick="getScope().pickCandidate = false; getScope().hideBio = false" -->
-
 <div class="main-background">
 
   <!-- Large Screen Header -->
@@ -20,13 +17,9 @@ ng-dblclick="getScope().pickCandidate = false; getScope().hideBio = false" -->
 
   <!--Navigation for Mobile -->
   <div class="hide-on-med-and-up center-align" id="mobile-navbar">
-      <button class="btn" id="issue-nav-mobile">
-        <a ui-sref='main.issues'>Issues</a>
-      </button>
-      <button class="btn" id="logo-nav-mobile"></button>
-      <button class="btn" id="candidate-nav-mobile">
-        <a ui-sref='main.candidate'>Candidates</a>
-      </button>
+    <a class="btn" id="issue-nav-mobile" ui-sref='main.issues'>Issues</a>
+    <button class="btn" id="logo-nav-mobile"></button>
+    <a class="btn" id="candidate-nav-mobile" ui-sref='main.candidate'>Candidates</a>
   </div>
 
   <!--Navigation for Desktop -->
@@ -39,13 +32,8 @@ ng-dblclick="getScope().pickCandidate = false; getScope().hideBio = false" -->
         <!-- Toggle Buttons on Medium Screens and Up -->
         <div class="toggle-content hide-on-small-and-down">
           <div class="togglebox">
-            <button class="btn hide-on-small-and-down" id="toggle-nav-btn">
-              <a ui-sref='main.issues'>Issues</a>
-            </button>
-
-            <button class="btn hide-on-small-and-down" id="toggle-nav-btn">
-              <a ui-sref='main.candidate'>Candidates</a>
-            </button>
+            <a class="btn hide-on-small-and-down" id="toggle-nav-btn" ui-sref='main.issues'>Issues</a>
+            <a class="btn hide-on-small-and-down" id="toggle-nav-btn" ui-sref='main.candidate'>Candidates</a>
           </div>
         </div>
 
@@ -57,7 +45,7 @@ ng-dblclick="getScope().pickCandidate = false; getScope().hideBio = false" -->
     <div ng-show="hideBio">
     <div class="summary-box" ng-show="currentCandidate == candidate">
       <h6 class="collection-item-chosen" >
-        <a ng-click="getScope().showBanner = true; getScope().pickCandidate = false; getScope().hideBio = false; topScroll(); getScope().bannerCandidate = true" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
+        <a ng-click="getScope().bannerCandidate = true; getScope().showBanner = true; getScope().pickCandidate = false; getScope().hideBio = false; topScroll(); g" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
         {{candidate.full_name}}
         <a ng-click="bioNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
       </h6>
