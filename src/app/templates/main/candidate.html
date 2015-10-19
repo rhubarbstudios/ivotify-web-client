@@ -1,0 +1,101 @@
+<!-- ng-dblclick="getScope().pickIssue = false; getScope().hideSummary = false" 
+ng-dblclick="getScope().pickCandidate = false; getScope().hideBio = false" -->
+
+<div class="main-background">
+
+  <!-- Large Screen Header -->
+  <div class="navbar-fixed hide-on-small-and-down">
+    <nav class="main-nav">
+        <div class="row">
+          <div class="col s3">
+            <div class="center-align">
+              <button class="btn" id="logo-nav-btn"></button>
+            </div>
+          </div>
+          <div class="col s4 right-align">
+         </div>
+        </div>
+    </nav>
+  </div>
+
+  <!--Navigation for Mobile -->
+  <div class="hide-on-med-and-up center-align" id="mobile-navbar">
+      <button class="btn" id="issue-nav-mobile">
+        <a ui-sref='main.issues'>Issues</a>
+      </button>
+      <button class="btn" id="logo-nav-mobile"></button>
+      <button class="btn" id="candidate-nav-mobile">
+        <a ui-sref='main.candidate'>Candidates</a>
+      </button>
+  </div>
+
+  <!--Navigation for Desktop -->
+  <div class="row" id="main-body">
+    <div class="col s12 m4 l3 column-nav">
+      <div class="collection">
+        <!-- Below is only seen on mobile -->
+        <p class="hide-on-med-and-up" id="pick-issue-banner" ng-show="bannerCandidate">Pick a Candidate</p>
+
+        <!-- Toggle Buttons on Medium Screens and Up -->
+        <div class="toggle-content hide-on-small-and-down">
+          <div class="togglebox">
+            <button class="btn hide-on-small-and-down" id="toggle-nav-btn">
+              <a ui-sref='main.issues'>Issues</a>
+            </button>
+
+            <button class="btn hide-on-small-and-down" id="toggle-nav-btn">
+              <a ui-sref='main.candidate'>Candidates</a>
+            </button>
+          </div>
+        </div>
+
+  <!-- Candidate List for both mobile and desktop -->
+  <div class="item-body" ng-repeat="candidate in candidates">
+    <a href="javascript:void(0)" ng-click="getScope().showBanner = false; getScope().pickCandidate = true; showBio(candidate); getScope().hideBio = true; getScope().bannerCandidate = false" ng-model="item.title" class="collection-item" ng-hide="pickCandidate">
+      <h6 class="issue-items">{{candidate.full_name}}</h6>
+    </a>
+    <div ng-show="hideBio">
+    <div class="summary-box" ng-show="currentCandidate == candidate">
+      <h6 class="collection-item-chosen" >
+        <a ng-click="getScope().showBanner = true; getScope().pickCandidate = false; getScope().hideBio = false; topScroll(); getScope().bannerCandidate = true" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
+        {{candidate.full_name}}
+        <a ng-click="bioNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
+      </h6>
+      <div class="scroll-summary">
+        <p class="situtation-bar"> BIO </p>
+        <div class="summary">
+          <p ng-model="item.summary" class="item-summary">{{candidate.bio}}</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!--Quote Pop-up List for Candidates Page -->
+  <div class="col s12 m6 candidate-quote-module">
+      <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
+
+        <div class="ng-hide" id="quote-body" ng-show="pickCandidate">
+          <div id="candidate-quote" ng-repeat="item in issues">
+              <p class="center-align" ng-style="set_header(item)" id="issue-name">
+              {{item.title | uppercase}}
+              </p>
+                <div ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
+                  <div class="quote">
+                      <p class="center-align" id="quote-one">"{{quote.body}}"</p>
+                  </div>
+                  <div class="quote">
+                      <p class="right-align" id="source-bar">{{quote.source | uppercase}}</p>
+                  </div>
+                  <svg class="line-divider">
+                    <line x1="50" y1="0" x2="640" y2="0" style="stroke:rgb(100,100,100);stroke-width:2" />
+                  </svg>
+                </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+</div>

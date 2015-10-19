@@ -21,13 +21,13 @@
       $scope.hideBio = false;
 
       // Boolean for issue or candiate list toggle
-      $scope.seeIssues = true;
-      $scope.seeCandidates = false;
+      // $scope.seeIssues = true;
+      // $scope.seeCandidates = false;
 
       // Boolean for banners across front-end
       $scope.showBanner = true;
       $scope.bannerIssue = true
-      $scope.bannerCandidate = false
+      $scope.bannerCandidate = true
 
       // Shows Issues Summary
       $scope.showSummary = function(item) {
