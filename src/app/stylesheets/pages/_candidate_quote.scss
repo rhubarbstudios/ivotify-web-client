@@ -7,7 +7,7 @@
   }
   @media #{$medium-and-up} {
     left: 40%;
-  } 
+  }
   bottom: 0;
 }
 
@@ -25,7 +25,7 @@
   @media #{$medium-and-up} {
     overflow-y: scroll;
     border-radius: 10px 10px 0 0;
-    border: 1px solid #EBE9EC;
+    // border: 1px solid #EBE9EC;
   }
 }
 
@@ -99,5 +99,3 @@
   width: 23%;
   }
 }
-
-
