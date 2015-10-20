@@ -1,5 +1,5 @@
 (function(){
-'use strict';
+// 'use strict';
 
   angular
     .module('ivotifyFrontend')
@@ -22,8 +22,8 @@
 
       // Boolean for banners across front-end
       $scope.showBanner = true;
-      $scope.bannerIssue = true
-      $scope.bannerCandidate = true
+      $scope.bannerIssue = true;
+      $scope.bannerCandidate = true;
 
       // Shows Issues Summary
       $scope.showSummary = function(item) {
@@ -39,7 +39,7 @@
 
       // Method for gaining access to ng-repeat="item in issues, <a> won't accept ng-click without it.
       $scope.getScope = function() {
-         return $scope;   
+         return $scope;
       };
 
       // Cycle method for candidate bios
@@ -50,7 +50,7 @@
         }
           return $scope.currentCandidate = $scope.candidates[index];
       }
-      
+
 
       // Cycle method for issue summaries
       $scope.itemNext = function (index) {
@@ -63,9 +63,9 @@
 
       // Scroll function for mobile and desktop, will be service soon
       $scope.topScroll = function () {
-        ScrollService.scroll();
-      }
-         
+        ScrollService.scrollTop();
+      };
+
       // Using Resource Factory for all CRUD, the one below is specifically for candidates
       // Access to CRUD for issues and candidates
       var CandidateResources = new Resources('candidates');
@@ -84,12 +84,12 @@
         $scope.candidates = resp.candidates;
         // console.log(resp.candidates);
       });
-     
+
       // Logic for setting canidate quote header colors
       $scope.set_color = function(candidate){
         if (candidate.first_name == "Bernie") {
           return {'background-color': "#B6D9FD" };
-        } 
+        }
         else if (candidate.first_name == "Hillary") {
           return { 'background-color': "#F5E265" };
         }
@@ -111,7 +111,7 @@
       $scope.set_header = function(item){
         if (item.title == "Gun Control") {
           return {'background-color': "#F5E265" };
-        } 
+        }
         else if (item.title == "Privacy Rights") {
           return { 'background-color': "#B6D9FD" };
         }
