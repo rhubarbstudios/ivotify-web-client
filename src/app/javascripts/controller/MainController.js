@@ -5,9 +5,9 @@
     .module('ivotifyFrontend')
     .controller('MainController', MainController);
 
-    MainController.$inject = ['Resources', '$scope', '$state', '$stateParams'];
+    MainController.$inject = ['Resources', '$scope', '$state', '$stateParams', 'ScrollService'];
 
-    function MainController(Resources, $scope, $state, $stateParams){
+    function MainController(Resources, $scope, $state, $stateParams, ScrollService){
       // Empty Arrays for Issue and Candidate Objects
       $scope.issues = [];
       $scope.candidates = [];
@@ -49,7 +49,8 @@
           return $scope.currentCandidate = $scope.candidates[0];
         }
           return $scope.currentCandidate = $scope.candidates[index];
-      };
+      }
+      
 
       // Cycle method for issue summaries
       $scope.itemNext = function (index) {
@@ -62,11 +63,8 @@
 
       // Scroll function for mobile and desktop, will be service soon
       $scope.topScroll = function () {
-        window = window.scrollTo(0, 0);
-        var summary = $('.summary').scrollTop(0);
-        var quotes = $('#quote-body').scrollTop(0);
-          return [window, quotes, summary];
-      };
+        ScrollService.scroll();
+      }
          
       // Using Resource Factory for all CRUD, the one below is specifically for candidates
       // Access to CRUD for issues and candidates
@@ -131,8 +129,7 @@
         }
       };
 
-  };
-  
 
+  };
 
 })();

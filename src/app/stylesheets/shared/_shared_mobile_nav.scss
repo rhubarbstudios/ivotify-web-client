@@ -6,11 +6,27 @@
   width: 100vw;
 }
 
+#nav-mobile-btn {
+  background-color: $red;
+  color: white;
+  border-radius: 0;
+  width: 40%;
+}
+
 #issue-nav-mobile {
   background-color: $red;
   color: white;
   border-radius: 0;
-  width: 41.7vw;
+  border-bottom: 4px solid white;
+  width: 40%;
+}
+
+#candidate-nav-mobile {
+  background-color: $red;
+  color: white;
+  border-radius: 0;
+  border-bottom: 4px solid white;
+  width: 40%;
 }
 
 #logo-nav-mobile {
@@ -21,11 +37,5 @@
   background-position: center;
   border-radius: 0;
 
-}
 
-#candidate-nav-mobile {
-  background-color: $red;
-  color: white;
-  border-radius: 0;
-  width: 41vw;
 }
