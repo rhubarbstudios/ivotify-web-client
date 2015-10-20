@@ -19,16 +19,16 @@ $button-color: #FF6666;
 
 @font-face {
   font-family: 'Futura Book';
-  src: url('/src/app/assets/fonts/futura/futura-book.woff') format('woff'),
-       url('/src/app/assets/fonts/futura/futura-book.eot') format('eot'),
-       url('/src/app/assets/fonts/futura/futura-book.ttf') format('ttf');
+  src: url('/dist/app/assets/fonts/futura/futura-book.woff') format('woff'),
+       url('/dist/app/assets/fonts/futura/futura-book.eot') format('eot'),
+       url('/dist/app/assets/fonts/futura/futura-book.ttf') format('ttf');
 }
 
 @font-face {
   font-family: 'Futura Light';
-  src: url('/src/app/assets/fonts/futura/futura-light.woff') format('woff'),
-       url('/src/app/assets/fonts/futura/futura-light.eot') format('eot'),
-       url('/src/app/assets/fonts/futura/futura-light.ttf') format('ttf');
+  src: url('/dist/app/assets/fonts/futura/futura-light.woff') format('woff'),
+       url('/dist/app/assets/fonts/futura/futura-light.eot') format('eot'),
+       url('/dist/app/assets/fonts/futura/futura-light.ttf') format('ttf');
 }
 
 $futura-stack: 'Futura', 'Trebuchet MS', Arial, sans-serif;
@@ -39,5 +39,3 @@ $futura-light-stack: 'Futura Light', Futura, 'Trebuchet MS', Arial, sans-serif;
 // Base Styles ////////////////////////////////////////////////////////////////////////
 
 $base-font-size: 14px;
-
-
