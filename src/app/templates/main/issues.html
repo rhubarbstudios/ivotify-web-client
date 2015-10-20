@@ -1,7 +1,7 @@
 <div class="main-background">
 
-<!-- Large Screen Nav -->
-  <div class="navbar-fixed hide-on-med-and-down">
+  <!-- Large Screen Header -->
+  <div class="navbar-fixed hide-on-small-and-down">
     <nav class="main-nav">
         <div class="row">
           <div class="col s3">
@@ -15,37 +15,38 @@
     </nav>
   </div>
 
+  <!--Navigation for Mobile -->
   <div class="hide-on-med-and-up center-align" id="mobile-navbar">
-      <button class="btn" id="issue-nav-mobile">Issues</button>
-      <button class="btn" id="logo-nav-mobile"></button>
-      <button class="btn" id="candidate-nav-mobile">Candidates</button>
+    <a class="btn" id="issue-nav-mobile" ui-sref='main.issues'>Issues</a>
+    <button class="btn" id="logo-nav-mobile"></button>
+    <a class="btn" id="nav-mobile-btn" ui-sref='main.candidate'>Candidates</a>
   </div>
 
-
-  <!-- Issue Navigation for Mobile and Desktop -->
+  <!--Navigation for Desktop -->
   <div class="row" id="main-body">
-    <div class="col s12 l3 column-nav">
+    <div class="col s12 m4 l3 column-nav">
       <div class="collection">
-        <p class="hide-on-med-and-up" id="pick-issue-banner" ng-hide="pickIssue">Pick an Issue</p>
+        <!-- Below is only seen on mobile -->
+        <p class="hide-on-med-and-up" id="pick-issue-banner" ng-show="bannerIssue">Pick an Issue</p>
 
         <!-- Toggle Buttons on Medium Screens and Up -->
-        <div class="toggle-content hide-on-med-and-down">
+        <div class="toggle-content hide-on-small-and-down">
           <div class="togglebox">
-            <button class="btn hide-on-med-and-down" id="toggle-nav-btn">Issues</button>
-            <button class="btn hide-on-med-and-down" id="toggle-nav-btn">Candidates</button>
+            <a class="btn hide-on-small-and-down" id="issue-nav-btn" ui-sref='main.issues'>Issues</a>
+            <a class="btn hide-on-small-and-down" id="toggle-nav-btn" ui-sref='main.candidate'>Candidates</a>
           </div>
         </div>
 
-        <!-- Issue List  for both mobile and desktop -->
 
+        <!-- Issue List for both mobile and desktop -->
         <div class="item-body" ng-repeat="item in issues">
-          <a href="javascript:void(0)" ng-click="getScope().pickIssue = true; showSummary(item); getScope().hideSummary = true" ng-model="item.title" class="collection-item" ng-hide="pickIssue">
+          <a href="javascript:void(0)" ng-click="getScope().showBanner = false; getScope().bannerIssue = false; getScope().pickIssue = true; showSummary(item); getScope().hideSummary = true; " ng-model="item.title" class="collection-item" ng-hide="pickIssue">
             <h6 class="issue-items">{{item.title}}</h6>
           </a>
           <div ng-show="hideSummary">
           <div class="summary-box" ng-show="currentIssue == item">
             <h6 class="collection-item-chosen" >
-              <a ng-click="getScope().pickIssue = false; getScope().hideSummary = false; topScroll()" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
+              <a ng-click="getScope().bannerIssue = true; getScope().showBanner = true; getScope().pickIssue = false; getScope().hideSummary = false; topScroll(); " class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
               {{item.title}}
               <a ng-click="itemNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
             </h6>
@@ -55,19 +56,14 @@
                 <p ng-model="item.summary" class="item-summary">{{item.summary}}</p>
               </div>
             </div>
-            
           </div>
           </div>
         </div> 
-
-
       </div>
-    </div>
 
-
-      <!-- Candidate Quote Pop-up List -->
+  <!--Quote Pop-up List for Issues Page-->
   <div class="col s12 m6 candidate-quote-module">
-      <img ng-hide="pickIssue" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
+      <img ng-show="showBanner" class="ng-hide hide-on-small-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickIssue">
           <div id="candidate-quote" ng-repeat="candidate in candidates">
@@ -92,9 +88,4 @@
       </div>
       
   
-
-
-    </div>
-
-
 </div>

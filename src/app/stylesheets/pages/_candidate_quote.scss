@@ -1,13 +1,13 @@
 .col.s12.m6.candidate-quote-module {
   position: fixed;
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
     display: block;
     position: relative;
     padding: 0;
   }
   @media #{$medium-and-up} {
     left: 40%;
-  } 
+  }
   bottom: 0;
 }
 
@@ -17,7 +17,7 @@
   height: 87vh;
   background-color: white;
   margin: 0;
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
     z-index: 0;
     box-shadow: none;
     height: 100vh;
@@ -25,7 +25,7 @@
   @media #{$medium-and-up} {
     overflow-y: scroll;
     border-radius: 10px 10px 0 0;
-    border: 1px solid #EBE9EC;
+    // border: 1px solid #EBE9EC;
   }
 }
 
@@ -36,10 +36,22 @@
   color: $darkgrey;
   font-family: $futura-stack;
   letter-spacing: 1.5px;
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
     font-size: 1.25em;
   }
 
+}
+
+#issue-name {
+  padding: 10px 0 10px 0;
+  font-size: 1.6875em;
+  position: relative;
+  color: $darkgrey;
+  font-family: $futura-stack;
+  letter-spacing: 1.5px;
+  @media #{$small-and-down} {
+    font-size: 1.25em;
+  }
 }
 
 #rushmose-image {
@@ -81,11 +93,9 @@
   z-index: 4;
   top: -60%;
   left: 10%;
-  @media #{$medium-and-down} {
+  @media #{$small-and-down} {
   top: -40%;
   left: 3%;
   width: 23%;
   }
 }
-
-
