@@ -48,6 +48,7 @@
         <a ng-click="getScope().bannerCandidate = true; getScope().showBanner = true; getScope().pickCandidate = false; getScope().hideBio = false; topScroll(); g" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
         {{candidate.full_name}}
         <a ng-click="bioNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
+
       </h6>
       <div class="scroll-summary">
         <p class="situtation-bar"> BIO </p>
@@ -71,16 +72,20 @@
       <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickCandidate">
-          <div id="candidate-quote" ng-repeat="item in issues">
-              <p class="center-align" ng-style="set_header(item)" id="issue-name">
+          <div class="candidate-quote" ng-repeat="item in issues">
+              <p class="center-align" ng-style="set_header(item)" class="issue-name">
               {{item.title | uppercase}}
               </p>
                 <div ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
                   <div class="quote">
-                      <p class="center-align" id="quote-one">"{{quote.body}}"</p>
+                      <p class="quote-one center-align">
+                        <span class="quotation-marks">"</span>
+                          {{quote.body}}
+                        <span class="quotation-marks">"</span>
+                      </p>
                   </div>
                   <div class="quote">
-                      <p class="right-align" id="source-bar">{{quote.source | uppercase}}</p>
+                      <p class="source-bar right-align">{{quote.source | uppercase}}</p>
                   </div>
                   <svg class="line-divider">
                     <line x1="50" y1="0" x2="640" y2="0" style="stroke:rgb(100,100,100);stroke-width:2" />
