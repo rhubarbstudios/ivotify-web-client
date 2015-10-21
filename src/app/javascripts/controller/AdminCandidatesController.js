@@ -56,6 +56,7 @@
 		$scope.addNewQuote = function() {
 			var newItemNo = $scope.candidate.quotes.length+1;
 			$scope.candidate.quotes.push({'id': newItemNo});
+			return false;
 		}
 
 		$scope.clearQuotes = function() {
@@ -70,9 +71,11 @@
 		};
 
 		$scope.$on('ngRepeatFinished', function(){
-			MaterializeComponents.addModal();
+			console.log("calls ngrepeat finished");
 			MaterializeComponents.addCollapsible();
 		})
+
+		MaterializeComponents.addModal();
 
 	};
 
