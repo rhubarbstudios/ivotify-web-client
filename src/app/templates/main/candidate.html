@@ -69,14 +69,14 @@
 
   <!--Quote Pop-up List for Candidates Page -->
   <div class="col s12 m6 candidate-quote-module">
-      <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
+      <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/candidate_splash.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickCandidate">
           <div class="candidate-quote" ng-repeat="item in issues">
-              <p class="center-align" ng-style="set_header(item)" class="issue-name">
+              <p class="issue-name center-align" ng-style="set_header(item)">
               {{item.title | uppercase}}
               </p>
-                <div ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
+                <div class="quotes-repeat" ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
                   <div class="quote">
                       <p class="quote-one center-align">
                         <span class="quotation-marks">"</span>
@@ -87,9 +87,7 @@
                   <div class="quote">
                       <p class="source-bar right-align">{{quote.source | uppercase}}</p>
                   </div>
-                  <svg class="line-divider">
-                    <line x1="50" y1="0" x2="640" y2="0" style="stroke:rgb(100,100,100);stroke-width:2" />
-                  </svg>
+                  <hr class="quote-divider">
                 </div>
           </div>
         </div>

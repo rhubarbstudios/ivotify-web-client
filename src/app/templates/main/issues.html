@@ -70,8 +70,8 @@
         </div>
       </div>
 
-  <!--Quote Pop-up List for Issues Page-->
   <div class="col s12 m6 candidate-quote-module">
+  <!--Quote Pop-up List for Issues Page-->
       <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/candidate_splash.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickIssue">
@@ -81,7 +81,7 @@
               <img class="candidate-image" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/{{candidate.first_name | uppercase}}.png">
               {{candidate.full_name | uppercase}}
               </p>
-              <div class="quotes-repeat"ng-repeat="quote in candidate.quotes | filter: {issue_id: currentIssue.id}">
+              <div class="quotes-repeat" ng-repeat="quote in candidate.quotes | filter: {issue_id: currentIssue.id}">
                 <div class="quote">
                     <p class="quote-one center-align">
                       <span class="quotation-marks">"</span>
