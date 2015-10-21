@@ -5,9 +5,9 @@
 		.module('ivotifyFrontend')
 		.controller('AdminCandidatesController', AdminCandidatesController);
 
-		AdminCandidatesController.$inject = ['Resources', '$scope', '$state', '$stateParams'];
+		AdminCandidatesController.$inject = ['Resources', 'MaterializeComponents', '$scope', '$state', '$stateParams', '$timeout'];
 
-		function AdminCandidatesController(Resources, $scope, $state, $stateParams){
+		function AdminCandidatesController(Resources, MaterializeComponents, $scope, $state, $stateParams, $timeout){
 			$scope.candidates = [];
 			$scope.addCandidate = false;
 			$scope.editCandidate = false;
@@ -44,9 +44,13 @@
 		// 	CandidateResources.update({id: candidate.id.$oid}, {candidate: candidate})
 		// };
 
+		$scope.$on('ngRepeatFinished', function(){
+			MaterializeComponents.addModal();
+			MaterializeComponents.addCollapsible();
+		})
 
 	};
-	
+
 
 
 })();

@@ -1,0 +1,22 @@
+.admin.candidates.index.page {
+  .candidate-row {
+    border-bottom: none;
+  }
+  .collapsible-header {
+    text-align: center;
+  }
+  .collapsible-body {
+    padding: 0 1em;
+  }
+  tr {
+    position: relative;
+  }
+  td button {
+    float: right;
+    @media #{$medium-and-down} {
+      position: absolute;
+      top: 32px;
+      right: 0; 
+    }
+  }
+}

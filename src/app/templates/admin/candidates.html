@@ -38,51 +38,65 @@
   <div class="container">
     <div>
       <table id="candidate-list" class="bordered responsive-table">
+
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
-          <th>Quote</th>
-          <th>Quote Source</th>
           <th>Bio</th>
-
-
+          <th></th>
         </tr>
 
-        <tr ng-repeat="candidate in candidates">
-         <form>
-          <td id="candidateFirst">
-            <span ng-hide="editCandidate">{{candidate.first_name}}</span>
-            <textarea ng-show="editCandidate" type="text" ng-model="candidate.first_name"></textarea>
-          </td>
+        <tr class="candidate-row" ng-repeat-start="candidate in candidates">
+          <form>
+            <td width="10%" id="candidateFirst">
+              <span ng-hide="editCandidate">{{candidate.first_name}}</span>
+              <textarea ng-show="editCandidate" type="text" ng-model="candidate.first_name"></textarea>
+            </td>
+            <td width="10%">
+              <span ng-hide="editCandidate">{{candidate.last_name}}</span>
+              <textarea ng-show="editCandidate" type="text" ng-model="candidate.last_name"></textarea>
+            </td>
+            <td width="70%">
+              <span ng-hide="editCandidate">{{candidate.bio}}</span>
+              <textarea ng-show="editCandidate" type="text" ng-model="candidate.bio"></textarea>
+            </td>
+            <td width="10%">
+              <button class="btn" ng-click="editCandidate = true" ng-hide="editCandidate">Edit</button>
+              <button class="btn" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" type="submit">Save</button>
+            </td>
+          </form>
+        </tr>
 
-          <td>
-            <span ng-hide="editCandidate">{{candidate.last_name}}</span>
-            <textarea ng-show="editCandidate" type="text" ng-model="candidate.last_name"></textarea>
+        <tr ng-repeat-end>
+          <td colspan="4">
+            <ul class="collapsible" data-collapsible="expandable" rel="collapsible">
+              <li>
+                <div class="collapsible-header">{{candidate.first_name}}'s Quotes</div>
+                <div class="collapsible-body active">
+                  <table>
+                    <tr>
+                      <th>Issue</th>
+                      <th>Quote</th>
+                      <th>Source</th>
+                    </tr>
+                    <tr ng-repeat="quote in candidate.quotes" on-finish-render="ngRepeatFinished">
+                      <td width="10%">
+                        <span>{{quote.issue_id}}</span>
+                      </td>
+                      <td width="60%">
+                        <span ng-hide="editCandidate">{{quote.body}}</span>
+                        <textarea ng-show="editCandidate" type="text" ng-model="quote.body"></textarea>
+                      </td>
+                      <td width="30%">
+                        <span ng-hide="editCandidate">{{quote.source}}</span>
+                        <textarea ng-show="editCandidate" type="text" ng-model="quote.source"></textarea>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+            </ul>
           </td>
-
-          <td>
-            <div ng-repeat="quote in candidate.quotes">
-              <span ng-hide="editCandidate">{{quote.body}}</span>
-              <textarea ng-show="editCandidate" type="text" ng-model="quote.body"></textarea>
-            </div>
-          </td>
-
-          <td>
-            <div ng-repeat="quote in candidate.quotes">
-              <span ng-hide="editCandidate">{{quote.source}}</span>
-              <textarea ng-show="editCandidate" type="text" ng-model="quote.source"></textarea>
-            </div>
-          </td>
-
-          <td>
-            <span ng-hide="editCandidate">{{candidate.bio}}</span>
-            <textarea ng-show="editCandidate" type="text" ng-model="candidate.bio"></textarea>
-          </td>
-          <td>
-            <button class="btn" id="edit-candidate-button" ng-click="editCandidate = true" ng-hide="editCandidate">Edit</button>
-            <button class="btn" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" type="submit">Save</button>
-          </td>
-        </form>
         </tr>
 
       </table>
@@ -137,13 +151,3 @@
 
 </div>
 
-<script>
-  $(document).ready(function(){
-      $("a[rel*=leanModal]").leanModal({
-        dismissible: true,
-        opacity: .5,
-        in_duration: 300,
-        out_duration: 200,
-      });
-  });
-</script>
