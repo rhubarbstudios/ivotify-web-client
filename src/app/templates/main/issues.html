@@ -61,7 +61,7 @@
               <div class="hide-on-small-and-down">
                   <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll()">
                     Next Issue
-                    <img class="right-align" id="next-arrow-desktop" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
+                    <img class="right-align" id="next-arrow-issue" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
                   </button>
               </div>
             </div>
@@ -72,7 +72,7 @@
 
   <!--Quote Pop-up List for Issues Page-->
   <div class="col s12 m6 candidate-quote-module">
-      <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
+      <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/candidate_splash.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickIssue">
           <div id="candidate-quote" ng-repeat="candidate in candidates">

@@ -53,7 +53,12 @@
         <p class="situtation-bar"> BIO </p>
         <div class="summary">
           <p ng-model="item.summary" class="item-summary">{{candidate.bio}}</p>
-          <line x1="50" y1="0" x2="640" y2="0" style="stroke:rgb(100,100,100);stroke-width:2" />
+        </div>
+        <div class="hide-on-small-and-down">
+            <button class="btn" id="next-issue-desktop" ng-click="bioNext($index + 1); topScroll()">
+              Next Candidate
+              <img class="right-align" id="next-arrow-candidate" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
+            </button>
         </div>
       </div>
     </div>
