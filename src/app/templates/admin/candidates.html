@@ -46,7 +46,7 @@
           <th></th>
         </tr>
 
-        <tr class="candidate-row" ng-repeat-start="candidate in candidates">
+        <tr class="candidate-row" ng-repeat-start="candidate in candidates" on-finish-render="ngRepeatFinished">
           <form>
             <td width="10%" id="candidateFirst">
               <span ng-hide="editCandidate">{{candidate.first_name}}</span>
@@ -79,11 +79,14 @@
                       <th>Quote</th>
                       <th>Source</th>
                     </tr>
-                    <tr ng-repeat="quote in candidate.quotes" on-finish-render="ngRepeatFinished">
-                      <td width="10%">
-                        <span>{{quote.issue_id}}</span>
+                    <tr ng-repeat="quote in candidate.quotes">
+                      <td width="20%">
+                        <span ng-hide="editCandidate" ng-repeat="issue in issues | filter:{id:quote.issue_id}">{{issue.title}}</span>
+                        <select ng-show="editCandidate" class="browser-default" name="repeatSelect" id="repeatSelect" ng-model="quote.issue_id"
+                          ng-options="issue.id as issue.title for issue in issues">
+                        </select>
                       </td>
-                      <td width="60%">
+                      <td width="50%">
                         <span ng-hide="editCandidate">{{quote.body}}</span>
                         <textarea ng-show="editCandidate" type="text" ng-model="quote.body"></textarea>
                       </td>

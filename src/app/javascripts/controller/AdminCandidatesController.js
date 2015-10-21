@@ -9,6 +9,7 @@
 
 		function AdminCandidatesController(Resources, MaterializeComponents, $scope, $state, $stateParams, $timeout){
 			$scope.candidates = [];
+			$scope.issues = [];
 			$scope.addCandidate = false;
 			$scope.editCandidate = false;
 
@@ -16,11 +17,20 @@
 
 		var CandidateResources = new Resources('candidates');
 
-		// Index of candidates
+		// Also gets issues for quotes relationship
+		var IssueResources = new Resources('issues');
 
+		// Index of candidates
 		CandidateResources.get()
 		.$promise.then(function(resp){
 			$scope.candidates = resp.candidates;
+		});
+
+		// Index of issues
+		IssueResources.get({})
+		.$promise.then(function(resp) { 
+		  $scope.issues = resp.issues; 
+		  console.log(resp.issues);
 		});
 
 		// Creates a candidate
