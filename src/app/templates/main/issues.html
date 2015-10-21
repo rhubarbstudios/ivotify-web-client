@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col s12 hide-on-large-only center-align" id="mobile-navbar">
       <a class="btn col s4" id="issue-nav-mobile" ui-sref='main.issues'>Issues</a>
-      <button class="btn col s4" id="logo-nav-mobile"></button>
+      <button class="btn col s4" id="logo-nav-mobile">ivotify</button>
       <a class="btn col s4" id="nav-mobile-btn" ui-sref='main.candidate'>Candidates</a>
     </div>
   </div>
@@ -29,7 +29,7 @@
     <div class="col s12 l3 column-nav">
       <div class="collection">
         <!-- Below is only seen on mobile -->
-        <p class="hide-on-med-and-up" id="pick-issue-banner" ng-show="bannerIssue">Pick an Issue</p>
+        <p class="hide-on-large-only" id="pick-issue-banner" ng-show="bannerIssue">Pick an Issue</p>
 
         <!-- Toggle Buttons on Medium Screens and Up -->
         <div class="toggle-content hide-on-med-and-down">
@@ -52,7 +52,7 @@
               {{item.title}}
 
               <!-- Next Arrow Mobile -->
-              <a class="hide-on-med-and-up" ng-click="itemNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
+              <a class="hide-on-large-only" ng-click="itemNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
 
             </h6>
             <div class="scroll-summary">
@@ -60,7 +60,7 @@
               <div class="summary">
                 <p ng-model="item.summary" class="item-summary">{{item.summary}}</p>
               </div>
-              <div class="hide-on-small-and-down">
+              <div class="hide-on-med-and-down">
                   <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll()">
                     Next Issue
                     <img class="right-align" id="next-arrow-issue" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
