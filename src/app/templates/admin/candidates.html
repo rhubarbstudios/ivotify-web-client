@@ -61,7 +61,7 @@
               <textarea ng-show="editCandidate" type="text" ng-model="candidate.bio"></textarea>
             </td>
             <td width="10%">
-              <button class="btn" ng-click="editCandidate = true" ng-hide="editCandidate">Edit</button>
+              <button class="btn" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
               <button class="btn" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" type="submit">Save</button>
             </td>
           </form>
@@ -93,6 +93,9 @@
                       <td width="30%">
                         <span ng-hide="editCandidate">{{quote.source}}</span>
                         <textarea ng-show="editCandidate" type="text" ng-model="quote.source"></textarea>
+                      </td>
+                      <td ng-show="editCandidate">
+                        <button class="btn float-right" ng-show="$last" ng-click="addNewQuote(candidate)" type="button">+</button>
                       </td>
                     </tr>
                   </table>
@@ -167,7 +170,7 @@
             </div>
             <div class="row">
               <div class="col s12">
-                <button class="btn float-right" ng-show="$last" ng-click="addNewQuote()" type="button">Add Quote</button>
+                <button class="btn float-right" ng-show="$last" ng-click="addNewQuote(candidate)" type="button">Add Another</button>
               </div>
             </div>
           </div>
@@ -176,7 +179,7 @@
             <div class="row">
               <div class="col s12">
                 <button class="modal-action modal-close btn waves-effect" id="modal-cancel" name="action"
-                type="reset" ng-click="clearQuotes()">Cancel</button>
+                type="reset" ng-click="clearQuotes(candidate)">Cancel</button>
                 <button class="modal-action modal-close btn waves-effect waves-light" id="modal-save"
                 ng-disabled="candidate_form.$invalid" type="submit" name="action" >Save</button>
               </div>

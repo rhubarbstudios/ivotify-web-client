@@ -52,15 +52,16 @@
 			});
 		};
 
-		// Add new quote field in candidate create module
-		$scope.addNewQuote = function() {
-			var newItemNo = $scope.candidate.quotes.length+1;
-			$scope.candidate.quotes.push({'id': newItemNo});
+		// Add new quote field in candidate create modal
+		$scope.addNewQuote = function(candidate) {
+			var newItemNo = candidate.quotes.length+1;
+			candidate.quotes.push({'id': newItemNo});
 			return false;
 		}
 
-		$scope.clearQuotes = function() {
-			$scope.candidate.quotes = [{id: '1'}];
+		// Clears quotes if modal is cancelled
+		$scope.clearQuotes = function(candidate) {
+			candidate.quotes = [{id: '1'}];
 		}
 
 
