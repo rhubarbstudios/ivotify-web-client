@@ -13,6 +13,9 @@
 			$scope.addCandidate = false;
 			$scope.editCandidate = false;
 
+			$scope.candidate = {};
+			$scope.candidate.quotes = [{id: '1'}];
+
 		// Using Resource Factory for all CRUD, the one below is specifically for candidates
 
 		var CandidateResources = new Resources('candidates');
@@ -48,6 +51,13 @@
 				$scope.candidate_form.$setPristine();
 			});
 		};
+
+		// Add new quote field in candidate create module
+		$scope.addNewQuote = function() {
+			var newItemNo = $scope.candidate.quotes.length+1;
+			$scope.candidate.quotes.push({'id': newItemNo});
+		}
+
 
 		// //Edit a candidate
 		$scope.update = function(candidate) {

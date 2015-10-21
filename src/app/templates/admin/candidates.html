@@ -114,34 +114,62 @@
         <form class="col s6 l12" ng-show="addCandidate" name="candidate_form" novalidate ng-submit="save()">
           <div class="row">
            <h4>New Candidate</h4>
-            <div class="col s12">
-            <h6>Candidate First Name</h6>
-              <textarea id="firstname" type="text" ng-model="candidate.first_name" required />
           </div>
           <div class="row">
-            <div class="col s12">
-            <h6>Candidate Last Name</h6>
-             <textarea id="lastname" ng-model="candidate.last_name" required ></textarea>
+            <div class=" input-field col s12">
+              <input id="firstname" type="text" class="validate" ng-model="candidate.first_name" required/>
+              <label for="firstname">First Name</label>
             </div>
           </div>
           <div class="row">
-            <div class="col s12">
-            <h6>Candidate Quotes</h6>
-             <textarea id="quotes" ng-model="candidate.quotes" required ></textarea>
+            <div class="input-field col s12">
+              <input id="lastname" type="text" class="validate" ng-model="candidate.last_name" required/>
+              <label for="lastname">Last Name</label>
             </div>
           </div>
           <div class="row">
+            <div class=" input-field col s12">
+              <input id="bio" type="text" class="validate" ng-model="candidate.bio" required/>
+              <label for="bio">Bio</label>
+            </div>
+          </div>
+
+          <div class="row">
             <div class="col s12">
-            <h6>Candidate Quote Sources</h6>
-             <textarea id="quotesource" ng-model="candidate.quotesource" required ></textarea>
+              <h6>Quotes</h6>
+            </div>
+          </div>
+
+          <div class="form-group" data-ng-repeat="quote in candidate.quotes">
+            <!-- <label for="quote" ng-show="$last">quotes</label> -->
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="quote-body-{{$index}}" class="materialize-textarea" ng-model="quote.body"></textarea>
+                <label for="quote-body-{{$index}}">Body</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+               <input id="quote-source-{{$index}}" type="text" ng-model="quote.source" required>
+               <label for="quote-source-{{$index}}">Source</label>
+              </div>
+            </div>
+            <button class="btn" ng-show="$last" ng-click="addNewQuote()">Add another quote</button>
+          </div>
+
+<!--           <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea" ng-model="candidate.quotes"></textarea>
+              <label for="textarea1">Body</label>
             </div>
           </div>
           <div class="row">
-            <div class="col s12">
-            <h6>Candidate Bio</h6>
-             <textarea id="bio" ng-model="candidate.bio" required ></textarea>
+            <div class="input-field col s12">
+             <input id="quotesource" type="text" ng-model="candidate.quotesource" required>
+             <label for="quotesource">Source</label>
             </div>
-          </div>
+          </div> -->
+
           <div class="modal-footer">
               <button class="modal-action modal-close btn waves-effect" id="modal-cancel" name="action" type="reset" >Cancel</button>
               <button class="modal-action modal-close btn waves-effect waves-light" id="modal-save" ng-disabled="candidate_form.$invalid" type="submit" name="action" >Save</button>
