@@ -18,10 +18,9 @@
       }
 
       service.addCollapsible = function(){
-          console.log("calls addCollapsible");
-          $('ul[rel*=collapsible]').collapsible({
-            accordion : false
-          });
+        $('ul[rel*=collapsible]').collapsible({
+          accordion : false
+        });
       }
 
       return service;

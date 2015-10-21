@@ -50,9 +50,10 @@
 		};
 
 		// //Edit a candidate
-		// $scope.update = function(candidate) {
-		// 	CandidateResources.update({id: candidate.id.$oid}, {candidate: candidate})
-		// };
+		$scope.update = function(candidate) {
+			console.log("candidate: ", candidate);
+			CandidateResources.update({id: candidate.id}, {candidate: candidate})
+		};
 
 		$scope.$on('ngRepeatFinished', function(){
 			MaterializeComponents.addModal();
