@@ -4,21 +4,24 @@
   bottom: 0;
   z-index: 900;
   width: 100vw;
+  padding: 0;
+  height: 6vh;
 }
 
 #nav-mobile-btn {
   background-color: $red;
   color: white;
   border-radius: 0;
-  width: 41%;
+  height: 6vh;
 }
 
 #issue-nav-mobile {
   background-color: $red;
   color: white;
+  line-height: 0;
   border-radius: 0;
   border-bottom: 4px solid white;
-  width: 41%;
+  height: 6vh;
 }
 
 #candidate-nav-mobile {
@@ -26,16 +29,18 @@
   color: white;
   border-radius: 0;
   border-bottom: 4px solid white;
-  width: 41%;
+  height: 6vh;
 }
 
 #logo-nav-mobile {
   background-color: $red;
-  background-image: url(https://s3-us-west-1.amazonaws.com/ivotify-images/logo_square.jpg);
-  background-size: auto 38px;
+  background-image: url(https://s3-us-west-1.amazonaws.com/ivotify-images/logo.png);
+  background-size: auto 75%;
   background-repeat: no-repeat;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
   background-position: center;
   border-radius: 0;
-
+  height: 6vh;
 
 }

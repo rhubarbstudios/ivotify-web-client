@@ -122,10 +122,15 @@
   padding-bottom: 3px;
   }
 }
+
 #back-arrow {
   width: 5%;
   height: auto;
   float: left;
+}
+
+#back-arrow:hover {
+  cursor: pointer;
 }
 
 #next-arrow {
