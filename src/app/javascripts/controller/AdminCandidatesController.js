@@ -58,6 +58,10 @@
 			$scope.candidate.quotes.push({'id': newItemNo});
 		}
 
+		$scope.clearQuotes = function() {
+			$scope.candidate.quotes = [{id: '1'}];
+		}
+
 
 		// //Edit a candidate
 		$scope.update = function(candidate) {
