@@ -13,7 +13,7 @@
 
 #quote-body {
   @extend .z-depth-2;
-  padding: 15px 0 0 0;
+  padding: 33px 0 0 0;
   height: 87vh;
   background-color: white;
   margin: 0;
@@ -110,8 +110,8 @@
   width: 143px;
   }
   @media #{$large-and-up} {
-  top: -35px;
-  right: 73%;
-  width: 125px;
+  top: -23px;
+  right: 74%;
+  width: 105px;
   }
 }

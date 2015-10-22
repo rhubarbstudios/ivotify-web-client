@@ -73,11 +73,6 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(path.join(conf.paths.dist, '/fonts/')));
 });
 
-gulp.task('fonts2', function() {
-  return gulp.src('src/app/assets/fonts/**/*')
-  .pipe(gulp.dest('dist/fonts'));
-});
-
 gulp.task('other', function () {
   var fileFilter = $.filter(function (file) {
     return file.stat.isFile();
@@ -95,4 +90,4 @@ gulp.task('clean', function (done) {
   $.del([path.join(conf.paths.dist, '/'), path.join(conf.paths.tmp, '/')], done);
 });
 
-gulp.task('build', ['html', 'fonts','fonts2', 'other']);
+gulp.task('build', ['html', 'fonts', 'other']);
