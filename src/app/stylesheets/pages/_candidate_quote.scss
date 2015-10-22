@@ -1,11 +1,11 @@
-.col.s12.m6.candidate-quote-module {
+.col.s12.l6.candidate-quote-module {
   position: fixed;
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     display: block;
     position: relative;
     padding: 0;
   }
-  @media #{$medium-and-up} {
+  @media #{$large-and-up} {
     left: 40%;
   }
   bottom: 0;
@@ -17,12 +17,12 @@
   height: 87vh;
   background-color: white;
   margin: 0;
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     z-index: 0;
     box-shadow: none;
     height: 100vh;
   }
-  @media #{$medium-and-up} {
+  @media #{$large-and-up} {
     overflow-y: scroll;
     border-radius: 10px 10px 0 0;
     // border: 1px solid #EBE9EC;
@@ -101,7 +101,7 @@
   z-index: 4;
   top: -60%;
   left: 10%;
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
   top: -40%;
   left: 3%;
   width: 23%;

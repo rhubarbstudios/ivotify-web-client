@@ -1,7 +1,7 @@
 <div class="main-background">
 
   <!-- Large Screen Header -->
-  <div class="navbar-fixed hide-on-small-and-down">
+  <div class="navbar-fixed hide-on-med-and-down">
     <nav class="main-nav">
         <div class="row">
           <div class="col s3">
@@ -17,25 +17,25 @@
 
   <!--Navigation for Mobile -->
   <div class="row">
-    <div class="col s12 hide-on-med-and-up center-align" id="mobile-navbar">
+    <div class="col s12 hide-on-large-only center-align" id="mobile-navbar">
       <a class="btn col s4" id="nav-mobile-btn" ui-sref='main.issues'>Issues</a>
-      <button class="btn col s4" id="logo-nav-mobile"></button>
+      <button class="btn col s4" id="logo-nav-mobile">ivotify</button>
       <a class="btn col s4" id="candidate-nav-mobile" ui-sref='main.candidate'>Candidates</a>
     </div>
   </div>
 
   <!--Navigation for Desktop -->
   <div class="row" id="main-body">
-    <div class="col s12 m4 l3 column-nav">
+    <div class="col s12 l3 column-nav">
       <div class="collection">
         <!-- Below is only seen on mobile -->
-        <p class="hide-on-med-and-up" id="pick-issue-banner" ng-show="bannerCandidate">Pick a Candidate</p>
+        <p class="hide-on-large-only" id="pick-issue-banner" ng-show="bannerCandidate">Pick a Candidate</p>
 
         <!-- Toggle Buttons on Medium Screens and Up -->
         <div class="toggle-content hide-on-small-and-down">
           <div class="togglebox">
-            <a class="btn hide-on-small-and-down" id="toggle-nav-btn" ui-sref='main.issues'>Issues</a>
-            <a class="btn hide-on-small-and-down" id="candidate-nav-btn" ui-sref='main.candidate'>Candidates</a>
+            <a class="btn hide-on-med-and-down" id="toggle-nav-btn" ui-sref='main.issues'>Issues</a>
+            <a class="btn hide-on-med-and-down" id="candidate-nav-btn" ui-sref='main.candidate'>Candidates</a>
           </div>
         </div>
 
@@ -72,7 +72,7 @@
 </div>
 
   <!--Quote Pop-up List for Candidates Page -->
-  <div class="col s12 m6 candidate-quote-module">
+  <div class="col s12 l6 candidate-quote-module">
       <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/candidate_splash.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickCandidate">

@@ -13,7 +13,7 @@
       border-radius: 0 0 0 0;
       min-height: 100vh;
     }
-     @media #{$medium-and-up} {
+     @media #{$large-and-up} {
       position: fixed;
       box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       // border: 1px solid #EBE9EC;
@@ -24,7 +24,7 @@
     .collection {
       margin: 0 auto;
       border: none;
-      @media #{$medium-and-up} {
+      @media #{$large-and-up} {
         position: absolute;
         width: 100%;
       }
@@ -43,7 +43,7 @@
       font-size: 1.5em;
       font-family: $futura-light-stack !important;
       margin: .1em;
-      @media #{$medium-and-up} {
+      @media #{$large-and-up} {
         line-height: 30px;
         font-size: 1.875em;
         font-family: $futura-light-stack !important;
@@ -72,10 +72,10 @@
 .item-summary {
   padding: 10px 40px 0px 40px;
   text-align: left;
-  @media #{$medium-and-up} {
+  @media #{$large-and-up} {
     font-family: $futura-book-stack;
   }
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     font-family: $futura-light-stack;
   }
 }
@@ -103,7 +103,7 @@
 .summary {
   overflow: scroll;
   position: static;
-    @media #{$medium-and-up} {
+    @media #{$large-and-up} {
     height: 48vh;
     padding-bottom: 24px;
     }
@@ -117,7 +117,7 @@
   padding-bottom: 5px;
   letter-spacing: 1.1px;
   height: 5vh;
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
   margin-top: 20%;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -128,9 +128,6 @@
   width: 5%;
   height: auto;
   float: left;
-}
-
-#back-arrow:hover {
   cursor: pointer;
 }
 
@@ -138,7 +135,9 @@
   width: 8%;
   height: auto;
   float: right;
+  cursor: pointer;
 }
+
 #next-issue-desktop {
   font-size: 0.9em;
   margin-top: 10%;
@@ -160,7 +159,7 @@
   height: auto;
   margin-right: -20%;
   margin-left: 10%;
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     width: 20%;
   }
 }
@@ -170,7 +169,7 @@
   height: auto;
   margin-right: -9%;
   margin-left: 2%;
-  @media #{$small-and-down} {
+  @media #{$medium-and-down} {
     width: 20%;
   }
 }
