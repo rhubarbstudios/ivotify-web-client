@@ -23,7 +23,7 @@
       // Boolean for banners across front-end
       $scope.showBanner = true;
       $scope.bannerIssue = true;
-      $scope.bannerCandidate = true;
+      $scope.bannerCandidate = true
 
       // Shows Issues Summary
       $scope.showSummary = function(item) {

@@ -1,7 +1,7 @@
 <div class="main-background">
 
   <!-- Large Screen Header -->
-  <div class="navbar-fixed hide-on-small-and-down">
+  <div class="navbar-fixed hide-on-med-and-down">
     <nav class="main-nav">
         <div class="row">
           <div class="col s3">
@@ -16,24 +16,26 @@
   </div>
 
   <!--Navigation for Mobile -->
-  <div class="hide-on-med-and-up center-align" id="mobile-navbar">
-    <a class="btn" id="nav-mobile-btn" ui-sref='main.issues'>Issues</a>
-    <button class="btn" id="logo-nav-mobile"></button>
-    <a class="btn" id="candidate-nav-mobile" ui-sref='main.candidate'>Candidates</a>
+  <div class="row">
+    <div class="col s12 hide-on-large-only center-align" id="mobile-navbar">
+      <a class="btn col s4" id="nav-mobile-btn" ui-sref='main.issues'>Issues</a>
+      <button class="btn col s4" id="logo-nav-mobile">ivotify</button>
+      <a class="btn col s4" id="candidate-nav-mobile" ui-sref='main.candidate'>Candidates</a>
+    </div>
   </div>
 
   <!--Navigation for Desktop -->
   <div class="row" id="main-body">
-    <div class="col s12 m4 l3 column-nav">
+    <div class="col s12 l3 column-nav">
       <div class="collection">
         <!-- Below is only seen on mobile -->
-        <p class="hide-on-med-and-up" id="pick-issue-banner" ng-show="bannerCandidate">Pick a Candidate</p>
+        <p class="hide-on-large-only" id="pick-issue-banner" ng-show="bannerCandidate">Pick a Candidate</p>
 
         <!-- Toggle Buttons on Medium Screens and Up -->
         <div class="toggle-content hide-on-small-and-down">
           <div class="togglebox">
-            <a class="btn hide-on-small-and-down" id="toggle-nav-btn" ui-sref='main.issues'>Issues</a>
-            <a class="btn hide-on-small-and-down" id="candidate-nav-btn" ui-sref='main.candidate'>Candidates</a>
+            <a class="btn hide-on-med-and-down" id="toggle-nav-btn" ui-sref='main.issues'>Issues</a>
+            <a class="btn hide-on-med-and-down" id="candidate-nav-btn" ui-sref='main.candidate'>Candidates</a>
           </div>
         </div>
 
@@ -47,12 +49,21 @@
       <h6 class="collection-item-chosen" >
         <a ng-click="getScope().bannerCandidate = true; getScope().showBanner = true; getScope().pickCandidate = false; getScope().hideBio = false; topScroll(); g" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
         {{candidate.full_name}}
-        <a ng-click="bioNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
+
+        <!-- Next Arrow Mobile -->
+        <a class="hide-on-large-only" ng-click="bioNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
+
       </h6>
       <div class="scroll-summary">
         <p class="situtation-bar"> BIO </p>
         <div class="summary">
           <p ng-model="item.summary" class="item-summary">{{candidate.bio}}</p>
+        </div>
+        <div class="hide-on-med-and-down">
+            <button class="btn" id="next-issue-desktop" ng-click="bioNext($index + 1); topScroll()">
+              Next Candidate
+              <img class="right-align" id="next-arrow-candidate" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
+            </button>
         </div>
       </div>
     </div>
@@ -61,24 +72,26 @@
 </div>
 
   <!--Quote Pop-up List for Candidates Page -->
-  <div class="col s12 m6 candidate-quote-module">
-      <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/ivotify_Candidates.png">
+  <div class="col s12 l6 candidate-quote-module">
+      <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/candidate_splash.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickCandidate">
-          <div id="candidate-quote" ng-repeat="item in issues">
-              <p class="center-align" ng-style="set_header(item)" id="issue-name">
+          <div class="candidate-quote" ng-repeat="item in issues">
+              <p class="issue-name center-align" ng-style="set_header(item)">
               {{item.title | uppercase}}
               </p>
-                <div ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
+                <div class="quotes-repeat" ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
                   <div class="quote">
-                      <p class="center-align" id="quote-one">"{{quote.body}}"</p>
+                      <p class="quote-one center-align">
+                        <span class="quotation-marks">"</span>
+                          {{quote.body}}
+                        <span class="quotation-marks">"</span>
+                      </p>
                   </div>
                   <div class="quote">
-                      <p class="right-align" id="source-bar">{{quote.source | uppercase}}</p>
+                      <p class="source-bar right-align">{{quote.source | uppercase}}</p>
                   </div>
-                  <svg class="line-divider">
-                    <line x1="50" y1="0" x2="640" y2="0" style="stroke:rgb(100,100,100);stroke-width:2" />
-                  </svg>
+                  <hr class="quote-divider">
                 </div>
           </div>
         </div>
