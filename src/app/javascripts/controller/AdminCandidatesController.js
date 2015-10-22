@@ -39,6 +39,7 @@
 		// Creates a candidate
 		$scope.save = function(){
 			console.log('trying to add candidate');
+			removeEmptyQuotes($scope.candidate.quotes);
 			CandidateResources.save({candidate: $scope.candidate}, function(data){
 
 				// Adds to candidate list
@@ -60,14 +61,15 @@
 		}
 
 		// Clears quotes if modal is cancelled
-		$scope.clearQuotes = function(candidate) {
-			candidate.quotes = [{id: '1'}];
-		}
+		// $scope.clearQuotes = function(candidate) {
+		// 	candidate.quotes = [{id: '1'}];
+		// }
 
 
 		// //Edit a candidate
 		$scope.update = function(candidate) {
 			console.log("candidate: ", candidate);
+			removeEmptyQuotes(candidate.quotes);
 			CandidateResources.update({id: candidate.id}, {candidate: candidate})
 		};
 
@@ -77,6 +79,16 @@
 		})
 
 		MaterializeComponents.addModal();
+
+		var removeEmptyQuotes = function(quotes) {
+			console.log("quotes: ", quotes);
+			angular.forEach(quotes, function(value, key){
+				if (!value.body) {
+					console.log("remove quote index: ", key);
+					quotes.splice(key, 1);
+				}
+			});
+		}
 
 	};
 
