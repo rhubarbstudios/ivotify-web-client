@@ -11,7 +11,7 @@
 #nav-mobile-btn {
   background-color: $red;
   color: white;
-  line-height: 2.5;
+  line-height: 3.0;
   border-radius: 0;
   height: 6vh;
 }
@@ -19,7 +19,7 @@
 #issue-nav-mobile {
   background-color: $red;
   color: white;
-  line-height: 2.5;
+  line-height: 3.0;
   border-radius: 0;
   border-bottom: 4px solid white;
   height: 6vh;
@@ -28,7 +28,7 @@
 #candidate-nav-mobile {
   background-color: $red;
   color: white;
-  line-height: 2.5;
+  line-height: 3.0;
   border-radius: 0;
   border-bottom: 4px solid white;
   height: 6vh;
@@ -37,15 +37,15 @@
 #logo-nav-mobile {
   background-color: $red;
   color: white;
-  line-height: 2.5;
-  font-size: 1em;
-  // font-family: 'Roboto',
-  // background-image: url(https://s3-us-west-1.amazonaws.com/ivotify-images/mobile_nav_icon.svg);
-  // background-size: auto 80%;
-  // background-repeat: no-repeat;
+  font-family: 'Roboto';
+  text-transform: lowercase;
+  font-weight: bold;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5;
+  font-size: 1.5em;
   border-right: 2px solid white;
   border-left: 2px solid white;
-  // background-position: center;
   border-radius: 0;
   height: 6vh;
 

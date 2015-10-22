@@ -19,22 +19,22 @@ $button-color: #FF6666;
 
 @font-face {
   font-family: 'Futura Book';
-  data-src:  url('src/app/assets/fonts/futura/futura-book.woff') format('woff'),
-             url('src/app/assets/fonts/futura/futura-book.eot') format('eot'),
-             url('src/app/assets/fonts/futura/futura-book.ttf') format('ttf');
+  src:  url('../fonts/futura/futura-book.woff') format('woff'),
+             url('../fonts/futura/futura-book.eot') format('eot'),
+             url('../fonts/futura/futura-book.ttf') format('ttf');
 }
 
 @font-face {
   font-family: 'Futura Light';
-  data-src: url('src/app/assets/fonts/futura/futura-light.woff') format('woff'),
-            url('src/app/assets/fonts/futura/futura-light.eot') format('eot'),
-            url('src/app/assets/fonts/futura/futura-light.ttf') format('ttf');
+  src: url('../fonts/futura/futura-light.woff') format('woff'),
+            url('../fonts/futura/futura-light.eot') format('eot'),
+            url('../fonts/futura/futura-light.ttf') format('ttf');
 }
 
 $futura-stack: 'Futura', 'Trebuchet MS', Arial, sans-serif;
 $futura-book-stack: 'Futura Book', 'Futura', 'Trebuchet MS', Arial, sans-serif;
 $futura-light-stack: 'Futura Light', Arial, sans-serif;
-
+$logo-font: 'Roboto', Arial, sans-serif;
 
 // Base Styles ////////////////////////////////////////////////////////////////////////
 $base-font-size: 14px;
