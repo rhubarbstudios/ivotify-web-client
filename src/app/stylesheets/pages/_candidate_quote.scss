@@ -96,14 +96,22 @@
 
 .candidate-image {
   position: absolute;
-  width: 18%;
   height: auto;
   z-index: 4;
-  top: -60%;
-  left: 10%;
-  @media #{$medium-and-down} {
+
+  @media #{$small-and-down} {
   top: -40%;
   left: 3%;
-  width: 23%;
+  width: 92px;
+  }
+  @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width) {
+  top: -72%;
+  left: 9%;
+  width: 143px;
+  }
+  @media #{$large-and-up} {
+  top: -35px;
+  right: 73%;
+  width: 125px;
   }
 }
