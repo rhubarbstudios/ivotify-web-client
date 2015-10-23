@@ -41,6 +41,7 @@
     }
     .issue-items {
       font-size: 3vh;
+      letter-spacing: 1px;
       font-family: $futura-light-stack !important;
       margin: .1em;
       @media #{$large-and-up} {
