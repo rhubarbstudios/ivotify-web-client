@@ -49,6 +49,10 @@
         font-family: $futura-light-stack !important;
       }
 
+      .issue-items:hover {
+        font-family: $futura-book-stack !important;
+      }
+
     }
   }
 }
@@ -131,7 +135,7 @@
   float: left;
   cursor: pointer;
   @media #{$medium-and-down} {
-    
+
   }
 }
 

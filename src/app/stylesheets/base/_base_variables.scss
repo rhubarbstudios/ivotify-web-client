@@ -31,10 +31,16 @@ $button-color: #FF6666;
             url('/app/assets/fonts/futura/futura-light.ttf') format('ttf');
 }
 
+@font-face {
+  font-family: 'ABeeZee-Regular';
+  src: url('/app/assets/fonts/ABeeZee/ABeeZee-Regular.ttf') format('ttf');
+}
+
 $futura-stack: 'Futura', 'Trebuchet MS', Arial, sans-serif;
 $futura-book-stack: 'Futura Book', 'Futura', 'Trebuchet MS', Arial, sans-serif;
 $futura-light-stack: 'Futura Light', Arial, sans-serif;
 $logo-font: 'Roboto', Arial, sans-serif;
+$quote-font: 'ABeeZee-Regular', Arial, sans-serif;
 
 // Base Styles ////////////////////////////////////////////////////////////////////////
 $base-font-size: 14px;
