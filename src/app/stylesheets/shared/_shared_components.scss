@@ -3,6 +3,7 @@
   margin-bottom: 0;
   position: relative;
   .col.s12.l3.column-nav {
+    @extend .z-depth-1;
     border-radius: 0 10px 0 0;
     background-color: white;
     min-height: 87vh;
@@ -15,8 +16,6 @@
     }
      @media #{$large-and-up} {
       position: fixed;
-      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      // border: 1px solid #EBE9EC;
     }
     a {
       color: $darkgrey;
@@ -41,19 +40,17 @@
     }
     .issue-items {
       font-size: 3vh;
-      letter-spacing: 1px;
-      font-family: $futura-light-stack !important;
+      letter-spacing: 0.5px;
+      font-family: $futura-light-stack;
       margin: .1em;
       @media #{$large-and-up} {
         line-height: 30px;
         font-size: 1.875em;
-        font-family: $futura-light-stack !important;
       }
-
-      .issue-items:hover {
-        font-family: $futura-book-stack !important;
-      }
-
+    }
+    .issue-items:hover {
+      letter-spacing: 1px;
+      font-family: $futura-book-stack;
     }
   }
 }
