@@ -5,24 +5,26 @@
   z-index: 900;
   width: 100vw;
   padding: 0;
-  height: 6vh;
+  height: 6vh !important;
 }
 
 #nav-mobile-btn {
   background-color: $red;
   color: white;
-  line-height: 3.0;
+  line-height: 3.0 !important;
   border-radius: 0;
-  height: 6vh;
+  font-size: 2vh;
+  height: 6vh !important;
 }
 
 #issue-nav-mobile {
   background-color: $red;
   color: white;
   line-height: 3.0;
+  font-size: 2vh;
   border-radius: 0;
   border-bottom: 4px solid white;
-  height: 6vh;
+  height: 6vh !important;
 }
 
 #candidate-nav-mobile {
@@ -30,8 +32,9 @@
   color: white;
   line-height: 3.0;
   border-radius: 0;
+  font-size: 2vh;
   border-bottom: 4px solid white;
-  height: 6vh;
+  height: 6vh !important;
 }
 
 #logo-nav-mobile {
@@ -41,12 +44,11 @@
   text-transform: lowercase;
   font-weight: bold;
   font-style: italic;
-  font-weight: 500;
   line-height: 1.5;
-  font-size: 1.5em;
+  font-size: 3vh !important;
   border-right: 2px solid white;
   border-left: 2px solid white;
   border-radius: 0;
-  height: 6vh;
+  height: 6vh !important;
 
 }

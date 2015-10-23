@@ -40,7 +40,7 @@
       // padding: 3em;
     }
     .issue-items {
-      font-size: 1.5em;
+      font-size: 3vh;
       font-family: $futura-light-stack !important;
       margin: .1em;
       @media #{$large-and-up} {
@@ -87,11 +87,11 @@
 .collection-item-chosen {
   background-color: $button-color;
   font-family: $futura-book-stack !important;
-  font-size: 1.875em !important;
-  line-height: 28px;
+  font-size: 4vh;
+  text-align: center;
+  line-height: 1.0;
   color: white;
   margin: 0;
-  font-size: 1.3em;
   padding-top: 13px;
   padding-bottom: 13px;
   padding-right: 12px;
@@ -130,8 +130,8 @@
 }
 
 #back-arrow {
-  width: 5%;
-  height: auto;
+  width: auto;
+  height: 4vh;
   float: left;
   cursor: pointer;
   @media #{$medium-and-down} {
@@ -140,8 +140,8 @@
 }
 
 #next-arrow {
-  width: 8%;
-  height: auto;
+  width: auto;
+  height: 4vh;
   float: right;
   cursor: pointer;
 }
