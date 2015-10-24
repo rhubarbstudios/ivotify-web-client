@@ -3,6 +3,7 @@
   margin-bottom: 0;
   position: relative;
   .col.s12.l3.column-nav {
+    @extend .z-depth-1;
     border-radius: 0 10px 0 0;
     background-color: white;
     min-height: 87vh;
@@ -15,8 +16,6 @@
     }
      @media #{$large-and-up} {
       position: fixed;
-      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      // border: 1px solid #EBE9EC;
     }
     a {
       color: $darkgrey;
@@ -40,15 +39,18 @@
       // padding: 3em;
     }
     .issue-items {
-      font-size: 1.5em;
-      font-family: $futura-light-stack !important;
+      font-size: 3vh;
+      letter-spacing: 0.5px;
+      font-family: $futura-light-stack;
       margin: .1em;
       @media #{$large-and-up} {
         line-height: 30px;
         font-size: 1.875em;
-        font-family: $futura-light-stack !important;
       }
-
+    }
+    .issue-items:hover {
+      letter-spacing: 1px;
+      font-family: $futura-book-stack;
     }
   }
 }
@@ -70,7 +72,7 @@
 }
 
 .item-summary {
-  padding: 10px 40px 0px 40px;
+  padding: 10px 60px 0px 60px;
   text-align: left;
   @media #{$large-and-up} {
     font-family: $futura-book-stack;
@@ -83,15 +85,11 @@
 .collection-item-chosen {
   background-color: $button-color;
   font-family: $futura-book-stack !important;
-  font-size: 1.875em !important;
-  line-height: 28px;
+  font-size: 4vh;
+
+  line-height: 7.5vh;
   color: white;
   margin: 0;
-  font-size: 1.3em;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-right: 12px;
-  padding-left: 10px;
   @media #{$medium-and-down} {
     position: fixed;
     width: 100%;
@@ -111,35 +109,41 @@
 }
 
 .situtation-bar {
-  font-size: 1.375em;
+  font-size: 2.5vh;
   background-color: $lightgrey;
   font-family: $futura-stack;
-  padding-top: 5px;
-  padding-bottom: 5px;
   letter-spacing: 1.1px;
+  line-height: 4.5vh;
   height: 5vh;
   @media #{$medium-and-down} {
-  margin-top: 20%;
+  margin-top: 10vh;
   padding-top: 3px;
   padding-bottom: 3px;
   }
 }
 
 #back-arrow {
-  width: 5%;
-  height: auto;
+  width: auto;
+  height: 4vh;
   float: left;
   cursor: pointer;
-  @media #{$medium-and-down} {
-    
+  top: 2vh;
+  left: 2vw;
+  position: relative;
+  @media #{$large-and-up} {
+    top: 1.8vh;
+    left: 0.5vw;
   }
 }
 
 #next-arrow {
-  width: 8%;
-  height: auto;
-  float: right;
+  width: auto;
+  height: 4vh;
   cursor: pointer;
+  float: right;
+  top: 2vh;
+  right: 2vw;
+  position: relative;
 }
 
 #next-issue-desktop {

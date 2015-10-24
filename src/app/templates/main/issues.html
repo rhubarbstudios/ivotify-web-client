@@ -1,7 +1,7 @@
 <div class="main-background">
 
   <!-- Large Screen Header -->
-  <div class="navbar-fixed hide-on-med-and-down">
+  <div class="navbar-fixed hide-on-med-and-down" id="navbar-desktop">
     <nav class="main-nav">
         <div class="row">
           <div class="col s3">
@@ -86,9 +86,9 @@
               <div class="quotes-repeat" ng-repeat="quote in candidate.quotes | filter: {issue_id: currentIssue.id}">
                 <div class="quote">
                     <p class="quote-one center-align">
-                      <span class="quotation-marks">"</span>
-                        {{quote.body}}
-                      <span class="quotation-marks">"</span>
+                      <!-- <span class="quotation-marks">"</span> -->
+                        "{{quote.body}}"
+                      <!-- <span class="quotation-marks">"</span> -->
                     </p>
                 </div>
                 <div class="quote">

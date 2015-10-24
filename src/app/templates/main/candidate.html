@@ -47,7 +47,7 @@
     <div ng-show="hideBio">
     <div class="summary-box" ng-show="currentCandidate == candidate">
       <h6 class="collection-item-chosen" >
-        <a ng-click="getScope().bannerCandidate = true; getScope().showBanner = true; getScope().pickCandidate = false; getScope().hideBio = false; topScroll(); g" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
+        <a ng-click="getScope().bannerCandidate = true; getScope().showBanner = true; getScope().pickCandidate = false; getScope().hideBio = false; topScroll();" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
         {{candidate.full_name}}
 
         <!-- Next Arrow Mobile -->
@@ -83,9 +83,9 @@
                 <div class="quotes-repeat" ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
                   <div class="quote">
                       <p class="quote-one center-align">
-                        <span class="quotation-marks">"</span>
-                          {{quote.body}}
-                        <span class="quotation-marks">"</span>
+                        <!-- <span class="quotation-marks">"</span> -->
+                          "{{quote.body}}"
+                        <!-- <span class="quotation-marks">"</span> -->
                       </p>
                   </div>
                   <div class="quote">

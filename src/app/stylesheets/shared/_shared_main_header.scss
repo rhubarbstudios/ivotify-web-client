@@ -6,9 +6,15 @@
   }
 }
 
+#navbar-desktop {
+  background-color: white;
+  box-shadow: 0 -2px -1px 0 rgba(0, 0, 0, -5.84), 0 0px -4px 0 rgba(0, 0, 0, -3.88) !important;
+}
+
 .main-nav {
   background-color: white;
   border-bottom: 1px solid $lightgrey;
+  box-shadow: 0 -2px -1px 0 rgba(0, 0, 0, -5.84), 0 0px -4px 0 rgba(0, 0, 0, -3.88) !important;
 }
 
 #logo-nav-btn {
@@ -23,7 +29,7 @@
 
 #toggle-nav-btn {
   padding: 0 5px 0 5px;
-  width: 120px;
+  width: 110px;
   color: white;
   background-color: $mediumgrey;
 }
@@ -32,12 +38,12 @@
   color: white;
   background-color: $brightgreen;
   padding: 0 5px 0 5px;
-  width: 120px;
+  width: 110px;
 }
 
 #candidate-nav-btn {
   color: white;
   background-color: $brightgreen;
   padding: 0 5px 0 5px;
-  width: 120px;
+  width: 110px;
 }
