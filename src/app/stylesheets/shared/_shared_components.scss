@@ -72,7 +72,7 @@
 }
 
 .item-summary {
-  padding: 10px 40px 0px 40px;
+  padding: 10px 60px 0px 60px;
   text-align: left;
   @media #{$large-and-up} {
     font-family: $futura-book-stack;
@@ -86,14 +86,10 @@
   background-color: $button-color;
   font-family: $futura-book-stack !important;
   font-size: 4vh;
-  text-align: center;
-  line-height: 1.0;
+
+  line-height: 7.5vh;
   color: white;
   margin: 0;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-right: 12px;
-  padding-left: 10px;
   @media #{$medium-and-down} {
     position: fixed;
     width: 100%;
@@ -116,10 +112,8 @@
   font-size: 2.5vh;
   background-color: $lightgrey;
   font-family: $futura-stack;
-  padding-top: 5px;
-  padding-bottom: 5px;
   letter-spacing: 1.1px;
-  line-height: 30px;
+  line-height: 4.5vh;
   height: 5vh;
   @media #{$medium-and-down} {
   margin-top: 10vh;
@@ -133,16 +127,23 @@
   height: 4vh;
   float: left;
   cursor: pointer;
-  @media #{$medium-and-down} {
-
+  top: 2vh;
+  left: 2vw;
+  position: relative;
+  @media #{$large-and-up} {
+    top: 1.8vh;
+    left: 0.5vw;
   }
 }
 
 #next-arrow {
   width: auto;
   height: 4vh;
-  float: right;
   cursor: pointer;
+  float: right;
+  top: 2vh;
+  right: 2vw;
+  position: relative;
 }
 
 #next-issue-desktop {
