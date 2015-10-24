@@ -14,18 +14,17 @@
 #quote-body {
   @extend .z-depth-1;
   padding: 33px 0 0 0;
-  height: 87vh;
+
   background-color: white;
   margin: 0;
   @media #{$medium-and-down} {
     z-index: 0;
     box-shadow: none;
-    height: 100vh;
   }
   @media #{$large-and-up} {
     overflow-y: scroll;
+    height: 87vh;
     border-radius: 10px 10px 0 0;
-    // border: 1px solid #EBE9EC;
   }
 }
 
