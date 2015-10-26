@@ -73,7 +73,8 @@
 .quote-one {
   font-size: 1em;
   font-family: $futura-light-stack;
-  padding: 5% 15% 5% 15%;
+  padding: 5% 4% 5% 27%;
+  text-align: -webkit-left;
   @media #{$small-and-down} {
     font-family: $futura-light-stack;
   }
@@ -82,6 +83,9 @@
 .quotation-marks {
   width: auto;
   height: 2vh;
+  top: -3vh;
+  position: relative;
+  right: 0;
 }
 
 .quote-divider {
@@ -110,7 +114,7 @@
   }
   @media #{$large-and-up} {
   top: -23px;
-  right: 74%;
+  right: 76%;
   width: 105px;
   }
 }

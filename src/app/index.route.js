@@ -8,9 +8,8 @@
     $stateProvider
       .state('welcome', {
         url:'/',
-        templateUrl: 'app/templates/welcome.html',
-        controller: 'WelcomeController',
-        controllerAs:'welcomectrl'
+        templateUrl: 'app/templates/main/issues.html',
+        controller: 'MainController'
       })
       .state('admin', {
         url: '/admin',
@@ -40,7 +39,7 @@
         templateUrl: 'app/templates/main/candidate.html',
         controller: 'MainController'
       });
-     
+
       $urlRouterProvider.otherwise('/');
     }
 
