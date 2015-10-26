@@ -12,7 +12,7 @@
         var summary = $('.summary').scrollTop(0);
         var quotes = $('#quote-body').scrollTop(0);
           return [window, quotes, summary];
-      }
+      };
       return service;
     }
 })();

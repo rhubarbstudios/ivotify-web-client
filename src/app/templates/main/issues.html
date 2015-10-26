@@ -48,7 +48,7 @@
           <div ng-show="hideSummary">
           <div class="summary-box" ng-show="currentIssue == item">
             <h6 class="collection-item-chosen" >
-              <a ng-click="getScope().bannerIssue = true; getScope().showBanner = true; getScope().pickIssue = false; getScope().hideSummary = false; topScroll(); " class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
+              <a ng-click="getScope().bannerIssue = true; getScope().showBanner = true; getScope().pickIssue = false; getScope().hideSummary = false; topScroll(); random(candidates);" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
               {{item.title}}
 
               <!-- Next Arrow Mobile -->
@@ -77,7 +77,7 @@
       <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/candidate_splash.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickIssue">
-          <div class="candidate-quote" ng-repeat="candidate in candidates | orderBy:'rank'">
+          <div class="candidate-quote" ng-repeat="candidate in candidates">
 
               <p ng-style="set_color(candidate)" class="candidate-name center-align">
               <img class="candidate-image" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/{{candidate.first_name | uppercase}}.png">
