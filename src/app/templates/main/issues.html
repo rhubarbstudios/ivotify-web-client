@@ -77,7 +77,7 @@
       <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/candidate_splash.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickIssue">
-          <div class="candidate-quote" ng-repeat="candidate in candidates">
+          <div class="candidate-quote" ng-repeat="candidate in candidates | orderBy:'rank'">
 
               <p ng-style="set_color(candidate)" class="candidate-name center-align">
               <img class="candidate-image" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/{{candidate.first_name | uppercase}}.png">
@@ -86,8 +86,8 @@
               <div class="quotes-repeat" ng-repeat="quote in candidate.quotes | filter: {issue_id: currentIssue.id}">
                 <div class="quote">
                     <p class="quote-one center-align">
-                      <span class="quotation-marks">“</span>
-                        <span>{{quote.body}}</span>
+                      <img src="https://s3-us-west-1.amazonaws.com/ivotify-images/quotation.png" alt="" class="quotation-marks"/>
+                        {{quote.body}}
 
                     </p>
                 </div>

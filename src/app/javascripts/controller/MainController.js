@@ -82,9 +82,21 @@
       CandidateResources.get({})
       .$promise.then(function(resp){
         $scope.candidates = resp.candidates;
-        // console.log(resp.candidates);
-      });
-
+      //   $scope.candidateShuf = [];
+      //   angular.forEach($scope.candidates, function(item) {
+      //     $scope.candidateShuf.push({
+      //         item: item,
+      //         first_name: item.first_name,
+      //         last_name: item.last_name,
+      //         full_name: item.full_name,
+      //         bio: item.bio,
+      //         quotes: item.quotes,
+      //         rank: 0.5 - Math.random()
+      //     });
+      //     console.log($scope.candidateShuf);
+      // });
+    });
+    
       // Logic for setting canidate quote header colors
       $scope.set_color = function(candidate){
         if (candidate.first_name == "Bernie") {
