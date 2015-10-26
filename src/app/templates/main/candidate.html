@@ -83,9 +83,8 @@
                 <div class="quotes-repeat" ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
                   <div class="quote">
                       <p class="quote-one center-align">
-                        <!-- <span class="quotation-marks">"</span> -->
-                          "{{quote.body}}"
-                        <!-- <span class="quotation-marks">"</span> -->
+                        <span class="quotation-marks">“</span>
+                          {{quote.body}}
                       </p>
                   </div>
                   <div class="quote">

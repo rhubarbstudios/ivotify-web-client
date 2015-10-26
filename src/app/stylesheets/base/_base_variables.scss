@@ -33,16 +33,19 @@ $button-color: #FF6666;
 
 @font-face {
   font-family: 'ABeeZee-Regular';
-  src: url('/app/assets/fonts/abezee/ABeeZee-Regular.woff') format('woff'),
-      url('/app/assets/fonts/abezee/ABeeZee-Regular.eot') format('eot'),
-      url('/app/assets/fonts/abezee/ABeeZee-Regular.ttf') format('ttf');
+  src: url('/app/assets/fonts/abezee/ABeeZee-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'ABeeZee-Italic';
+  src: url('/app/assets/fonts/abezee/ABeeZee-Italic.ttf') format('ttf');
 }
 
 $futura-stack: 'Futura', 'Trebuchet MS', Arial, sans-serif;
 $futura-book-stack: 'Futura Book', 'Futura', 'Trebuchet MS', Arial, sans-serif;
 $futura-light-stack: 'Futura Light', Arial, sans-serif;
 $logo-font: 'Roboto', Arial, sans-serif;
-$quote-font: 'ABeeZee Regular', Arial, sans-serif;
+$quote-font: 'ABeeZee-Italic', Arial, sans-serif;
 
 // Base Styles ////////////////////////////////////////////////////////////////////////
 $base-font-size: 14px;

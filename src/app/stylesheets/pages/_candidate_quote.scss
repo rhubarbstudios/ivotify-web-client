@@ -80,8 +80,10 @@
 }
 
 .quotation-marks {
-  font-family: $quote-font;
-	font-size: 30px;
+  font-family: 'ABeeZee', sans-serif;
+	font-size: 50px;
+  position: relative;
+  color: $mediumgrey
 }
 
 .quote-divider {
