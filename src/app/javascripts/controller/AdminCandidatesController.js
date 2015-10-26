@@ -12,12 +12,10 @@
 			$scope.issues = [];
 			$scope.addCandidate = false;
 			$scope.editCandidate = false;
-
 			$scope.candidate = {};
-			$scope.candidate.quotes = [{id: '1'}];
+			$scope.candidate.quotes = [];
 
 		// Using Resource Factory for all CRUD, the one below is specifically for candidates
-
 		var CandidateResources = new Resources('candidates');
 
 		// Also gets issues for quotes relationship
@@ -33,13 +31,11 @@
 		IssueResources.get({})
 		.$promise.then(function(resp) { 
 		  $scope.issues = resp.issues; 
-		  console.log(resp.issues);
 		});
 
 		// Creates a candidate
 		$scope.save = function(){
-			console.log('trying to add candidate');
-			removeEmptyQuotes($scope.candidate.quotes);
+			$scope.removeEmptyQuotes($scope.candidate.quotes);
 			CandidateResources.save({candidate: $scope.candidate}, function(data){
 
 				// Adds to candidate list
@@ -53,42 +49,41 @@
 			});
 		};
 
+		//Edit a candidate
+		$scope.update = function(candidate) {
+			$scope.removeEmptyQuotes(candidate.quotes);
+			CandidateResources.update({id: candidate.id}, {candidate: candidate})
+		};
+
 		// Add new quote field in candidate create modal
 		$scope.addNewQuote = function(candidate) {
-			var newItemNo = candidate.quotes.length+1;
+			if (candidate.quotes) {
+				var newItemNo = candidate.quotes.length+1;
+			}
+			else {
+				candidate.quotes = [];
+			}
 			candidate.quotes.push({'id': newItemNo});
 			return false;
 		}
 
-		// Clears quotes if modal is cancelled
-		// $scope.clearQuotes = function(candidate) {
-		// 	candidate.quotes = [{id: '1'}];
-		// }
+		// Removes empty quotes from candidate object
+		$scope.removeEmptyQuotes = function(quotes) {
+			var i = quotes.length;
+			while (i--){
+				if (!quotes[i].body) {
+					quotes.splice(i, 1);
+				}
+			}
+		}
 
-
-		// //Edit a candidate
-		$scope.update = function(candidate) {
-			console.log("candidate: ", candidate);
-			removeEmptyQuotes(candidate.quotes);
-			CandidateResources.update({id: candidate.id}, {candidate: candidate})
-		};
-
+		// Adds collapsible functionality to quotes after repeate for candidates has finished
 		$scope.$on('ngRepeatFinished', function(){
-			console.log("calls ngrepeat finished");
 			MaterializeComponents.addCollapsible();
 		})
 
+		// Adds Modal functionality on page load
 		MaterializeComponents.addModal();
-
-		var removeEmptyQuotes = function(quotes) {
-			console.log("quotes: ", quotes);
-			angular.forEach(quotes, function(value, key){
-				if (!value.body) {
-					console.log("remove quote index: ", key);
-					quotes.splice(key, 1);
-				}
-			});
-		}
 
 	};
 

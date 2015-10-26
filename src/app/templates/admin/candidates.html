@@ -10,7 +10,7 @@
             <button class="btn" id="admin-nav-btn"><a ui-sref='admin.candidates'>Candidates</a></button>
           </div>
           <div class="col s4 right-align">
-            <a class="btn" id="add-candidate" ng-click="addCandidate = true" rel="leanModal" href="#candidate-modal"> + Candidates</a>
+            <a class="btn" id="add-candidate" ng-click="addCandidate = true; addNewQuote(candidate)" rel="leanModal" href="#candidate-modal"> + Candidates</a>
          </div>
         </div>
       </div>
@@ -179,7 +179,7 @@
             <div class="row">
               <div class="col s12">
                 <button class="modal-action modal-close btn waves-effect" id="modal-cancel" name="action"
-                type="reset" ng-click="clearQuotes(candidate)">Cancel</button>
+                type="reset" ng-click="removeEmptyQuotes(candidate.quotes)">Cancel</button>
                 <button class="modal-action modal-close btn waves-effect waves-light" id="modal-save"
                 ng-disabled="candidate_form.$invalid" type="submit" name="action" >Save</button>
               </div>
