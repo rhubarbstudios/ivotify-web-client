@@ -17,8 +17,8 @@
 
       // Index of issues
       IssueResources.get()
-      .$promise.then(function(resp) {  
-        $scope.issues = resp.issues;  
+      .$promise.then(function(resp) { 
+        $scope.issues = resp.issues; 
       });
 
 
@@ -39,15 +39,11 @@
 
       // Edit an issue
       $scope.update = function(issue) {
-        IssueResources.update({id: issue._id.$oid}, {issue: issue})
-        
+        IssueResources.update({id: issue.id}, {issue: issue})
+
       };
 
 
-
-        
-
-      
   };
 
 })();

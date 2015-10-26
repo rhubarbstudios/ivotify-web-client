@@ -12,7 +12,7 @@
       // Returns a constructor function
       return function(type){
 
-        return $resource('https://ivotify-api.herokuapp.com/api/' + type + '/:id', null,
+        return $resource('https://ivotify-api-staging.herokuapp.com/api/' + type + '/:id', null,
           {
            'update': { method: 'PUT'}
           });
