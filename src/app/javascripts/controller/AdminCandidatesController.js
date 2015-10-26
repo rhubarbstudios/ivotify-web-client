@@ -5,27 +5,37 @@
 		.module('ivotifyFrontend')
 		.controller('AdminCandidatesController', AdminCandidatesController);
 
-		AdminCandidatesController.$inject = ['Resources', '$scope', '$state', '$stateParams'];
+		AdminCandidatesController.$inject = ['Resources', 'MaterializeComponents', '$scope', '$state', '$stateParams', '$timeout'];
 
-		function AdminCandidatesController(Resources, $scope, $state, $stateParams){
+		function AdminCandidatesController(Resources, MaterializeComponents, $scope, $state, $stateParams, $timeout){
 			$scope.candidates = [];
+			$scope.issues = [];
 			$scope.addCandidate = false;
 			$scope.editCandidate = false;
+			$scope.candidate = {};
+			$scope.candidate.quotes = [];
 
 		// Using Resource Factory for all CRUD, the one below is specifically for candidates
-
 		var CandidateResources = new Resources('candidates');
 
-		// Index of candidates
+		// Also gets issues for quotes relationship
+		var IssueResources = new Resources('issues');
 
+		// Index of candidates
 		CandidateResources.get()
 		.$promise.then(function(resp){
 			$scope.candidates = resp.candidates;
 		});
 
+		// Index of issues
+		IssueResources.get({})
+		.$promise.then(function(resp) { 
+		  $scope.issues = resp.issues; 
+		});
+
 		// Creates a candidate
 		$scope.save = function(){
-			console.log('trying to add candidate');
+			$scope.removeEmptyQuotes($scope.candidate.quotes);
 			CandidateResources.save({candidate: $scope.candidate}, function(data){
 
 				// Adds to candidate list
@@ -39,14 +49,44 @@
 			});
 		};
 
-		// //Edit a candidate
-		// $scope.update = function(candidate) {
-		// 	CandidateResources.update({id: candidate.id.$oid}, {candidate: candidate})
-		// };
+		//Edit a candidate
+		$scope.update = function(candidate) {
+			$scope.removeEmptyQuotes(candidate.quotes);
+			CandidateResources.update({id: candidate.id}, {candidate: candidate})
+		};
 
+		// Add new quote field in candidate create modal
+		$scope.addNewQuote = function(candidate) {
+			if (candidate.quotes) {
+				var newItemNo = candidate.quotes.length+1;
+			}
+			else {
+				candidate.quotes = [];
+			}
+			candidate.quotes.push({'id': newItemNo});
+			return false;
+		}
+
+		// Removes empty quotes from candidate object
+		$scope.removeEmptyQuotes = function(quotes) {
+			var i = quotes.length;
+			while (i--){
+				if (!quotes[i].body) {
+					quotes.splice(i, 1);
+				}
+			}
+		}
+
+		// Adds collapsible functionality to quotes after repeate for candidates has finished
+		$scope.$on('ngRepeatFinished', function(){
+			MaterializeComponents.addCollapsible();
+		})
+
+		// Adds Modal functionality on page load
+		MaterializeComponents.addModal();
 
 	};
-	
+
 
 
 })();
