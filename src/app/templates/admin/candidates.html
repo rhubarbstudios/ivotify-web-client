@@ -48,19 +48,19 @@
 
         <tr class="candidate-row" ng-repeat-start="candidate in candidates | orderBy: '-created_at'">
           <form>
-            <td width="10%" id="candidateFirst">
+            <td id="candidateFirst">
               <span ng-hide="editCandidate">{{candidate.first_name}}</span>
               <textarea ng-show="editCandidate" type="text" ng-model="candidate.first_name"></textarea>
             </td>
-            <td width="10%">
+            <td>
               <span ng-hide="editCandidate">{{candidate.last_name}}</span>
               <textarea ng-show="editCandidate" type="text" ng-model="candidate.last_name"></textarea>
             </td>
-            <td width="70%">
+            <td>
               <span ng-hide="editCandidate">{{candidate.bio}}</span>
               <textarea ng-show="editCandidate" type="text" ng-model="candidate.bio"></textarea>
             </td>
-            <td width="10%">
+            <td>
               <button class="btn" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
               <button class="btn" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" type="submit">Save</button>
             </td>
@@ -68,7 +68,7 @@
         </tr>
 
         <tr ng-repeat-end>
-          <td colspan="4">
+          <td class="quotes-row" colspan="4">
             <ul class="collapsible" data-collapsible="expandable" rel="collapsible">
               <li>
                 <div class="collapsible-header">{{candidate.first_name}}'s Quotes</div>
@@ -80,17 +80,17 @@
                       <th>Source</th>
                     </tr>
                     <tr ng-repeat="quote in candidate.quotes" on-finish-render="ngRepeatFinished">
-                      <td width="20%">
+                      <td>
                         <span ng-hide="editCandidate" ng-repeat="issue in issues | filter:{id:quote.issue_id}">{{issue.title}}</span>
                         <select ng-show="editCandidate" class="browser-default" name="repeatSelect" id="repeatSelect" ng-model="quote.issue_id"
                           ng-options="issue.id as issue.title for issue in issues">
                         </select>
                       </td>
-                      <td width="50%">
+                      <td>
                         <span ng-hide="editCandidate">{{quote.body}}</span>
                         <textarea ng-show="editCandidate" type="text" ng-model="quote.body"></textarea>
                       </td>
-                      <td width="30%">
+                      <td>
                         <span ng-hide="editCandidate">{{quote.source}}</span>
                         <textarea ng-show="editCandidate" type="text" ng-model="quote.source"></textarea>
                       </td>
