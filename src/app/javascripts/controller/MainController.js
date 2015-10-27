@@ -5,9 +5,9 @@
     .module('ivotifyFrontend')
     .controller('MainController', MainController);
 
-    MainController.$inject = ['Resources', '$scope', '$state', '$stateParams', 'ScrollService'];
+    MainController.$inject = ['Resources', '$scope', '$state', '$stateParams', 'ScrollService', 'Randomizer'];
 
-    function MainController(Resources, $scope, $state, $stateParams, ScrollService){
+    function MainController(Resources, $scope, $state, $stateParams, ScrollService, Randomizer){
       // Empty Arrays for Issue and Candidate Objects
       $scope.issues = [];
       $scope.candidates = [];
@@ -49,8 +49,7 @@
           return $scope.currentCandidate = $scope.candidates[0];
         }
           return $scope.currentCandidate = $scope.candidates[index];
-      }
-
+      };
 
       // Cycle method for issue summaries
       $scope.itemNext = function (index) {
@@ -66,6 +65,11 @@
         ScrollService.scrollTop();
       };
 
+      // Randomize function for issues and candidates quotes
+      $scope.random = function (array) {
+        Randomizer.shuffle(array);
+      };
+
       // Using Resource Factory for all CRUD, the one below is specifically for candidates
       // Access to CRUD for issues and candidates
       var CandidateResources = new Resources('candidates');
@@ -75,14 +79,12 @@
       IssueResources.get({})
       .$promise.then(function(resp) { 
         $scope.issues = resp.issues; 
-        // console.log(resp.issues);
       });
 
        // Index of candidates
       CandidateResources.get({})
       .$promise.then(function(resp){
         $scope.candidates = resp.candidates;
-        // console.log(resp.candidates);
       });
 
       // Logic for setting canidate quote header colors
