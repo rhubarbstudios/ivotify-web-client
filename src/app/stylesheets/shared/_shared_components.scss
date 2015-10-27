@@ -112,9 +112,10 @@
   background-color: $lightgrey;
   font-family: $futura-stack;
   letter-spacing: 1.1px;
-  line-height: 4.5vh;
+  line-height: 5.5vh;
   height: 5vh;
   @media #{$medium-and-down} {
+  line-height: 4.5vh;
   margin-top: 10vh;
   padding-top: 3px;
   padding-bottom: 3px;
