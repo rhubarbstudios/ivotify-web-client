@@ -47,7 +47,7 @@
     <div ng-show="hideBio">
     <div class="summary-box" ng-show="currentCandidate == candidate">
       <h6 class="collection-item-chosen" >
-        <a ng-click="getScope().bannerCandidate = true; getScope().showBanner = true; getScope().pickCandidate = false; getScope().hideBio = false; topScroll();" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
+        <a ng-click="getScope().bannerCandidate = true; getScope().showBanner = true; getScope().pickCandidate = false; getScope().hideBio = false; topScroll(); random(issues);" class="back-button"><img id="back-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt=""> </a>
         {{candidate.full_name}}
 
         <!-- Next Arrow Mobile -->
@@ -72,7 +72,7 @@
 </div>
 
   <!--Quote Pop-up List for Candidates Page -->
-  <div class="col s12 l6 candidate-quote-module">
+  <div class="col s12 l7 candidate-quote-module">
       <img ng-show="showBanner" class="ng-hide hide-on-med-and-down" id="rushmose-image" src="https://s3-us-west-1.amazonaws.com/ivotify-images/candidate_splash.png">
 
         <div class="ng-hide" id="quote-body" ng-show="pickCandidate">
@@ -83,13 +83,13 @@
                 <div class="quotes-repeat" ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
                   <div class="quote">
                       <p class="quote-one center-align">
-                        <!-- <span class="quotation-marks">"</span> -->
-                          "{{quote.body}}"
-                        <!-- <span class="quotation-marks">"</span> -->
+                        <img src="https://s3-us-west-1.amazonaws.com/ivotify-images/quotation.png" alt="" class="quotation-marks"/>
+                        <br>
+                          {{quote.body}}
                       </p>
                   </div>
                   <div class="quote">
-                      <p class="source-bar right-align">{{quote.source | uppercase}}</p>
+                      <p class="source-bar right-align"><span class="source-text">{{quote.source | uppercase}}</span></p>
                   </div>
                   <hr class="quote-divider">
                 </div>
