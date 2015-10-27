@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('ivotifyFrontend', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router']);
+    .module('ivotifyFrontend', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'env-constants']);
 
 })();

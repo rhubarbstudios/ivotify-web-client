@@ -5,9 +5,9 @@
     .module('ivotifyFrontend')
     .factory('Resources', Resources);
 
-    Resources.$inject = ['$resource'];
+    Resources.$inject = ['$resource', 'apiUrl'];
 
-    function Resources($resource){
+    function Resources($resource, apiUrl){
 
       // Returns a constructor function
       return function(type){

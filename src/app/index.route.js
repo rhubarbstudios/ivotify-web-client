@@ -27,7 +27,7 @@
       })
       .state('main', {
         url: '/main',
-        templateUrl: 'app/templates/admin.html'
+        templateUrl: 'app/templates/main.html'
       })
       .state('main.issues', {
         url: '/issues',
