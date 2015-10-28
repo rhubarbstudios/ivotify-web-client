@@ -39,13 +39,15 @@
       // padding: 3em;
     }
     .issue-items {
-      font-size: 3vh;
       letter-spacing: 0.5px;
       font-family: $futura-light-stack;
       margin: .1em;
       @media #{$large-and-up} {
         line-height: 30px;
         font-size: 1.875em;
+      }
+      @media #{$medium-and-down} {
+        font-size: 4vh;
       }
     }
     .issue-items:hover {
@@ -67,8 +69,8 @@
   background-color: $brightgreen;
   width: 100vw;
   margin-bottom: 0;
-  font-size: 2.4em;
   color: white;
+  font-size: 4.5vh;
 }
 
 .item-summary {
@@ -95,6 +97,9 @@
     height: 8vh;
     top: 0;
     z-index: 999;
+  }
+  @media #{$large-and-up} {
+    padding-right: 1vw;
   }
 }
 
