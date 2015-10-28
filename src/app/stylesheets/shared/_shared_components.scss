@@ -33,12 +33,15 @@
       a.collection-item:not(.active):hover {
         background-color: $button-color;
         color: white;
-        letter-spacing: 1px !important;
-        font-family: $futura-book-stack !important;
+        & .issue-items {
+          letter-spacing: 1px;
+          font-family: $futura-book-stack;
+        }
+
       }
     }
     ul {
-      // padding: 3em;
+
     }
     .issue-items {
       letter-spacing: 0.5px;
@@ -46,15 +49,11 @@
       margin: .1em;
       @media #{$large-and-up} {
         line-height: 30px;
-        font-size: 1.875em;
+        font-size: 4vh;
       }
       @media #{$medium-and-down} {
         font-size: 4vh;
       }
-    }
-    .issue-items:hover {
-      // letter-spacing: 1px;
-      // font-family: $futura-book-stack;
     }
   }
 }
