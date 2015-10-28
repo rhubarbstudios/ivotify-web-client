@@ -10,6 +10,9 @@ html {
   font-variant: normal;
   // font-weight: 100;
   // line-height: 26.4px;
+  @media #{$small-and-down} {
+    font-size: 12px;
+  }
 }
 
 .container {

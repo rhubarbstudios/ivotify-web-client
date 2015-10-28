@@ -39,13 +39,15 @@
       // padding: 3em;
     }
     .issue-items {
-      font-size: 3vh;
       letter-spacing: 0.5px;
       font-family: $futura-light-stack;
       margin: .1em;
       @media #{$large-and-up} {
         line-height: 30px;
         font-size: 1.875em;
+      }
+      @media #{$medium-and-down} {
+        font-size: 4vh;
       }
     }
     .issue-items:hover {
@@ -67,17 +69,19 @@
   background-color: $brightgreen;
   width: 100vw;
   margin-bottom: 0;
-  font-size: 2.4em;
   color: white;
+  font-size: 4.5vh;
 }
 
 .item-summary {
-  padding: 10px 60px 0px 60px;
+  padding: 0px 40px 0px 40px;
   text-align: left;
   @media #{$large-and-up} {
     font-family: $futura-book-stack;
   }
   @media #{$medium-and-down} {
+    padding: 0px 45px 0px 55px;
+    font-size: 1.1em;
     font-family: $futura-light-stack;
   }
 }
@@ -96,6 +100,9 @@
     top: 0;
     z-index: 999;
   }
+  @media #{$large-and-up} {
+    padding-right: 1vw;
+  }
 }
 
 .summary {
@@ -108,8 +115,10 @@
 }
 
 .situtation-bar {
+  margin-bottom: 12px;
   font-size: 2.5vh;
   background-color: $lightgrey;
+  color: $darkgrey;
   font-family: $futura-stack;
   letter-spacing: 1.1px;
   line-height: 5.5vh;

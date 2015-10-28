@@ -52,7 +52,14 @@
 		//Edit a candidate
 		$scope.update = function(candidate) {
 			$scope.removeEmptyQuotes(candidate.quotes);
-			CandidateResources.update({id: candidate.id}, {candidate: candidate})
+			CandidateResources.update({id: candidate.id}, {candidate: candidate},
+				function(successResult) {
+	        console.log('successResult', successResult);
+	    	},
+				function(errorResult) {
+	      	console.log('errorResult', errorResult);
+	      }
+			);
 		};
 
 		// Add new quote field in candidate create modal
@@ -86,7 +93,5 @@
 		MaterializeComponents.addModal();
 
 	};
-
-
 
 })();
