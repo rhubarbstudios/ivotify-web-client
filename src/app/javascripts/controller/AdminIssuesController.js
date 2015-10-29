@@ -40,7 +40,10 @@
       // Edit an issue
       $scope.update = function(issue) {
         IssueResources.update({id: issue.id}, {issue: issue})
+      };
 
+      $scope.deleteIssue = function(issue) {
+        IssueResources.delete({id: issue.id}, {issue: issue})
       };
 
 

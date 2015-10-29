@@ -43,7 +43,7 @@
           <th>Issue Summary</th>
           <th>Last Updated</th>
         </tr>
-       
+
         <tr ng-repeat="issue in issues">
          <form>
           <td id="issuetitle">
@@ -59,11 +59,12 @@
           <td>{{issue.updated_at | date:"MM/dd/yyyy 'at' h:mma" }} </td>
           <td>
             <button class="btn" id="edit-issue-button" ng-click="editIssue = true" ng-hide="editIssue">Edit</button>
+            <button class="btn" id="delete-issue-button" type="submit">Delete</button>
             <button class="btn" ng-show="editIssue" ng-click="update(issue); editIssue = false" type="submit">Save</button>
           </td>
         </form>
         </tr>
-        
+
       </table>
     </div>
   </div>
