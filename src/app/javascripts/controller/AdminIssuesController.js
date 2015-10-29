@@ -11,7 +11,6 @@
       $scope.issues = [];
       $scope.addIssue = false;
       $scope.editIssue = false;
-      $scope.deleteIssue = false;
 
       // Using Resource Factory for all CRUD, the one below is specifcally for issues
       var IssueResources = new Resources('issues');
@@ -21,7 +20,6 @@
       .$promise.then(function(resp) { 
         $scope.issues = resp.issues; 
       });
-
 
       // Creates an issues
       $scope.save = function(){
@@ -44,6 +42,7 @@
       };
 
       $scope.deleteIssue = function(issue) {
+        console.log('issue', issue)
         IssueResources.delete({id: issue.id}, {issue: issue})
       };
 
