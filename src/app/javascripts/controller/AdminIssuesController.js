@@ -5,9 +5,9 @@
     .module('ivotifyFrontend')
     .controller('AdminIssuesController', AdminIssuesController);
 
-    AdminIssuesController.$inject = ['Resources', '$scope', '$state', '$stateParams'];
+    AdminIssuesController.$inject = ['Resources','MaterializeComponents','$scope', '$state', '$stateParams'];
 
-    function AdminIssuesController(Resources, $scope, $state, $stateParams){
+    function AdminIssuesController(Resources, MaterializeComponents, $scope, $state, $stateParams){
       $scope.issues = [];
       $scope.addIssue = false;
       $scope.editIssue = false;
@@ -47,6 +47,10 @@
         IssueResources.delete({id: issue.id}, {issue: issue})
       };
 
+      // Allows me to use the modal inside of ng-repeat
+  		$scope.initModals = function() {
+  	  	MaterializeComponents.addModal();
+  		}
 
   };
 

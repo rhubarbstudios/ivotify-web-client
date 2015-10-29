@@ -89,8 +89,11 @@
 			MaterializeComponents.addCollapsible();
 		})
 
-		// Adds Modal functionality on page load
-		MaterializeComponents.addModal();
+		// Allows me to use the modal inside of ng-repeat
+		$scope.initModals = function() {
+	  	MaterializeComponents.addModal();
+		}
+
 
 	};
 
