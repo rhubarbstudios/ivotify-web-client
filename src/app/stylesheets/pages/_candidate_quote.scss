@@ -36,7 +36,7 @@
   font-family: $futura-stack;
   letter-spacing: 1.5px;
   @media #{$small-and-down} {
-    font-size: 1.25em;
+    font-size: 1.70em;
   }
 
 }
@@ -80,7 +80,7 @@
 .quote-one {
   font-size: 1.3em;
   font-family: $futura-light-stack;
-  padding: 5% 12% 5% 27%;
+  padding: 5% 12% 5% 12%;
   text-align: -webkit-left;
   margin-top: -4%;
   @media #{$small-and-down} {
@@ -111,8 +111,8 @@
   z-index: 4;
 
   @media #{$small-and-down} {
-  top: -40%;
-  left: 2%;
+  top: -33%;
+  left: 1%;
   width: 92px;
   }
   @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width) {

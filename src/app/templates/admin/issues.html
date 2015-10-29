@@ -10,7 +10,7 @@
             <button class="btn" id="admin-nav-btn"><a ui-sref='admin.candidates'>Candidates</a></button>
           </div>
           <div class="col s4 right-align">
-            <a class="btn" id="add-issue" ng-click="addIssue = true" rel="leanModal" href="#issue-modal"> + Issues</a>
+            <!-- <a class="btn" id="add-issue" ng-click="addIssue = true" rel="leanModal" href="#issue-modal"> + Issues</a> -->
          </div>
         </div>
       </div>
@@ -27,12 +27,14 @@
             <button class="btn" id="admin-btn-mobile-candidate">Candidates</button>
           </div>
           <div class="col s2 right-align">
-            <a class="btn" id="add-issue-mobile" ng-click="addIssue = true" rel="leanModal" href="#issue-modal">+</a>
+            <!-- <a class="btn" id="add-issue-mobile" ng-click="addIssue = true" rel="leanModal" href="#issue-modal">+</a> -->
          </div>
         </div>
       </div>
     </nav>
   </div>
+
+  <a class="btn" id="delete-issue-button" rel="leanModal" href="#delete-modal" ng-click="deleteIssue = true" type="submit">Delete</a>
 
 <!-- Index View of Issues -->
   <div class="container">
@@ -59,7 +61,7 @@
           <td>{{issue.updated_at | date:"MM/dd/yyyy 'at' h:mma" }} </td>
           <td>
             <button class="btn" id="edit-issue-button" ng-click="editIssue = true" ng-hide="editIssue">Edit</button>
-            <button class="btn" id="delete-issue-button" type="submit">Delete</button>
+            <a class="btn" id="delete-issue-button" rel="leanModal" href="#delete-modal" ng-click="deleteIssue = true" type="submit">Delete</a>
             <button class="btn" ng-show="editIssue" ng-click="update(issue); editIssue = false" type="submit">Save</button>
           </td>
         </form>
@@ -75,6 +77,34 @@
 
  <!-- Create Issue Form -->
         <form class="col s12" ng-show="addIssue" name="issue_form" novalidate ng-submit="save()">
+          <div class="row">
+           <h4>New Issue</h4>
+            <div class="col s6">
+            <h6>Issue Title</h6>
+              <textarea id="title" type="text" ng-model="issue.title" required />
+          </div>
+          <div class="row">
+            <div class="col s12">
+            <h6>Issue Summary</h6>
+             <textarea id="summary" ng-model="issue.summary" required ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+              <button class="modal-action modal-close btn waves-effect" id="modal-cancel" name="action" type="reset" >Cancel</button>
+              <button class="modal-action modal-close btn waves-effect waves-light" id="modal-save" ng-disabled="issue_form.$invalid" type="submit" name="action" >Save</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+<!-- Delete Issue Verify Modal -->
+  <div class="modal" id="delete-modal">
+    <div class="modal-content">
+
+ <!-- Delete Issue Box -->
+        <form class="col s12" ng-show="deleteIssue" name="issue_form" novalidate ng-submit="save()">
           <div class="row">
            <h4>New Issue</h4>
             <div class="col s6">

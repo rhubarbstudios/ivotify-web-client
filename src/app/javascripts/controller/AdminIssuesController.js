@@ -11,6 +11,7 @@
       $scope.issues = [];
       $scope.addIssue = false;
       $scope.editIssue = false;
+      $scope.deleteIssue = false;
 
       // Using Resource Factory for all CRUD, the one below is specifcally for issues
       var IssueResources = new Resources('issues');
