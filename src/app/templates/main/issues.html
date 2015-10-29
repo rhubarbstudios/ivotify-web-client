@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col s3">
             <div class="center-align">
-              <button class="btn" id="logo-nav-btn"></button>
+              <img src="https://s3-us-west-1.amazonaws.com/ivotify-images/logo.png" alt="" id="logo-nav-btn"/>
             </div>
           </div>
           <div class="col s4 right-align">
@@ -60,12 +60,13 @@
               <div class="summary">
                 <p ng-model="item.summary" class="item-summary">{{item.summary}}</p>
               </div>
-              <div class="hide-on-med-and-down">
-                  <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll()">
-                    Next Issue
-                    <img class="right-align" id="next-arrow-issue" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
-                  </button>
-              </div>
+
+            </div>
+            <div class="hide-on-med-and-down">
+                <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll()">
+                  Next Issue
+                  <img class="right-align" id="next-arrow-issue" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
+                </button>
             </div>
           </div>
           </div>
