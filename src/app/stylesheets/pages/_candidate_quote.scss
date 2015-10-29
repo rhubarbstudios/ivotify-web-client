@@ -80,11 +80,12 @@
 .quote-one {
   font-size: 1.3em;
   font-family: $futura-light-stack;
-  padding: 5% 12% 5% 12%;
+  padding: 5% 12% 5% 27%;
   text-align: -webkit-left;
   margin-top: -4%;
   @media #{$small-and-down} {
     font-family: $futura-light-stack;
+    padding: 5% 12% 5% 12%;
   }
 }
 
