@@ -63,7 +63,7 @@
 
             </div>
             <div class="hide-on-med-and-down">
-                <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll()">
+                <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll(); random(candidates);">
                   Next Issue
                   <img class="right-align" id="next-arrow-issue" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
                 </button>
@@ -86,6 +86,7 @@
               </p>
               <div class="quotes-repeat" ng-repeat="quote in candidate.quotes | filter: {issue_id: currentIssue.id}">
                 <div class="quote">
+                  <hr class="quote-divider">
                     <p class="quote-one center-align">
                       <span><img src="https://s3-us-west-1.amazonaws.com/ivotify-images/quotation.png" alt="" class="quotation-marks"/></span>
                       <br>
@@ -95,7 +96,6 @@
                 <div class="quote">
                     <p class="source-bar right-align"><span class="source-text">{{quote.source | uppercase}}</span></p>
                 </div>
-                <hr class="quote-divider">
               </div>
           </div>
         </div>

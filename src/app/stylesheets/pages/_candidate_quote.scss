@@ -13,7 +13,7 @@
 
 #quote-body {
   @extend .z-depth-1;
-  padding: 33px 0 0 0;
+  padding: 41px 0 0 0;
 
   background-color: white;
   margin: 0;
@@ -36,7 +36,7 @@
   font-family: $futura-stack;
   letter-spacing: 1.5px;
   @media #{$small-and-down} {
-    font-size: 1.25em;
+    font-size: 1.70em;
   }
 
 }
@@ -85,6 +85,7 @@
   margin-top: -4%;
   @media #{$small-and-down} {
     font-family: $futura-light-stack;
+    padding: 5% 12% 5% 12%;
   }
 }
 
@@ -101,7 +102,7 @@
   text-align: center;
 }
 
-.quotes-repeat:nth-of-type(even) .quote-divider {
+.quotes-repeat:nth-of-type(odd) .quote-divider {
   display: none;
 }
 
@@ -111,8 +112,8 @@
   z-index: 4;
 
   @media #{$small-and-down} {
-  top: -40%;
-  left: 2%;
+  top: -33%;
+  left: 1%;
   width: 92px;
   }
   @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width) {

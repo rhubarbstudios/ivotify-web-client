@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col s8">
             <button class="btn" id="admin-nav-btn"><a ui-sref='admin.issues'>Issues</a></button>
-            <button class="btn" id="admin-nav-btn"><a ui-sref='admin.candidates'>Candidates</a></button>
+            <button class="btn" id="admin-nav-candidate"><a ui-sref='admin.candidates'>Candidates</a></button>
           </div>
           <div class="col s4 right-align">
             <a class="btn" id="add-candidate" ng-click="addCandidate = true; addNewQuote(candidate)" rel="leanModal" href="#candidate-modal"> + Candidates</a>
@@ -61,8 +61,8 @@
               <textarea ng-show="editCandidate" type="text" ng-model="candidate.bio"></textarea>
             </td>
             <td>
-              <button class="btn" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
-              <button class="btn" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" type="submit">Save</button>
+              <button class="btn" id="edit-all" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
+              <button class="btn" id="save-all" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" type="submit">Save</button>
             </td>
           </form>
         </tr>
@@ -169,7 +169,7 @@
               </div>
             </div>
             <div class="row">
-              <button class="btn float-right add-quote-btn" ng-show="$last" ng-click="addNewQuote(candidate)" type="button">+ Quote</button>
+              <button class="btn float-right add-quote-btn" ng-show="$last" ng-click="addNewQuote(candidate)" id="add-quote-btn" type="button">+ Quote</button>
             </div>
           </div>
 
@@ -189,4 +189,3 @@
   </div>
 
 </div>
-

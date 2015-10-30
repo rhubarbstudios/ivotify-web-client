@@ -70,7 +70,7 @@
 			else {
 				candidate.quotes = [];
 			}
-			candidate.quotes.push({'id': newItemNo});
+			candidate.quotes.push({'tempId': newItemNo});
 			return false;
 		}
 
@@ -89,8 +89,9 @@
 			MaterializeComponents.addCollapsible();
 		})
 
-		// Adds Modal functionality on page load
-		MaterializeComponents.addModal();
+		// Allows me to use the modal inside of ng-repeat
+	  	MaterializeComponents.addModal();
+
 
 	};
 
