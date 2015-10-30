@@ -23,8 +23,8 @@
       <div class="container">
         <div class="row">
           <div class="col s9">
-            <button class="btn" id="admin-btn-mobile">Issues</button>
-            <button class="btn" id="admin-btn-mobile-candidate">Candidates</button>
+            <button class="btn" id="admin-nav-btn"><a ui-sref='admin.issues'>Issues</a></button>
+            <button class="btn" id="admin-nav-candidate"><a ui-sref='admin.candidates'>Candidates</a></button>
           </div>
           <div class="col s3 right-align">
             <a class="btn" id="add-candidate-mobile" ng-click="addCandidate = true; addNewQuote(candidate)" rel="leanModal" href="#candidate-modal">+</a>
