@@ -92,3 +92,4 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('build', ['html', 'fonts', 'other', 'set-prod-node-env', 'constants']);
+gulp.task('build-dev', ['html', 'fonts', 'other', 'set-dev-node-env', 'constants']);
