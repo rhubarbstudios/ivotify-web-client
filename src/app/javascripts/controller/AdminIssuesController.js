@@ -23,7 +23,6 @@
 
       // Creates an issues
       $scope.save = function(){
-        console.log('trying to add something')
         IssueResources.save({issue: $scope.issue}, function(data){
 
           // Adds to issue list
@@ -48,9 +47,15 @@
 
       // Delete an Issue
       $scope.deleteIssue = function() {
-        console.log('$scope.issueIndex.id', $scope.issueIndex.id)
-        IssueResources.delete({id: $scope.issueIndex.id})
-        // $scope.issues.unshift(data);
+        // console.log('$scope.issueIndex.id', $scope.issueIndex.id)
+        IssueResources.delete({id: $scope.issueIndex.id}, {issue: $scope.issueIndex}, function(data){
+          data = $scope.issueIndex.id;
+ 
+          // Deletes from issue list
+          $scope.issues.splice(data);
+          console.log('data', data);
+
+        });
       };
 
       // Allows me to use the modal inside of ng-repeat

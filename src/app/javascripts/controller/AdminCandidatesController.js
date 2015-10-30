@@ -90,9 +90,7 @@
 		})
 
 		// Allows me to use the modal inside of ng-repeat
-		$scope.initModals = function() {
 	  	MaterializeComponents.addModal();
-		}
 
 
 	};
