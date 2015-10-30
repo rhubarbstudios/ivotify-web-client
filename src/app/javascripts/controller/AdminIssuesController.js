@@ -31,7 +31,6 @@
           $scope.issue.title = "";
           $scope.issue.summary = "";
           $scope.issue_form.$setPristine();
-
         });
       };
 
@@ -50,7 +49,7 @@
         // console.log('$scope.issueIndex.id', $scope.issueIndex.id)
         IssueResources.delete({id: $scope.issueIndex.id}, {issue: $scope.issueIndex}, function(data){
           data = $scope.issueIndex.id;
- 
+
           // Deletes from issue list
           $scope.issues.splice(data);
           console.log('data', data);
