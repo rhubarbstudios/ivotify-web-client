@@ -70,7 +70,7 @@
 			else {
 				candidate.quotes = [];
 			}
-			candidate.quotes.push({'id': newItemNo});
+			candidate.quotes.push({'tempId': newItemNo});
 			return false;
 		}
 
