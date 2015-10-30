@@ -5,9 +5,9 @@
     .module('ivotifyFrontend')
     .controller('AdminIssuesController', AdminIssuesController);
 
-    AdminIssuesController.$inject = ['Resources', '$scope', '$state', '$stateParams'];
+    AdminIssuesController.$inject = ['Resources','MaterializeComponents','$scope', '$state', '$stateParams'];
 
-    function AdminIssuesController(Resources, $scope, $state, $stateParams){
+    function AdminIssuesController(Resources, MaterializeComponents, $scope, $state, $stateParams){
       $scope.issues = [];
       $scope.addIssue = false;
       $scope.editIssue = false;
@@ -21,10 +21,8 @@
         $scope.issues = resp.issues; 
       });
 
-
       // Creates an issues
       $scope.save = function(){
-        console.log('trying to add something')
         IssueResources.save({issue: $scope.issue}, function(data){
 
           // Adds to issue list
@@ -42,10 +40,28 @@
         IssueResources.update({id: issue.id}, {issue: issue})
       };
 
-      $scope.deleteIssue = function(issue) {
-        IssueResources.delete({id: issue.id}, {issue: issue})
+      // Logic for passing index from ng-repeat to modal
+      $scope.deleteIndex = function(issue) {
+        $scope.issueIndex = issue;
       };
 
+      // Delete an Issue
+      $scope.deleteIssue = function() {
+        // console.log('$scope.issueIndex.id', $scope.issueIndex.id)
+        IssueResources.delete({id: $scope.issueIndex.id}, {issue: $scope.issueIndex}, function(data){
+          data = $scope.issueIndex.id;
+ 
+          // Deletes from issue list
+          $scope.issues.splice(data);
+          console.log('data', data);
+
+        });
+      };
+
+      // Allows me to use the modal inside of ng-repeat
+  		$scope.initModals = function() {
+  	  	MaterializeComponents.addModal();
+  		}
 
   };
 
