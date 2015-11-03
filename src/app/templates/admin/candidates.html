@@ -78,6 +78,7 @@
                       <th>Issue</th>
                       <th>Quote</th>
                       <th>Source</th>
+                      <th>Last Updated</th>
                     </tr>
                     <tr ng-repeat="quote in candidate.quotes" on-finish-render="ngRepeatFinished">
                       <td>
@@ -93,6 +94,9 @@
                       <td>
                         <span ng-hide="editCandidate">{{quote.source}}</span>
                         <textarea ng-show="editCandidate" type="text" ng-model="quote.source"></textarea>
+                      </td>
+                      <td>
+                        <span>{{quote.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}</span>
                       </td>
                       <td ng-show="editCandidate">
                         <button class="btn float-right" ng-show="$last" ng-click="addNewQuote(candidate)" type="button">+</button>
