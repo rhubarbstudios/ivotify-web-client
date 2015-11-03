@@ -63,6 +63,9 @@
 .source-bar {
   font-size: .8em;
   margin-bottom: 8%;
+  @media #{$medium-and-down} {
+    margin-left: 9%;
+  }
 }
 
 .source-text {
