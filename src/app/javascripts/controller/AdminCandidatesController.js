@@ -84,14 +84,34 @@
 			}
 		}
 
+		// Logic for passing index from ng-repeat to modal
+		$scope.deleteIndex = function(index, candidate) {
+			$scope.candDelete = candidate;
+			$scope.candIndex = index;
+		};
+
+		// Delete an Issue
+		$scope.deleteIssue = function() {
+			console.log('$scope.candDelete.id', $scope.issueDelete.id)
+			IssueResources.delete({id: $scope.issueDelete.id}, {issue: $scope.issueDelete}, function(data){
+				data = $scope.issueIndex;
+
+				// Deletes from issue list
+				$scope.issues.splice(data);
+				console.log('data', data);
+
+			});
+		};
+
 		// Adds collapsible functionality to quotes after repeate for candidates has finished
 		$scope.$on('ngRepeatFinished', function(){
 			MaterializeComponents.addCollapsible();
 		})
 
 		// Allows me to use the modal inside of ng-repeat
+		$scope.initModals = function() {
 	  	MaterializeComponents.addModal();
-
+		}
 
 	};
 
