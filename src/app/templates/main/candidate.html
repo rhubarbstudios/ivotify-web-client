@@ -82,6 +82,7 @@
               </p>
                 <div class="quotes-repeat" ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
                   <div class="quote">
+                    <hr class="quote-divider">
                       <p class="quote-one center-align">
                         <img src="https://s3-us-west-1.amazonaws.com/ivotify-images/quotation.png" alt="" class="quotation-marks"/>
                         <br>
@@ -91,7 +92,6 @@
                   <div class="quote">
                       <p class="source-bar right-align"><span class="source-text">{{quote.source | uppercase}}</span></p>
                   </div>
-                  <hr class="quote-divider">
                 </div>
           </div>
         </div>

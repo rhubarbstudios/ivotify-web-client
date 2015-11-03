@@ -40,15 +40,16 @@
       };
 
       // Logic for passing index from ng-repeat to modal
-      $scope.deleteIndex = function(issue) {
-        $scope.issueIndex = issue;
+      $scope.deleteIndex = function(index, issue) {
+        $scope.issueDelete = issue;
+        $scope.issueIndex = index;
       };
 
       // Delete an Issue
       $scope.deleteIssue = function() {
-        // console.log('$scope.issueIndex.id', $scope.issueIndex.id)
-        IssueResources.delete({id: $scope.issueIndex.id}, {issue: $scope.issueIndex}, function(data){
-          data = $scope.issueIndex.id;
+        console.log('$scope.issueDelete.id', $scope.issueDelete.id)
+        IssueResources.delete({id: $scope.issueDelete.id}, {issue: $scope.issueDelete}, function(data){
+          data = $scope.issueIndex;
 
           // Deletes from issue list
           $scope.issues.splice(data);
