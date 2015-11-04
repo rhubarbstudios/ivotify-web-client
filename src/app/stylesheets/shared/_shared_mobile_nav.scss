@@ -1,6 +1,6 @@
 #mobile-navbar {
   position: fixed;
-  background-color: white;
+  // background-color: $red;
   bottom: 0;
   z-index: 900;
   width: 100vw;
@@ -19,6 +19,7 @@
 
 #issue-nav-mobile {
   background-color: $red;
+  box-shadow: none;
   color: white;
   line-height: 3.5;
   font-size: 2vh;
@@ -29,6 +30,7 @@
 
 #candidate-nav-mobile {
   background-color: $red;
+  box-shadow: 0 !important;
   color: white;
   line-height: 3.5;
   border-radius: 0;

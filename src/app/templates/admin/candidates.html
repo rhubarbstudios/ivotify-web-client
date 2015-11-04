@@ -44,8 +44,8 @@
           <th>Bio</th>
           <th>Last Updated</th>
         </tr>
-      <form name="candidate_edit_form" novalidate>
-        <tr class="candidate-row" ng-repeat-start="candidate in candidates | orderBy: '-created_at'" repeat-done="initModals()">
+      <form name="candidate_edit_form" novalidate ng-submit="save()">
+        <tr class="candidate-row" ng-repeat-start="candidate in candidates" repeat-done="initModals()">
 
             <td id="candidateFirst">
               <span ng-hide="editCandidate">{{candidate.first_name}}</span>
@@ -60,12 +60,12 @@
               <textarea ng-show="editCandidate" type="text" ng-model="candidate.bio" required></textarea>
             </td>
             <td>
-              {{candidate.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}
+              {{candidate.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}: {{$index}}
             </td>
             <td>
               <button class="btn" id="edit-all" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
               <button class="btn waves-effect waves-light" id="save-all" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" ng-disabled="candidate_edit_form.$invalid" type="submit" name="action">Save</button>
-              <a class="btn" id="delete-button" rel="leanModal" href="#delete-cand-modal" ng-click="deleteIndex($index, candidate)" type="submit">Delete</a>
+              <a class="btn" id="delete-button" rel="leanModal" href="#delete-cand-modal" ng-click="getCandidateToDelete($index, candidate)" type="submit">Delete</a>
             </td>
         </tr>
     </form>
@@ -202,7 +202,7 @@
         <h6 class="center-align">Deleting an candidate will also delete all associated candidate quotes.</h6>
           <div class="center-align">
             <button class="modal-action modal-close btn waves-effect" id="cancel-delete" name="action" type="reset" >Cancel</button>
-            <button class="modal-action modal-close btn waves-effect waves-light" ng-click="deleteIssue();" id="delete-button" type="submit" name="action">Delete</button>
+            <button class="modal-action modal-close btn waves-effect waves-light" ng-click="deleteCandidate();" id="delete-button" type="submit" name="action">Delete</button>
           </div>
       </div>
     </div>
