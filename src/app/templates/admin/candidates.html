@@ -44,31 +44,32 @@
           <th>Bio</th>
           <th>Last Updated</th>
         </tr>
-      <form name="candidate_edit_form" novalidate ng-submit="save()">
-        <tr class="candidate-row" ng-repeat-start="candidate in candidates" repeat-done="initModals()">
 
+        <tr class="candidate-row" ng-repeat-start="candidate in candidates" repeat-done="initModals()">
+          <form name="candidate_edit_form" novalidate>
             <td id="candidateFirst">
               <span ng-hide="editCandidate">{{candidate.first_name}}</span>
-              <textarea ng-show="editCandidate" type="text" ng-model="candidate.first_name" required></textarea>
+              <textarea ng-show="editCandidate" type="text" class="validate" ng-model="candidate.first_name" required></textarea>
             </td>
             <td>
               <span ng-hide="editCandidate">{{candidate.last_name}}</span>
-              <textarea ng-show="editCandidate" type="text" ng-model="candidate.last_name" required></textarea>
+              <textarea ng-show="editCandidate" type="text" class="validate" ng-model="candidate.last_name" required></textarea>
             </td>
             <td>
               <span ng-hide="editCandidate">{{candidate.bio}}</span>
-              <textarea ng-show="editCandidate" type="text" ng-model="candidate.bio" required></textarea>
+              <textarea ng-show="editCandidate" type="text" class="validate" ng-model="candidate.bio" required></textarea>
             </td>
             <td>
-              {{candidate.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}: {{$index}}
+              {{candidate.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}
             </td>
             <td>
               <button class="btn" id="edit-all" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
               <button class="btn waves-effect waves-light" id="save-all" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" ng-disabled="candidate_edit_form.$invalid" type="submit" name="action">Save</button>
               <a class="btn" id="delete-button" rel="leanModal" href="#delete-cand-modal" ng-click="getCandidateToDelete($index, candidate)" type="submit">Delete</a>
             </td>
+          </form>
         </tr>
-    </form>
+
 
         <tr ng-repeat-end>
           <td class="quotes-row" colspan="4">
