@@ -92,18 +92,18 @@
 
 		// Delete an Issue
 		$scope.deleteIssue = function() {
-			console.log('$scope.candDelete.id', $scope.issueDelete.id)
-			IssueResources.delete({id: $scope.issueDelete.id}, {issue: $scope.issueDelete}, function(data){
-				data = $scope.issueIndex;
+			console.log('$scope.candDelete.id', $scope.candDelete.id)
+			CandidateResources.delete({id: $scope.candDelete.id}, {candidate: $scope.candDelete}, function(data){
+				data = $scope.candIndex;
 
 				// Deletes from issue list
-				$scope.issues.splice(data);
+				$scope.candidates.splice(data);
 				console.log('data', data);
 
 			});
 		};
 
-		// Adds collapsible functionality to quotes after repeate for candidates has finished
+		// Adds collapsible functionality to quotes after repeats for candidates has finished
 		$scope.$on('ngRepeatFinished', function(){
 			MaterializeComponents.addCollapsible();
 		})
