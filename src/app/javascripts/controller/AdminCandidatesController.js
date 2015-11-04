@@ -5,9 +5,9 @@
 		.module('ivotifyFrontend')
 		.controller('AdminCandidatesController', AdminCandidatesController);
 
-		AdminCandidatesController.$inject = ['Resources', 'MaterializeComponents', '$scope', '$state', '$stateParams', '$timeout'];
+		AdminCandidatesController.$inject = ['Resources', 'MaterializeComponents', '$scope', '$state', '$stateParams', '$timeout', 'filterFilter'];
 
-		function AdminCandidatesController(Resources, MaterializeComponents, $scope, $state, $stateParams, $timeout){
+		function AdminCandidatesController(Resources, MaterializeComponents, $scope, $state, $stateParams, $timeout, filterFilter){
 			$scope.candidates = [];
 			$scope.issues = [];
 			$scope.addCandidate = false;
@@ -26,6 +26,11 @@
 		.$promise.then(function(resp){
 			$scope.candidates = resp.candidates;
 		});
+
+		$timeout(function(){
+			$scope.candidates = filterFilter($scope.candidates, 'updated_at');
+			console.log('$scope.candidates', $scope.candidates);
+		})
 
 		// Index of issues
 		IssueResources.get({})
@@ -85,22 +90,25 @@
 		}
 
 		// Logic for passing index from ng-repeat to modal
-		$scope.deleteIndex = function(index, candidate) {
+		$scope.getCandidateToDelete = function(index, candidate) {
 			$scope.candDelete = candidate;
 			$scope.candIndex = index;
 		};
 
 		// Delete an Issue
-		$scope.deleteIssue = function() {
-			console.log('$scope.candDelete.id', $scope.candDelete.id)
-			CandidateResources.delete({id: $scope.candDelete.id}, {candidate: $scope.candDelete}, function(data){
-				data = $scope.candIndex;
+		$scope.deleteCandidate = function() {
+			// console.log('$scope.candDelete.id', $scope.candDelete.id)
+			CandidateResources.delete({id: $scope.candDelete.id});
+				var candidateIndex = $scope.candIndex;
 
 				// Deletes from issue list
-				$scope.candidates.splice(data);
-				console.log('data', data);
+				// console.log("candidate to delete:", $scope.candidates[candidateIndex]);
+				// console.log("candidateIndex: ",candidateIndex);
+				// console.log("candidates before delete: ", $scope.candidates);
+				$scope.candidates.splice(candidateIndex, 1);
+				// console.log("candidates after delete: ", $scope.candidates);
+				// console.log('data', data);
 
-			});
 		};
 
 		// Adds collapsible functionality to quotes after repeats for candidates has finished
