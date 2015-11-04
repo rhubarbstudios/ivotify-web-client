@@ -108,19 +108,23 @@
 				$scope.candidates.splice(candidateIndex, 1);
 				// console.log("candidates after delete: ", $scope.candidates);
 				// console.log('data', data);
-
 		};
 
 		// Adds collapsible functionality to quotes after repeats for candidates has finished
 		$scope.$on('ngRepeatFinished', function(){
 			MaterializeComponents.addCollapsible();
-		})
+		});
 
 		// Allows me to use the modal inside of ng-repeat
 		$scope.initModals = function() {
 	  	MaterializeComponents.addModal();
-		}
+		};
+
+		// $scope.unTouch = function(form){
+		// 	console.log(form.$viewValue);
+		// 	form.$setUntouched();
+		// };
+
 
 	};
-
 })();
