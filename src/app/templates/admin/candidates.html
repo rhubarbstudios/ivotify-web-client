@@ -39,7 +39,7 @@
 
       <div class="row" id="candidate-list">
         <div class="candidate-row" ng-repeat-start="candidate in candidates" repeat-done="initModals()">
-          <form name="candidate_edit_form_{{$index}}" id="candidate_edit_form_{{$index}}"novalidate>
+          <form name="candidate_edit_form" id="candidate_edit_form_{{$index}}" novalidate>
             <br>
             <div id="candidate-name">
               <span class="field-headers"> Name </span>
@@ -73,6 +73,7 @@
                 <div class="collapsible-body active">
 
                     <div ng-repeat="quote in candidate.quotes" on-finish-render="ngRepeatFinished">
+                      <form name="candidate_edit_form2">
                       <div>
                         <span class="field-headers">Issue</span>
                         <br>
@@ -104,22 +105,25 @@
                       <hr class="quote-divider-admin">
                       <br>
                       <div ng-show="editCandidate">
-                        <button class="btn float-right" ng-show="$last" ng-click="addNewQuote(candidate)" type="button">+</button>
+                        <button class="btn" ng-show="$last" ng-click="addNewQuote(candidate)" type="button">+</button>
                       </div>
+                      <br>
+                      </form>
                     </div>
                 </div>
               </li>
             </ul>
           </div>
+
           <div class="admin-button-bar">
             <button class="btn" id="edit-all" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
-            <button class="btn waves-effect waves-light" id="save-all" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" ng-disabled="candidate_edit_form_{{$index}}.$invalid" type="submit" name="action">Save</button>
+            <button class="btn waves-effect waves-light" id="save-all" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" ng-disabled="candidate_edit_form.$invalid || candidate_edit_form2.$invalid" type="submit" name="action">Save</button>
             <a class="btn" id="delete-button" rel="leanModal" href="#delete-cand-modal" ng-click="getCandidateToDelete($index, candidate)" type="submit">Delete</a>
           </div>
+
           <hr class="candidate-divider">
         </div>
       </div>
-
   </div>
 
   <!-- Create Candidate Modals -->
