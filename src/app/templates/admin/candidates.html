@@ -36,36 +36,30 @@
 
 <!-- Index View of Candidates -->
   <div class="container">
-    <div>
-      <div id="candidate-list">
-        <div>
-          <div>First Name</div>
-          <div>Last Name</div>
-          <div>Bio</div>
-          <div>Last Updated</div>
-        </div>
 
+      <div class="row" id="candidate-list">
         <div class="candidate-row" ng-repeat-start="candidate in candidates" repeat-done="initModals()">
           <form name="candidate_edit_form_{{$index}}" id="candidate_edit_form_{{$index}}"novalidate>
-            <div id="candidateFirst">
+            <br>
+            <div id="candidate-name">
+              <span class="field-headers"> Name </span>
+              <br>
               <span ng-hide="editCandidate">{{candidate.first_name}}</span>
               <textarea ng-show="editCandidate" type="text" class="validate" ng-model="candidate.first_name" required></textarea>
-            </div>
-            <div>
               <span ng-hide="editCandidate">{{candidate.last_name}}</span>
               <textarea ng-show="editCandidate" type="text" class="validate" ng-model="candidate.last_name" required></textarea>
             </div>
-            <div>
+            <br>
+            <br>
+            <div id="candidate-bio">
+              <span class="field-headers"> Bio </span>
+              <br>
               <span ng-hide="editCandidate">{{candidate.bio}}</span>
               <textarea ng-show="editCandidate" type="text" class="validate" ng-model="candidate.bio" required></textarea>
             </div>
+            <br>
             <div>
-              {{candidate.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}
-            </div>
-            <div>
-              <button class="btn" id="edit-all" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
-              <button class="btn waves-effect waves-light" id="save-all" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" ng-disabled="candidate_edit_form_{{$index}}.$invalid" type="submit" name="action">Save</button>
-              <a class="btn" id="delete-button" rel="leanModal" href="#delete-cand-modal" ng-click="getCandidateToDelete($index, candidate)" type="submit">Delete</a>
+              <span class="field-headers">Last Updated:</span>  {{candidate.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}
             </div>
           </form>
         </div>
@@ -77,45 +71,55 @@
               <li>
                 <div class="collapsible-header">{{candidate.first_name}}'s Quotes</div>
                 <div class="collapsible-body active">
-                  <div>
-                    <div>
-                      <div>Issue</div>
-                      <div>Quote</div>
-                      <div>Source</div>
-                      <div>Last Updated</div>
-                    </div>
+
                     <div ng-repeat="quote in candidate.quotes" on-finish-render="ngRepeatFinished">
                       <div>
+                        <span class="field-headers">Issue</span>
+                        <br>
                         <span ng-hide="editCandidate" ng-repeat="issue in issues | filter:{id:quote.issue_id}">{{issue.title}}</span>
                         <select ng-show="editCandidate" class="browser-default" name="repeatSelect" id="repeatSelect" ng-model="quote.issue_id"
                           ng-options="issue.id as issue.title for issue in issues">
                         </select>
                       </div>
+                      <br>
                       <div>
+                        <span class="field-headers">Body</span>
+                        <br>
                         <span ng-hide="editCandidate">{{quote.body}}</span>
                         <textarea ng-show="editCandidate" type="text" ng-model="quote.body" required></textarea>
                       </div>
+                      <br>
                       <div>
+                        <span class="field-headers">Source</span>
+                        <br>
                         <span ng-hide="editCandidate">{{quote.source}}</span>
                         <textarea ng-show="editCandidate" type="text" ng-model="quote.source" required></textarea>
                       </div>
+                      <br>
                       <div>
+                        <span class="field-headers">Last Updated:</span>
                         <span>{{quote.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}</span>
                       </div>
+                      <br>
+                      <hr class="quote-divider-admin">
+                      <br>
                       <div ng-show="editCandidate">
                         <button class="btn float-right" ng-show="$last" ng-click="addNewQuote(candidate)" type="button">+</button>
                       </div>
                     </div>
-                  </div>
                 </div>
               </li>
             </ul>
           </div>
+          <div class="admin-button-bar">
+            <button class="btn" id="edit-all" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
+            <button class="btn waves-effect waves-light" id="save-all" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" ng-disabled="candidate_edit_form_{{$index}}.$invalid" type="submit" name="action">Save</button>
+            <a class="btn" id="delete-button" rel="leanModal" href="#delete-cand-modal" ng-click="getCandidateToDelete($index, candidate)" type="submit">Delete</a>
+          </div>
+          <hr class="candidate-divider">
         </div>
-
       </div>
 
-    </div>
   </div>
 
   <!-- Create Candidate Modals -->
