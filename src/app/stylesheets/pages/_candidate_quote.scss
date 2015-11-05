@@ -60,6 +60,18 @@
   bottom: 0;
 }
 
+#splash-text {
+  width: 75vw;
+  font-size: 7.6vh;
+  letter-spacing: 4px;
+  position: fixed;
+  font-family: $futura-stack;
+  color: $darkgrey;
+  top: 28vh;
+  right: 0;
+  text-align: center;
+}
+
 .source-bar {
   font-size: .8em;
   margin-bottom: 8%;
@@ -87,6 +99,7 @@
   text-align: -webkit-left;
   text-align: -moz-left;
   margin-top: -4%;
+  color: $charcoal;
   @media #{$small-and-down} {
     font-family: $futura-light-stack;
     padding: 5% 12% 5% 12%;
