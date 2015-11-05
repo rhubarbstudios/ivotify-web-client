@@ -38,7 +38,6 @@
   @media #{$small-and-down} {
     font-size: 1.70em;
   }
-
 }
 
 .issue-name {
@@ -49,7 +48,7 @@
   font-family: $futura-stack;
   letter-spacing: 1.5px;
   @media #{$small-and-down} {
-    font-size: 1.25em;
+    font-size: 1.70em;
   }
 }
 
@@ -58,6 +57,18 @@
   right: 0;
   position: fixed;
   bottom: 0;
+}
+
+#splash-text {
+  width: 75vw;
+  font-size: 7.6vh;
+  letter-spacing: 4px;
+  position: fixed;
+  font-family: $futura-stack;
+  color: $darkgrey;
+  top: 28vh;
+  right: 0;
+  text-align: center;
 }
 
 .source-bar {
@@ -87,10 +98,15 @@
   text-align: -webkit-left;
   text-align: -moz-left;
   margin-top: -4%;
+  color: $charcoal;
   @media #{$small-and-down} {
     font-family: $futura-light-stack;
     padding: 5% 12% 5% 12%;
   }
+}
+
+.quotes-repeat:nth-of-type(even) .quote-one {
+  margin-top: 2%;
 }
 
 .quotation-marks {
@@ -116,7 +132,7 @@
   z-index: 4;
 
   @media #{$small-and-down} {
-  top: -33%;
+  top: -40%;
   left: 1%;
   width: 92px;
   }
@@ -128,6 +144,6 @@
   @media #{$large-and-up} {
   top: -29px;
   right: 76%;
-  width: 120px;
+  width: 110px;
   }
 }
