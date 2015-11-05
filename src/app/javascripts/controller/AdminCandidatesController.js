@@ -28,7 +28,7 @@
 		});
 
 		$timeout(function(){
-			$scope.candidates = filterFilter($scope.candidates, 'updated_at');
+			$scope.candidates = filterFilter($scope.candidates, 'first_name');
 			console.log('$scope.candidates', $scope.candidates);
 		})
 
