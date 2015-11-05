@@ -38,7 +38,6 @@
   @media #{$small-and-down} {
     font-size: 1.70em;
   }
-
 }
 
 .issue-name {
@@ -49,7 +48,7 @@
   font-family: $futura-stack;
   letter-spacing: 1.5px;
   @media #{$small-and-down} {
-    font-size: 1.25em;
+    font-size: 1.70em;
   }
 }
 
@@ -106,6 +105,10 @@
   }
 }
 
+.quotes-repeat:nth-of-type(even) .quote-one {
+  margin-top: 2%;
+}
+
 .quotation-marks {
   width: auto;
   height: 2vh;
@@ -129,7 +132,7 @@
   z-index: 4;
 
   @media #{$small-and-down} {
-  top: -33%;
+  top: -40%;
   left: 1%;
   width: 92px;
   }
@@ -141,6 +144,6 @@
   @media #{$large-and-up} {
   top: -29px;
   right: 76%;
-  width: 120px;
+  width: 110px;
   }
 }

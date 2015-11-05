@@ -78,6 +78,7 @@
         <div class="ng-hide" id="quote-body" ng-show="pickCandidate">
           <div class="candidate-quote" ng-repeat="item in issues">
               <p class="issue-name center-align" ng-style="set_header(item)">
+              <img class="candidate-image" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Issue+Icons/{{item.title}}.png">
               {{item.title | uppercase}}
               </p>
                 <div class="quotes-repeat" ng-repeat="quote in currentCandidate.quotes | filter: {issue_id: item.id}">
