@@ -36,7 +36,6 @@
 
 <!-- Index View of Candidates -->
   <div class="container">
-
       <div class="row" id="candidate-list">
         <div class="candidate-row" ng-repeat-start="candidate in candidates" repeat-done="initModals()">
           <form name="candidate_edit_form" id="candidate_edit_form_{{$index}}" novalidate>
@@ -54,8 +53,11 @@
             <div id="candidate-bio">
               <span class="field-headers"> Bio </span>
               <br>
-              <span ng-hide="editCandidate">{{candidate.bio}}</span>
-              <textarea ng-show="editCandidate" type="text" class="validate" ng-model="candidate.bio" required></textarea>
+              <span ng-hide="editCandidate" ta-bind="text" ng-model="candidate.bio">{{candidate.bio}}</span>
+              <text-angular ng-show="editCandidate" ta-toolbar="[
+              ['h1','h2','h3','h4','h5','h6','p','quote'],
+              ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="candidate.bio" required>
+              </text-angular>
             </div>
             <br>
             <div>
@@ -151,8 +153,12 @@
           </div>
           <div class="row">
             <div class="col s12">
-              <textarea id="bio" type="text" class="validate" text-angular ng-model="candidate.bio" required></textarea>
               <label for="bio">Bio</label>
+                <text-angular ta-toolbar="[
+                ['h1','h2','h3','h4','h5','h6','p','quote'],
+                ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="candidate.bio" required>
+                </text-angular>
+
             </div>
           </div>
 

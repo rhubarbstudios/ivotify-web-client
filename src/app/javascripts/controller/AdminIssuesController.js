@@ -61,10 +61,11 @@
       $scope.$on('ngRepeatFinished', function(){
         MaterializeComponents.addModal();
       })
-      // // Allows me to use the modal inside of ng-repeat
-  		// $scope.initModals = function() {
-  	  // 	MaterializeComponents.addModal();
-  		// }
+      
+      // Allows me to use the modal inside of ng-repeat
+  		$scope.initModals = function() {
+  	  	MaterializeComponents.addModal();
+  		}
 
   };
 
