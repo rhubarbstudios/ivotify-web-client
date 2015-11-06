@@ -26,3 +26,30 @@ table {
     }
   }
 }
+
+#candidate-list {
+  top: 3vh;
+}
+
+.quote-divider-admin {
+  width: 100%;
+}
+
+.candidate-divider {
+  width: 100%;
+}
+
+#candidate-name {
+  display: inline !important;
+}
+
+.admin-button-bar {
+  height: 15vh;
+}
+
+.field-headers {
+  font-size: 1.3em;
+  font-weight: bold;
+  // text-decoration: underline;
+  font-family: $futura-book-stack;
+}
