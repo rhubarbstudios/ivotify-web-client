@@ -46,3 +46,16 @@ position: relative;
   padding: 0 5px 0 5px;
   width: 110px;
 }
+
+.feedback-button {
+  background-color: $purple !important;
+  width: 7vw;
+  top: 8.5vh;
+  right: 1vw;
+  position: absolute;
+  padding: 0;
+  font-size: 1.5vh;
+  border-radius: 0 0 10px 10px;
+  font-family: $futura-light-stack;
+  color: white;
+}

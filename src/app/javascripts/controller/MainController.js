@@ -5,9 +5,9 @@
     .module('ivotifyFrontend')
     .controller('MainController', MainController);
 
-    MainController.$inject = ['Resources', '$scope', '$state', '$stateParams', 'ScrollService', 'Randomizer'];
+    MainController.$inject = ['Resources','MaterializeComponents', '$scope', '$state', '$stateParams', 'ScrollService', 'Randomizer'];
 
-    function MainController(Resources, $scope, $state, $stateParams, ScrollService, Randomizer){
+    function MainController(Resources, MaterializeComponents, $scope, $state, $stateParams, ScrollService, Randomizer){
       // Empty Arrays for Issue and Candidate Objects
       $scope.issues = [];
       $scope.candidates = [];
@@ -130,6 +130,9 @@
           return { 'background-color': "#0BECB8" };
         }
       };
+
+      // Modal function to render modal
+      MaterializeComponents.addModal();
 
 
   };
