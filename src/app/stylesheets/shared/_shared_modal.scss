@@ -14,3 +14,41 @@
 .modal .modal-footer {
   padding: 4px 0;
 }
+
+#feedback-modal {
+  border-radius: 10px;
+}
+
+.top-header {
+  background-color: $red;
+  padding: 0;
+  width: 100%;
+  color: white;
+  height: 10vh;
+}
+
+.feedback-label {
+  text-align: center;
+  position: relative;
+  letter-spacing: 2px;
+  font-family: $futura-light-stack;
+  top: 2.5vh;
+}
+
+.feedback-body {
+  height: 30vh;
+  padding: 5%;
+}
+
+#feedback-box {
+  height: 20vh;
+  padding: 1%;
+  border-radius: 10px;
+  font-size: 2.2vh;
+  border: 1px solid $red;
+  background-color: $lightgrey;
+  font-family: $futura-book-stack;
+}
+
+#cancel-feedback {}
+#feedback-save {}
