@@ -57,15 +57,15 @@
   padding: 1%;
   border-radius: 10px;
   font-size: 2.2vh;
-  border: 1px solid $red;
+  border: 1px solid $lightpurple;
   background-color: $lightgrey;
   font-family: $futura-book-stack;
 }
 
 #cancel-feedback {
   background-color: white;
-  color: $purple;
-  border: 1px solid $purple;
+  color: $lightpurple;
+  border: 2px solid $lightpurple;
   width: 8vw;
   margin-bottom: 4vh;
   margin-right: 1vw;
@@ -74,7 +74,7 @@
 }
 
 #feedback-save {
-  background-color: $purple;
+  background-color: $lightpurple;
   color: white;
   width: 8vw;
   margin-left: 1vw;

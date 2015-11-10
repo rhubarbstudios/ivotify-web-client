@@ -66,7 +66,10 @@
               <div class="summary">
                 <p ta-bind="text" ng-model="item.summary" class="item-summary">{{item.summary}}</p>
               </div>
-
+              <div class="center-align hide-on-large-only" id="button-box-mobile">
+                <button class="btn" id="share-mobile"> SHARE </button>
+                <button class="btn" id="give-feedback-mobile"> GIVE FEEDBACK </button>
+              </div>
             </div>
             <div class="hide-on-med-and-down">
                 <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll(); random(candidates);">

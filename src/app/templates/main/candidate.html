@@ -15,7 +15,9 @@
     </nav>
   </div>
 
-  <a class="btn feedback-button hide-on-med-and-down" rel="leanModal" href="#feedback-modal">GIVE FEEDBACK</a>
+  <a class="btn feedback-button hide-on-med-and-down" rel="leanModal" href="#feedback-modal">
+    <span id="feedback-desktop-text"> GIVE FEEDBACK </span>
+  </a>
 
   <!--Navigation for Mobile -->
   <div class="row">
@@ -60,6 +62,10 @@
         <!-- <p class="situtation-bar"> BIO </p> -->
         <div class="summary">
           <!-- <p ng-model="item.summary" class="item-summary">{{candidate.bio}}</p> -->
+        </div>
+        <div class="center-align hide-on-large-only" id="button-box-mobile">
+          <button class="btn" id="share-mobile"> SHARE </button>
+          <button class="btn" id="give-feedback-mobile"> GIVE FEEDBACK </button>
         </div>
         <div class="hide-on-med-and-down">
             <button class="btn" id="next-issue-desktop" ng-click="bioNext($index + 1); topScroll()">

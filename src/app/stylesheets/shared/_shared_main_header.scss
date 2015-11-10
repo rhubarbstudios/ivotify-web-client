@@ -48,7 +48,7 @@ position: relative;
 }
 
 .feedback-button {
-  background-color: $purple !important;
+  background-color: $lightpurple !important;
   width: 7vw;
   top: 8.5vh;
   right: 1vw;
@@ -58,4 +58,9 @@ position: relative;
   border-radius: 0 0 10px 10px;
   font-family: $futura-light-stack;
   color: white;
+}
+
+#feedback-desktop-text {
+  position: relative;
+  font-size: 1.5vh;
 }
