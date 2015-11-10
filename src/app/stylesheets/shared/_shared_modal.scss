@@ -16,7 +16,7 @@
 }
 
 #feedback-modal {
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .top-header {
@@ -36,8 +36,20 @@
 }
 
 .feedback-body {
+  background-color: white;
   height: 30vh;
   padding: 5%;
+}
+
+.modal-footer-feedback {
+  background-color: white;
+  padding: 0 !important;
+}
+
+#bottom-feedback {
+  background-color: white;
+  text-align: center;
+
 }
 
 #feedback-box {
@@ -45,10 +57,28 @@
   padding: 1%;
   border-radius: 10px;
   font-size: 2.2vh;
-  border: 1px solid $red;
+  border: 1px solid $lightpurple;
   background-color: $lightgrey;
   font-family: $futura-book-stack;
 }
 
-#cancel-feedback {}
-#feedback-save {}
+#cancel-feedback {
+  background-color: white;
+  color: $lightpurple;
+  border: 2px solid $lightpurple;
+  width: 8vw;
+  margin-bottom: 4vh;
+  margin-right: 1vw;
+  font-family: $futura-book-stack;
+  border-radius: 5px;
+}
+
+#feedback-save {
+  background-color: $lightpurple;
+  color: white;
+  width: 8vw;
+  margin-left: 1vw;
+  margin-bottom: 4vh;
+  font-family: $futura-book-stack;
+  border-radius: 5px;
+}
