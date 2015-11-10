@@ -114,7 +114,7 @@
 </div>
 
 <div id="feedback-modal" class="modal">
-  <form novalidate ng-submit="save()">
+  <form name="feedback_form" novalidate ng-submit="save()">
     <div class="top-header">
       <h4 class="feedback-label">Give us feedback</h4>
     </div>
@@ -126,7 +126,7 @@
           <button class="modal-action modal-close btn waves-effect center-align" id="cancel-feedback" name="action"
           type="reset" ng-click="">Cancel</button>
           <button class="modal-action modal-close btn waves-effect waves-light center-align" id="feedback-save"
-           type="submit" name="action" >Save</button>
+           type="submit" name="action"  ng-click="sendFeedback()" ng-disabled="feedback_form.$invalid">Save</button>
       </div>
     </div>
   </form>
