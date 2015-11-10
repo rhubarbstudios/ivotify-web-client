@@ -68,7 +68,7 @@
               </div>
               <div class="center-align hide-on-large-only" id="button-box-mobile">
                 <button class="btn" id="share-mobile"> SHARE </button>
-                <button class="btn" id="give-feedback-mobile"> GIVE FEEDBACK </button>
+                <button class="btn" id="give-feedback-mobile" ui-sref='main.feedback_issue_mobile'> GIVE FEEDBACK </button>
               </div>
             </div>
             <div class="hide-on-med-and-down">
@@ -114,19 +114,19 @@
 </div>
 
 <div id="feedback-modal" class="modal">
-  <form name="feedback_form" novalidate ng-submit="save()">
+  <form name="feedback_form_issue" novalidate>
     <div class="top-header">
       <h4 class="feedback-label">Give us feedback</h4>
     </div>
     <div class="feedback-body">
-      <textarea id="feedback-box" type="text" placeholder="Share any suggestions or comments with us. We'd love to hear your thougths and ideas about ivotify" required></textarea>
+      <textarea id="feedback-box" ng-model="feedback.body" type="text" placeholder="Share any suggestions or comments with us. We'd love to hear your thougths and ideas about ivotify" required></textarea>
     </div>
     <div class="modal-footer-feedback">
       <div class="row" id="bottom-feedback">
           <button class="modal-action modal-close btn waves-effect center-align" id="cancel-feedback" name="action"
-          type="reset" ng-click="">Cancel</button>
+          type="reset">Cancel</button>
           <button class="modal-action modal-close btn waves-effect waves-light center-align" id="feedback-save"
-           type="submit" name="action"  ng-click="sendFeedback()" ng-disabled="feedback_form.$invalid">Save</button>
+           type="submit" name="action" ng-disabled="feedback_form_issue.$invalid" >Submit</button>
       </div>
     </div>
   </form>

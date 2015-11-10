@@ -32,10 +32,11 @@
   <div class="row" id="main-body">
     <div class="col s12 l3 column-nav">
       <div class="collection">
+
         <!-- Below is only seen on mobile -->
         <p class="hide-on-large-only" id="pick-issue-banner" ng-show="bannerCandidate">Pick a Candidate</p>
 
-        <!-- Toggle Buttons on Medium Screens and Up -->
+        <!-- Toggle Buttons on Large Screens-->
         <div class="toggle-content hide-on-small-and-down">
           <div class="togglebox">
             <a class="btn hide-on-med-and-down" id="toggle-nav-btn" ui-sref='main.issues'>Issues</a>
@@ -65,7 +66,7 @@
         </div>
         <div class="center-align hide-on-large-only" id="button-box-mobile">
           <button class="btn" id="share-mobile"> SHARE </button>
-          <button class="btn" id="give-feedback-mobile"> GIVE FEEDBACK </button>
+          <button class="btn" id="give-feedback-mobile" 'main.feedback_cand_mobile'> GIVE FEEDBACK </button>
         </div>
         <div class="hide-on-med-and-down">
             <button class="btn" id="next-issue-desktop" ng-click="bioNext($index + 1); topScroll()">
@@ -111,19 +112,19 @@
 
 
 <div id="feedback-modal" class="modal">
-  <form name="feedback_form" novalidate ng-submit="save()">
+  <form name="feedback_form_candidate" novalidate ng-submit="save()">
     <div class="top-header">
       <h4 class="feedback-label">Give us feedback</h4>
     </div>
     <div class="feedback-body">
-      <textarea id="feedback-box" type="text" placeholder="Share any suggestions or comments with us. We'd love to hear your thougths and ideas about ivotify" required></textarea>
+      <textarea id="feedback-box" type="text" ng-model="feedback.body" placeholder="Share any suggestions or comments with us. We'd love to hear your thougths and ideas about ivotify" required></textarea>
     </div>
     <div class="modal-footer-feedback">
       <div class="row" id="bottom-feedback">
           <button class="modal-action modal-close btn waves-effect center-align" id="cancel-feedback" name="action"
           type="reset" ng-click="">Cancel</button>
           <button class="modal-action modal-close btn waves-effect waves-light center-align" id="feedback-save"
-           type="submit" ng-click="sendFeedback()" ng-disabled="feedback_form.$invalid" name="action" >Submit</button>
+           type="submit" ng-click="sendFeedback()" ng-disabled="feedback_form_candidate.$invalid" name="action" >Submit</button>
       </div>
     </div>
   </form>

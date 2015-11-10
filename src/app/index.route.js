@@ -38,6 +38,11 @@
         url: '/candidate',
         templateUrl: 'app/templates/main/candidate.html',
         controller: 'MainController'
+      })
+      .state('main.feedback_mobile', {
+        url: '/feedback',
+        templateUrl: 'app/templates/main/feedback_mobile.html',
+        controller: 'MainController'
       });
 
       $urlRouterProvider.otherwise('/');

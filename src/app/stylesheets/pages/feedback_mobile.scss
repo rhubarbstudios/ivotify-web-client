@@ -1,25 +1,4 @@
-#modal-save {
-  float: none !important;
-}
-
-#modal-cancel {
-  background-color: $red;
-  float: none !important;
-}
-
-#summary {
-  height: 126px;
-}
-
-.modal .modal-footer {
-  padding: 4px 0;
-}
-
-#feedback-modal {
-  border-radius: 5px;
-}
-
-.top-header {
+.top-header-mobile {
   background-color: $red;
   padding: 0;
   width: 100%;
@@ -27,7 +6,7 @@
   height: 10vh;
 }
 
-.feedback-label {
+.feedback-label-mobile {
   text-align: center;
   position: relative;
   letter-spacing: 2px;
@@ -35,24 +14,24 @@
   top: 2.5vh;
 }
 
-.feedback-body {
+.feedback-body-mobile {
   background-color: white;
   height: 30vh;
   padding: 5%;
 }
 
-.modal-footer-feedback {
+.footer-feedback-mobile {
   background-color: white;
   padding: 0 !important;
 }
 
-#bottom-feedback {
+#bottom-feedback-mobile {
   background-color: white;
   text-align: center;
 
 }
 
-#feedback-box {
+#feedback-box-mobile {
   height: 20vh;
   padding: 1%;
   border-radius: 10px;
@@ -62,7 +41,7 @@
   font-family: $futura-book-stack;
 }
 
-#cancel-feedback {
+#cancel-feedback-mobile {
   background-color: white;
   color: $lightpurple;
   border: 2px solid $lightpurple;
@@ -74,7 +53,7 @@
   border-radius: 5px;
 }
 
-#feedback-save {
+#feedback-save-mobile {
   background-color: $lightpurple;
   color: white;
   width: 8vw;
