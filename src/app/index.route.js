@@ -39,9 +39,14 @@
         templateUrl: 'app/templates/main/candidate.html',
         controller: 'MainController'
       })
-      .state('main.feedback_mobile', {
-        url: '/feedback',
-        templateUrl: 'app/templates/main/feedback_mobile.html',
+      .state('main.feedback_issue_mobile', {
+        url: '/feedback/issue',
+        templateUrl: 'app/templates/main/feedback_issue_mobile.html',
+        controller: 'MainController'
+      })
+      .state('main.feedback_cand_mobile', {
+        url: '/feedback/candidate',
+        templateUrl: 'app/templates/main/feedback_cand_mobile.html',
         controller: 'MainController'
       });
 

@@ -74,7 +74,7 @@
       // Access to CRUD for issues and candidates
       var CandidateResources = new Resources('candidates');
       var IssueResources = new Resources('issues');
-      var FeedbackResources = new Resources('feeedbacks');
+      var FeedbackResources = new Resources('feedbacks');
 
       // Index of issues
       IssueResources.get({})
@@ -88,9 +88,13 @@
         $scope.candidates = resp.candidates;
       });
 
-      // Creates an issues
-      $scope.sendFeedback = function(){
-        FeedbackResources.save({feedback: $scope.feedback})
+      // Creates feedback submission
+      $scope.save = function(){
+        FeedbackResources.save({feedback: $scope.feedback}, function() {
+
+          $scope.feedback.body = "";
+          $scope.feedback_form.$setPristine();
+        });
       };
 
       // Logic for setting canidate quote header colors

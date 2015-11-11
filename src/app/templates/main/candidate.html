@@ -64,9 +64,16 @@
         <div class="summary">
           <!-- <p ng-model="item.summary" class="item-summary">{{candidate.bio}}</p> -->
         </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="center-align hide-on-large-only" id="button-box-mobile">
           <button class="btn" id="share-mobile"> SHARE </button>
-          <button class="btn" id="give-feedback-mobile" 'main.feedback_cand_mobile'> GIVE FEEDBACK </button>
+          <button class="btn" id="give-feedback-mobile" ui-sref='main.feedback_cand_mobile'> GIVE FEEDBACK </button>
         </div>
         <div class="hide-on-med-and-down">
             <button class="btn" id="next-issue-desktop" ng-click="bioNext($index + 1); topScroll()">
@@ -112,7 +119,7 @@
 
 
 <div id="feedback-modal" class="modal">
-  <form name="feedback_form_candidate" novalidate ng-submit="save()">
+  <form name="feedback_form" novalidate ng-submit="save()">
     <div class="top-header">
       <h4 class="feedback-label">Give us feedback</h4>
     </div>
@@ -124,7 +131,7 @@
           <button class="modal-action modal-close btn waves-effect center-align" id="cancel-feedback" name="action"
           type="reset" ng-click="">Cancel</button>
           <button class="modal-action modal-close btn waves-effect waves-light center-align" id="feedback-save"
-           type="submit" ng-click="sendFeedback()" ng-disabled="feedback_form_candidate.$invalid" name="action" >Submit</button>
+           type="submit" ng-click="sendFeedback()" ng-disabled="feedback_form.$invalid" name="action" >Submit</button>
       </div>
     </div>
   </form>
