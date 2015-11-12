@@ -49,7 +49,20 @@
 #bottom-feedback {
   background-color: white;
   text-align: center;
+}
 
+#thank-you-container {
+  position: relative;
+}
+
+.thank-you-text {
+  font-size: 2.5vh;
+  font-family: $futura-book-stack;
+  letter-spacing: 1px;
+}
+
+#thank-you-check {
+  width: 4vw;
 }
 
 #feedback-box {
@@ -67,6 +80,7 @@
   color: $lightpurple;
   border: 2px solid $lightpurple;
   width: 8vw;
+  padding: 0;
   margin-bottom: 4vh;
   margin-right: 1vw;
   font-family: $futura-book-stack;

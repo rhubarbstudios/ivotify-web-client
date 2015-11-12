@@ -25,6 +25,10 @@
       $scope.bannerIssue = true;
       $scope.bannerCandidate = true
 
+      // Boolean for feedback submission
+      $scope.feedbackDesk = false;
+      $scope.feedbackMobile = false;
+
       // Shows Issues Summary
       $scope.showSummary = function(item) {
         $scope.currentIssue = item;
@@ -74,6 +78,7 @@
       // Access to CRUD for issues and candidates
       var CandidateResources = new Resources('candidates');
       var IssueResources = new Resources('issues');
+      var FeedbackResources = new Resources('feedbacks');
 
       // Index of issues
       IssueResources.get({})
@@ -86,6 +91,15 @@
       .$promise.then(function(resp){
         $scope.candidates = resp.candidates;
       });
+
+      // Creates feedback submission
+      $scope.save = function(){
+        FeedbackResources.save({feedback: $scope.feedback}, function() {
+
+          $scope.feedback.body = "";
+          $scope.feedback_form.$setPristine();
+        });
+      };
 
       // Logic for setting canidate quote header colors
       $scope.set_color = function(candidate){
