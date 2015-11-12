@@ -46,6 +46,11 @@
 					// Adds to candidate list
 					$scope.candidates.unshift(data);
 
+					// Timeout for rendering dom elements before deleting
+					setTimeout(function(){
+						$scope.initModals();
+					}, 500);
+
 					$scope.candidate_form.first_name = "";
 					$scope.candidate_form.last_name = "";
 					$scope.candidate_form.quotes = {};
@@ -120,10 +125,6 @@
 		  	MaterializeComponents.addModal();
 			};
 
-			// $scope.unTouch = function(form){
-			// 	console.log(form.$viewValue);
-			// 	form.$setUntouched();
-			// };
 
 
 	};
