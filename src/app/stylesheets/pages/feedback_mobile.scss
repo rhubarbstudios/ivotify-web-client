@@ -101,3 +101,35 @@
   font-family: $futura-stack;
   border-radius: 5px;
 }
+
+.thank-you-body {
+  background-color: white;
+  height: 43vh;
+  top: 12vh;
+  position: relative;
+  padding: 5%;
+}
+
+#thank-you-container-mobile {
+  position: relative;
+}
+
+.thank-you-text-mobile {
+  font-size: 4vh;
+  font-family: $futura-book-stack;
+  letter-spacing: 1px;
+}
+
+#thank-you-check-mobile {
+  width: 16vw;
+}
+
+#back-arrow-thanks {
+  width: auto;
+  height: 4vh;
+  float: left;
+  cursor: pointer;
+  top: 3vh;
+  left: 4vw;
+  position: relative;
+}

@@ -1,8 +1,27 @@
 <div class="row" id="feedback-mobile-container">
   <div class="col s12" id="feedback-mobile-column">
-    <form name="feedback_form" novalidate ng-submit="save()">
+
+    <div class="feedback-submission-form" ng-show="feedbackMobile">
+      <div class="top-header">
+        <a class="back-button-feedback" ui-sref='main.issues'><img id="back-arrow-thanks" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt="">
+        </a>
+        <h4 class="feedback-label-mobile">Thanks!</h4>
+      </div>
+      <div class="thank-you-body">
+        <p class="thank-you-text-mobile center-align">
+          Your feedback will help us give you the best experience with ivotify.
+        </p>
+        <div class="center-align">
+          <a ui-sref='main.issues' id="thank-you-container-mobile"><img id="thank-you-check-mobile" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Thank-you-check.png" alt=""> </a>
+        </div>
+
+      </div>
+    </div>
+
+
+    <form name="feedback_form" novalidate ng-submit="save()" ng-hide="feedbackMobile">
       <div class="top-header-mobile">
-        <a class="back-button-feedback" ui-sref='main.issue'><img id="back-arrow-feedback" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt="">
+        <a class="back-button-feedback" ui-sref='main.issues'><img id="back-arrow-feedback" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Back+Button.svg" alt="">
         </a>
         <h4 class="feedback-label-mobile">Give us feedback</h4>
       </div>
@@ -13,8 +32,8 @@
         <div class="row" id="bottom-feedback-mobile">
             <button class="modal-action modal-close btn waves-effect center-align" id="cancel-feedback-mobile" name="action"
             type="reset" ng-click="">Cancel</button>
-            <button class="modal-action modal-close btn waves-effect waves-light center-align" id="feedback-save-mobile"
-             type="submit" ng-click="sendFeedback()" ng-disabled="feedback_form.$invalid" name="action" >Submit</button>
+            <button class="btn waves-effect waves-light center-align" id="feedback-save-mobile"
+             type="submit" ng-click="sendFeedback(); feedbackMobile= true;" ng-disabled="feedback_form.$invalid" name="action" >Submit</button>
         </div>
       </div>
     </form>
