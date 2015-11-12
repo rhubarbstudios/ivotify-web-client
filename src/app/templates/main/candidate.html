@@ -148,7 +148,7 @@
     <div class="modal-footer-feedback">
       <div class="row" id="bottom-feedback">
           <button class="modal-action modal-close btn waves-effect center-align" id="cancel-feedback" name="action"
-          type="reset">Cancel</button>
+          type="reset" ng-click="clearFeedback()">Cancel</button>
           <button class="modal-action btn waves-effect waves-light center-align" id="feedback-save"
            type="submit" name="action" ng-disabled="feedback_form.$invalid" ng-click="feedbackDesk = true; modalSize={'width':'50vh'}">Submit</button>
       </div>

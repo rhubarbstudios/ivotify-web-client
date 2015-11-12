@@ -63,7 +63,7 @@
           <td>
             <button class="btn" id="edit-all" ng-click="editIssue = true" ng-hide="editIssue">Edit</button>
             <button class="btn" ng-show="editIssue"  id="save-all" ng-click="update(issue); editIssue = false" type="submit">Save</button>
-            <a class="btn" id="delete-button" rel="leanModal" href="#delete-modal" ng-click="deleteIndex($index, issue); initModals()" type="submit">Delete</a>
+            <a class="btn" id="delete-button" rel="leanModal" href="#delete-modal" ng-click="deleteIndex($index, issue)" type="submit">Delete</a>
           </td>
         </form>
         </tr>
