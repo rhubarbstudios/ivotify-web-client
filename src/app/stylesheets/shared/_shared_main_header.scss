@@ -50,17 +50,21 @@ position: relative;
 .feedback-button {
   background-color: $lightpurple !important;
   width: 7vw;
-  top: 8.5vh;
+  height: 10vh;
+  top: 3.5vh;
   right: 1vw;
   position: absolute;
-  padding: 0;
-  font-size: 1.5vh;
+  padding: 0 0 2.5% 0;
   border-radius: 0 0 10px 10px;
   font-family: $futura-light-stack;
   color: white;
 }
 
-#feedback-desktop-text {
+.feedback-desktop-text {
   position: relative;
-  font-size: 1.5vh;
+  font-size: 1.8vh;
+  padding-left: 1%;
+  padding-right: 1%;
+  letter-spacing: 1.1px;
+  bottom: -5vh;
 }

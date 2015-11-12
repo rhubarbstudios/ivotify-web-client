@@ -19,7 +19,8 @@
     </nav>
   </div>
 
-  <a class="btn feedback-button hide-on-med-and-down" rel="leanModal" href="#feedback-modal">GIVE FEEDBACK</a>
+  <a class="btn feedback-button hide-on-med-and-down" rel="leanModal" href="#feedback-modal">
+    <span class='feedback-desktop-text'>FEEDBACK</span></a>
 
   <!--Navigation for Mobile -->
   <div class="row">
@@ -113,8 +114,27 @@
 
 </div>
 
-<div id="feedback-modal" class="modal">
-  <form name="feedback_form" novalidate ng-submit="save()">
+<!-- Feedback Modal -->
+<div id="feedback-modal" ng-style="modalSize" class="modal">
+
+  <!-- Submission Confirmation -->
+  <div class="feedback-submission-form" ng-show="feedbackDesk">
+    <div class="top-header">
+      <h4 class="feedback-label">Thanks!</h4>
+    </div>
+    <div class="feedback-body">
+      <p class="thank-you-text center-align">
+        Your feedback will help us give you the best experience with ivotify.
+      </p>
+      <div class="center-align">
+        <a class="modal-action modal-close" ng-click="feedbackDesk = false" id="thank-you-container"><img id="thank-you-check" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Thank-you-check.png" alt=""> </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Feedback Form - Pre Confirmation -->
+  <form name="feedback_form" novalidate ng-submit="save()" ng-hide="feedbackDesk">
     <div class="top-header">
       <h4 class="feedback-label">Give us feedback</h4>
     </div>
@@ -125,9 +145,10 @@
       <div class="row" id="bottom-feedback">
           <button class="modal-action modal-close btn waves-effect center-align" id="cancel-feedback" name="action"
           type="reset">Cancel</button>
-          <button class="modal-action modal-close btn waves-effect waves-light center-align" id="feedback-save"
-           type="submit" name="action" ng-disabled="feedback_form.$invalid" >Submit</button>
+          <button class="modal-action btn waves-effect waves-light center-align" id="feedback-save"
+           type="submit" name="action" ng-disabled="feedback_form.$invalid" ng-click="feedbackDesk = true; modalSize={'width':'50vh'}">Submit</button>
       </div>
     </div>
   </form>
+
 </div>

@@ -25,6 +25,10 @@
       $scope.bannerIssue = true;
       $scope.bannerCandidate = true
 
+      // Boolean for feedback submission
+      $scope.feedbackDesk = false;
+      $scope.feedbackMobile = false;
+
       // Shows Issues Summary
       $scope.showSummary = function(item) {
         $scope.currentIssue = item;
