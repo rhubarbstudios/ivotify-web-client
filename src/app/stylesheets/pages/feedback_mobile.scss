@@ -9,6 +9,11 @@
   padding:0;
 }
 
+.back-button-feedback {
+  z-index: 999;
+  position: relative;
+}
+
 .top-header-mobile {
   background-color: $red;
   padding: 0;
