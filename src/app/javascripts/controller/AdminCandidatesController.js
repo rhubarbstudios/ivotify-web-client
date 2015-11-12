@@ -94,6 +94,12 @@
 				}
 			}
 
+			// Clears the form when you cancel feedback as well
+      $scope.clearFeedback = function(){
+        $scope.feedback.body = "";
+        $scope.feedback_form.$setUntouched();
+      };
+
 			// Logic for passing index from ng-repeat to modal
 			$scope.getCandidateToDelete = function(index, candidate) {
 				$scope.candDelete = candidate;

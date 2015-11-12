@@ -101,6 +101,7 @@
         });
       };
 
+      // Clears the forms the form when you cancel feedback as well
       $scope.clearFeedback = function(){
         $scope.feedback.body = "";
         $scope.feedback_form.$setUntouched();
