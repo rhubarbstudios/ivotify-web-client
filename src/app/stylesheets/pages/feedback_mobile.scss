@@ -35,6 +35,8 @@
 .footer-feedback-mobile {
   background-color: white;
   padding: 0 !important;
+  top: 3vh;
+  position: relative;
 }
 
 #bottom-feedback-mobile {
@@ -46,6 +48,8 @@
 #feedback-box-mobile {
   height: 38vh;
   padding: 3%;
+  bottom: 1vh;
+  position: relative;
   border-radius: 10px;
   font-size: 2.7vh;
   border: 1px solid $lightpurple;
