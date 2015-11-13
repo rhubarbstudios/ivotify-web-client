@@ -27,10 +27,10 @@
 				$scope.candidates = resp.candidates;
 			});
 
-			// $timeout(function(){
-			// 	$scope.candidates = filterFilter($scope.candidates, 'first_name');
-			// 	console.log('$scope.candidates', $scope.candidates);
-			// })
+			$timeout(function(){
+				$scope.candidates = filterFilter($scope.candidates, 'first_name');
+				console.log('$scope.candidates', $scope.candidates);
+			})
 
 			// Index of issues
 			IssueResources.get({})
@@ -47,9 +47,9 @@
 					$scope.candidates.unshift(data);
 
 					// Timeout for rendering dom elements before deleting
-					setTimeout(function(){
-						$scope.initModals();
-					}, 500);
+					// setTimeout(function(){
+					// 	$scope.initModals();
+					// }, 500);
 
 					$scope.candidate_form.first_name = "";
 					$scope.candidate_form.last_name = "";
@@ -95,10 +95,10 @@
 			}
 
 			// Clears the form when you cancel feedback as well
-      $scope.clearFeedback = function(){
-        $scope.feedback.body = "";
-        $scope.feedback_form.$setUntouched();
-      };
+      // $scope.clearFeedback = function(){
+      //   $scope.feedback.body = "";
+      //   $scope.feedback_form.$setUntouched();
+      // };
 
 			// Logic for passing index from ng-repeat to modal
 			$scope.getCandidateToDelete = function(index, candidate) {
