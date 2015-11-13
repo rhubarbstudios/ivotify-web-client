@@ -46,6 +46,11 @@
 					// Adds to candidate list
 					$scope.candidates.unshift(data);
 
+					// Timeout for rendering dom elements before deleting
+					setTimeout(function(){
+						$scope.initModals();
+					}, 500);
+
 					$scope.candidate_form.first_name = "";
 					$scope.candidate_form.last_name = "";
 					$scope.candidate_form.quotes = {};
@@ -89,6 +94,12 @@
 				}
 			}
 
+			// Clears the form when you cancel feedback as well
+      $scope.clearFeedback = function(){
+        $scope.feedback.body = "";
+        $scope.feedback_form.$setUntouched();
+      };
+
 			// Logic for passing index from ng-repeat to modal
 			$scope.getCandidateToDelete = function(index, candidate) {
 				$scope.candDelete = candidate;
@@ -120,10 +131,6 @@
 		  	MaterializeComponents.addModal();
 			};
 
-			// $scope.unTouch = function(form){
-			// 	console.log(form.$viewValue);
-			// 	form.$setUntouched();
-			// };
 
 
 	};

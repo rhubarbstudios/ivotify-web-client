@@ -15,7 +15,7 @@
     </nav>
   </div>
 
-  <a class="btn feedback-button hide-on-med-and-down" rel="leanModal" href="#feedback-modal">
+  <a class="btn feedback-button hide-on-med-and-down" rel="leanModal" href="#feedback-modal" ng-click="feedbackDesk = false">
     <span class="feedback-desktop-text">FEEDBACK</span>
   </a>
 
@@ -131,7 +131,7 @@
         Your feedback will help us give you the best experience with ivotify.
       </p>
       <div class="center-align">
-        <a class="modal-action modal-close" ng-click="feedbackDesk = false" id="thank-you-container"><img id="thank-you-check" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Thank-you-check.png" alt=""> </a>
+        <a class="modal-action modal-close" ng-click="feedbackDesk = false; modalSize={'width':'55%'}" id="thank-you-container"><img id="thank-you-check" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Thank-you-check.png" alt=""> </a>
       </div>
 
     </div>
@@ -148,7 +148,7 @@
     <div class="modal-footer-feedback">
       <div class="row" id="bottom-feedback">
           <button class="modal-action modal-close btn waves-effect center-align" id="cancel-feedback" name="action"
-          type="reset">Cancel</button>
+          type="reset" ng-click="clearFeedback()">Cancel</button>
           <button class="modal-action btn waves-effect waves-light center-align" id="feedback-save"
            type="submit" name="action" ng-disabled="feedback_form.$invalid" ng-click="feedbackDesk = true; modalSize={'width':'50vh'}">Submit</button>
       </div>

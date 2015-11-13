@@ -101,6 +101,13 @@
         });
       };
 
+      // Clears the forms the form when you cancel feedback as well
+      $scope.clearFeedback = function(){
+        $scope.feedback.body = "";
+        $scope.feedback_form.$setUntouched();
+      };
+
+
       // Logic for setting canidate quote header colors
       $scope.set_color = function(candidate){
         if (candidate.first_name == "Bernie") {

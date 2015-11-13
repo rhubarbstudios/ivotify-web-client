@@ -10,7 +10,7 @@
         restrict: 'A',
         link: function (scope, element, attr) {
           if (scope.$last === true) {
-            $timeout(function () {
+            $timeout(500, function () {
               scope.$emit('ngRepeatFinished');
             });
           }
