@@ -1,0 +1,135 @@
+#feedback-mobile-container {
+  width: 100% !important;
+  position: fixed;
+  top: -16px;
+}
+
+#feedback-mobile-column {
+  top: 0;
+  padding:0;
+}
+
+.back-button-feedback {
+  z-index: 999;
+  position: relative;
+}
+
+.top-header-mobile {
+  background-color: $red;
+  padding: 0;
+  width: 100%;
+  color: white;
+  height: 9vh;
+}
+
+.feedback-label-mobile {
+  text-align: center;
+  position: relative;
+  letter-spacing: 2px;
+  font-family: $futura-stack;
+  top: 2.4vh;
+  font-size: 4.3vh;
+}
+
+.feedback-body-mobile {
+  background-color: white;
+  height: 43vh;
+  padding: 5%;
+}
+
+.footer-feedback-mobile {
+  background-color: white;
+  padding: 0 !important;
+  top: 3vh;
+  position: relative;
+}
+
+#bottom-feedback-mobile {
+  background-color: white;
+  text-align: center;
+
+}
+
+#feedback-box-mobile {
+  height: 38vh;
+  padding: 3%;
+  bottom: 1vh;
+  position: relative;
+  border-radius: 10px;
+  font-size: 2.7vh;
+  border: 1px solid $lightpurple;
+  background-color: $lightgrey;
+  font-family: $futura-book-stack;
+}
+
+#back-arrow-feedback {
+  width: auto;
+  height: 4vh;
+  float: left;
+  cursor: pointer;
+  top: 2.5vh;
+  left: 4vw;
+  position: relative;
+}
+
+#cancel-feedback-mobile {
+  background-color: white;
+  color: $lightpurple;
+  border: 2px solid $lightpurple;
+  width: 36vw;
+  padding: 0;
+  box-shadow: none;
+  height: 7vh;
+  margin-bottom: 4vh;
+  margin-right: 8vw;
+  font-size: 2.8vh;
+  letter-spacing: 1.3px;
+  font-family: $futura-stack;
+  border-radius: 5px;
+}
+
+#feedback-save-mobile {
+  background-color: $lightpurple;
+  color: white;
+  width: 36vw;
+  height: 7vh;
+  margin-left: 1vw;
+  box-shadow: none;
+  font-size: 2.8vh;
+  letter-spacing: 1.3px;
+  margin-bottom: 4vh;
+  font-family: $futura-stack;
+  border-radius: 5px;
+}
+
+.thank-you-body {
+  background-color: white;
+  height: 43vh;
+  top: 12vh;
+  position: relative;
+  padding: 5%;
+}
+
+#thank-you-container-mobile {
+  position: relative;
+}
+
+.thank-you-text-mobile {
+  font-size: 4vh;
+  font-family: $futura-book-stack;
+  letter-spacing: 1px;
+}
+
+#thank-you-check-mobile {
+  width: 16vw;
+}
+
+#back-arrow-thanks {
+  width: auto;
+  height: 4vh;
+  float: left;
+  cursor: pointer;
+  top: 3vh;
+  left: 4vw;
+  position: relative;
+}

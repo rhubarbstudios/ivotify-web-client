@@ -9,18 +9,25 @@
               <img src="https://s3-us-west-1.amazonaws.com/ivotify-images/logo.png" alt="" id="logo-nav-btn"/>
             </div>
           </div>
-          <div class="col s4 right-align">
-         </div>
+          <!-- <div class="col s9 right-align">
+            <div class="feedback-box">
+              <input id="feedback-email-input" type="text" required/>
+            </div>
+            <a id="hover-tag" class="btn-floating btn-large waves-effect waves-light red"></a>
+         </div> -->
         </div>
     </nav>
   </div>
 
+  <a class="btn feedback-button hide-on-med-and-down" rel="leanModal" href="#feedback-modal" ng-click="feedbackDesk = false; modalSize={'width':'55%'}">
+    <span class='feedback-desktop-text'>FEEDBACK</span></a>
+
   <!--Navigation for Mobile -->
   <div class="row">
-    <div class="col s12 hide-on-large-only center-align" id="mobile-navbar">
-      <a class="btn col s4" id="issue-nav-mobile" ui-sref='main.issues' ng-click="getScope().bannerIssue = true; getScope().showBanner = true; getScope().pickIssue = false; getScope().hideSummary = false; topScroll(); random(candidates);">Issues</a>
-      <button class="btn col s4" id="logo-nav-mobile">ivotify</button>
-      <a class="btn col s4" id="nav-mobile-btn" ui-sref='main.candidate'>Candidates</a>
+    <div class="col s12 hide-on-large-only" id="mobile-navbar">
+      <a class="col s4 btn" id="issue-nav-mobile" ui-sref='main.issues' ng-click="getScope().bannerIssue = true; getScope().showBanner = true; getScope().pickIssue = false; getScope().hideSummary = false; topScroll(); random(candidates);">Issues</a>
+      <button class="col s4 btn" id="logo-nav-mobile">ivotify</button>
+      <a class="col s4 btn" id="nav-mobile-btn" ui-sref='main.candidate'>Candidates</a>
     </div>
   </div>
 
@@ -60,7 +67,10 @@
               <div class="summary">
                 <p ta-bind="text" ng-model="item.summary" class="item-summary">{{item.summary}}</p>
               </div>
-
+              <div class="center-align hide-on-large-only" id="button-box-mobile">
+                <button class="btn" id="share-mobile"> SHARE </button>
+                <button class="btn" id="give-feedback-mobile" ui-sref='main.feedback_issue_mobile'> GIVE FEEDBACK </button>
+              </div>
             </div>
             <div class="hide-on-med-and-down">
                 <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll(); random(candidates);">
@@ -101,5 +111,44 @@
         </div>
       </div>
 
+
+</div>
+
+<!-- Feedback Modal -->
+<div id="feedback-modal" ng-style="modalSize" class="modal">
+
+  <!-- Submission Confirmation -->
+  <div class="feedback-submission-form" ng-show="feedbackDesk">
+    <div class="top-header">
+      <h4 class="feedback-label">Thanks!</h4>
+    </div>
+    <div class="feedback-body">
+      <p class="thank-you-text center-align">
+        Your feedback will help us give you the best experience with ivotify.
+      </p>
+      <div class="center-align">
+        <a class="modal-action modal-close" ng-click="feedbackDesk = false; modalSize={'width':'55%'}" id="thank-you-container"><img id="thank-you-check" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Thank-you-check.png" alt=""> </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Feedback Form - Pre Confirmation -->
+  <form name="feedback_form" novalidate ng-submit="save()" ng-hide="feedbackDesk">
+    <div class="top-header">
+      <h4 class="feedback-label">Give us feedback</h4>
+    </div>
+    <div class="feedback-body">
+      <textarea id="feedback-box" ng-model="feedback.body" type="text" placeholder="Share any suggestions or comments with us. We'd love to hear your thoughts and ideas about ivotify." required></textarea>
+    </div>
+    <div class="modal-footer-feedback">
+      <div class="row" id="bottom-feedback">
+          <button class="modal-action modal-close btn waves-effect center-align" id="cancel-feedback" name="action"
+          type="reset" ng-click="clearFeedback()">Cancel</button>
+          <button class="modal-action btn waves-effect waves-light center-align" id="feedback-save"
+           type="submit" name="action" ng-disabled="feedback_form.$invalid" ng-click="feedbackDesk = true; modalSize={'width':'50vh'}">Submit</button>
+      </div>
+    </div>
+  </form>
 
 </div>

@@ -28,6 +28,11 @@
           // Adds to issue list
           $scope.issues.unshift(data);
 
+          // Timeout for rendering dom elements before deleting
+          setTimeout(function(){
+            $scope.initModals();
+          }, 500);
+
           $scope.issue.title = "";
           $scope.issue.summary = "";
           $scope.issue_form.$setPristine();
@@ -58,10 +63,16 @@
         });
       };
 
+      // Clears the form when you cancel feedback as well
+      $scope.clearFeedback = function(){
+        $scope.feedback.body = "";
+        $scope.feedback_form.$setUntouched();
+      };
+
       $scope.$on('ngRepeatFinished', function(){
         MaterializeComponents.addModal();
       })
-      
+
       // Allows me to use the modal inside of ng-repeat
   		$scope.initModals = function() {
   	  	MaterializeComponents.addModal();

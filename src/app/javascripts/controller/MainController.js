@@ -5,9 +5,9 @@
     .module('ivotifyFrontend')
     .controller('MainController', MainController);
 
-    MainController.$inject = ['Resources', '$scope', '$state', '$stateParams', 'ScrollService', 'Randomizer'];
+    MainController.$inject = ['Resources','MaterializeComponents', '$scope', '$state', '$stateParams', 'ScrollService', 'Randomizer'];
 
-    function MainController(Resources, $scope, $state, $stateParams, ScrollService, Randomizer){
+    function MainController(Resources, MaterializeComponents, $scope, $state, $stateParams, ScrollService, Randomizer){
       // Empty Arrays for Issue and Candidate Objects
       $scope.issues = [];
       $scope.candidates = [];
@@ -24,6 +24,10 @@
       $scope.showBanner = true;
       $scope.bannerIssue = true;
       $scope.bannerCandidate = true
+
+      // Boolean for feedback submission
+      $scope.feedbackDesk = false;
+      $scope.feedbackMobile = false;
 
       // Shows Issues Summary
       $scope.showSummary = function(item) {
@@ -74,6 +78,7 @@
       // Access to CRUD for issues and candidates
       var CandidateResources = new Resources('candidates');
       var IssueResources = new Resources('issues');
+      var FeedbackResources = new Resources('feedbacks');
 
       // Index of issues
       IssueResources.get({})
@@ -86,6 +91,22 @@
       .$promise.then(function(resp){
         $scope.candidates = resp.candidates;
       });
+
+      // Creates feedback submission
+      $scope.save = function(){
+        FeedbackResources.save({feedback: $scope.feedback}, function() {
+
+          $scope.feedback.body = "";
+          $scope.feedback_form.$setPristine();
+        });
+      };
+
+      // Clears the forms the form when you cancel feedback as well
+      $scope.clearFeedback = function(){
+        $scope.feedback.body = "";
+        $scope.feedback_form.$setUntouched();
+      };
+
 
       // Logic for setting canidate quote header colors
       $scope.set_color = function(candidate){
@@ -130,6 +151,9 @@
           return { 'background-color': "#0BECB8" };
         }
       };
+
+      // Modal function to render modal
+      MaterializeComponents.addModal();
 
 
   };

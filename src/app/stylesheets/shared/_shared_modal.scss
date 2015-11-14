@@ -14,3 +14,85 @@
 .modal .modal-footer {
   padding: 4px 0;
 }
+
+#feedback-modal {
+  border-radius: 5px;
+}
+
+.top-header {
+  background-color: $red;
+  padding: 0;
+  width: 100%;
+  color: white;
+  height: 10vh;
+}
+
+.feedback-label {
+  text-align: center;
+  position: relative;
+  letter-spacing: 2px;
+  font-family: $futura-light-stack;
+  top: 2.5vh;
+}
+
+.feedback-body {
+  background-color: white;
+  height: 30vh;
+  padding: 5%;
+}
+
+.modal-footer-feedback {
+  background-color: white;
+  padding: 0 !important;
+}
+
+#bottom-feedback {
+  background-color: white;
+  text-align: center;
+}
+
+#thank-you-container {
+  position: relative;
+}
+
+.thank-you-text {
+  font-size: 2.5vh;
+  font-family: $futura-book-stack;
+  letter-spacing: 1px;
+}
+
+#thank-you-check {
+  width: 4vw;
+}
+
+#feedback-box {
+  height: 20vh;
+  padding: 1%;
+  border-radius: 10px;
+  font-size: 2.2vh;
+  border: 1px solid $lightpurple;
+  background-color: $lightgrey;
+  font-family: $futura-book-stack;
+}
+
+#cancel-feedback {
+  background-color: white;
+  color: $lightpurple;
+  border: 2px solid $lightpurple;
+  width: 8vw;
+  padding: 0;
+  margin-bottom: 4vh;
+  margin-right: 1vw;
+  font-family: $futura-book-stack;
+  border-radius: 5px;
+}
+
+#feedback-save {
+  background-color: $lightpurple;
+  color: white;
+  width: 8vw;
+  margin-left: 1vw;
+  margin-bottom: 4vh;
+  font-family: $futura-book-stack;
+  border-radius: 5px;
+}
