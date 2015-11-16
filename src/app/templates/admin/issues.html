@@ -60,6 +60,7 @@
           </td>
 
           <td>{{issue.updated_at | date:"MM/dd/yyyy 'at' h:mma" }} </td>
+          <!-- <td>{{issue.background}}</td> -->
           <td>
             <button class="btn" id="edit-all" ng-click="editIssue = true" ng-hide="editIssue">Edit</button>
             <button class="btn" ng-show="editIssue"  id="save-all" ng-click="update(issue); editIssue = false" type="submit">Save</button>
