@@ -1,4 +1,5 @@
 {
   "development": {"apiUrl": "https://ivotify-api-staging.herokuapp.com/api/"},
-  "production": {"apiUrl": "https://ivotify-api.herokuapp.com/api/"}
+  "production": {"apiUrl": "https://ivotify-api.herokuapp.com/api/"},
+  "local": {"apiUrl": "http://localhost:3000"}
 }

@@ -51,6 +51,10 @@ gulp.task('serve', ['set-dev-node-env','constants','watch'], function () {
   browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 });
 
+gulp.task('serve-loc', ['set-local-node-env','constants','watch'], function () {
+  browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
+});
+
 gulp.task('serve:dist', ['build'], function () {
   browserSyncInit(conf.paths.dist);
 });
