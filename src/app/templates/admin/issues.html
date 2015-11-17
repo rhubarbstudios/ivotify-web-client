@@ -104,6 +104,14 @@
             </text-angular>
             </div>
           </div>
+
+        <!-- tEST FORM -->
+          <div class="row" ng-repeat="issue in issues.issue_side">
+            <div class="col s12">
+            <h6>Issue Side</h6>
+            <textarea id="title" ng-model="issue.issue_side.title" required></textarea>
+            </div>
+          </div>
           <div class="modal-footer">
               <button class="modal-action modal-close btn waves-effect" id="modal-cancel" name="action" type="reset" >Cancel</button>
               <button class="modal-action modal-close btn waves-effect waves-light" id="modal-save" ng-disabled="issue_form.$invalid" type="submit" name="action" >Save</button>
