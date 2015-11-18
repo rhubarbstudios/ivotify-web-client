@@ -9,6 +9,8 @@
 
     function AdminIssuesController(Resources, MaterializeComponents, $scope, $state, $stateParams){
       $scope.issues = [];
+      $scope.issue = {};
+      $scope.issue.issue_sides = [];
       $scope.addIssue = false;
       $scope.editIssue = false;
 
@@ -19,6 +21,7 @@
       IssueResources.get()
       .$promise.then(function(resp) { 
         $scope.issues = resp.issues; 
+        console.log('resp', resp.issues)
       });
 
       // Creates an issues

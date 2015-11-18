@@ -25,6 +25,7 @@
 			CandidateResources.get()
 			.$promise.then(function(resp){
 				$scope.candidates = resp.candidates;
+				console.log('resp', resp.candidates)
 			});
 
 			$timeout(function(){
