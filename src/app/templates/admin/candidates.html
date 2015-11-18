@@ -63,7 +63,7 @@
             <div>
               <span class="field-headers">Last Updated:</span>  {{candidate.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}
             </div>
-          </form>
+
         </div>
 
 
@@ -75,7 +75,7 @@
                 <div class="collapsible-body active">
 
                     <div ng-repeat="quote in candidate.quotes" on-finish-render="ngRepeatFinished">
-                      <form name="candidate_edit_form2">
+                      <ng-form name="candidate_edit_form2">
                       <div>
                         <span class="field-headers">Issue</span>
                         <br>
@@ -110,7 +110,7 @@
                         <button class="btn" ng-show="$last" ng-click="addNewQuote(candidate)" type="button">+</button>
                       </div>
                       <br>
-                      </form>
+                    </ng-form>
                     </div>
                 </div>
               </li>
@@ -125,6 +125,7 @@
 
           <hr class="candidate-divider">
         </div>
+      </form>
       </div>
   </div>
 

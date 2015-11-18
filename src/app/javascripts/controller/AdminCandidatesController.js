@@ -28,10 +28,10 @@
 				console.log('resp', resp.candidates)
 			});
 
-			$timeout(function(){
-				$scope.candidates = filterFilter($scope.candidates, 'first_name');
-				console.log('$scope.candidates', $scope.candidates);
-			})
+			// $timeout(function(){
+			// 	$scope.candidates = filterFilter($scope.candidates, 'first_name');
+			// 	console.log('$scope.candidates', $scope.candidates);
+			// })
 
 			// Index of issues
 			IssueResources.get({})

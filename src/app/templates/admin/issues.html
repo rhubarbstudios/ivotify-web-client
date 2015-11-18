@@ -89,7 +89,7 @@
           <div class="row">
             <div class="col s12">
             <h6>Issue Summary</h6>
-            <text-angular id="summary-text" ta-toolbar="[
+            <text-angular ta-text-editor-class="summary-text" ta-toolbar="[
             ['h1','h2','h3','h4','h5','h6','p','quote'],
             ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="issue.summary" required>
             </text-angular>
@@ -98,7 +98,7 @@
           <div class="row">
             <div class="col s12">
             <h6>Issue Background</h6>
-            <text-angular id="summary-text" ta-toolbar="[
+            <text-angular ta-text-editor-class="background-text" ta-toolbar="[
             ['h1','h2','h3','h4','h5','h6','p','quote'],
             ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="issue.background" required>
             </text-angular>
@@ -111,38 +111,39 @@
             </div>
           </div>
 
-          <div class="form-group" data-ng-repeat="side in issue.issue_sides">
+          <div class="form-group" >
+            <div data-ng-repeat="side in issue.issue_sides">
+
             <div class="new-side-container">
-              <div class="row">
+              <!-- <div class="row">
                 <div class=" input-field col s12 l6">
-                  <!-- <select class="browser-default" name="new-side-select" id="new-side-select" ng-model="quote.issue_id"
+                  <select class="browser-default" name="new-side-select" id="new-side-select" ng-model="quote.issue_id"
                     ng-options="issue.id as issue.title for issue in issues">
                     <option value="" disabled selected>Select Issue</option>
-                  </select> -->
+                  </select>
                 </div>
-              </div>
+              </div> -->
               <div class="row">
                 <div class="input-field col s12">
                   <textarea id="side-body-{{$index}}" class="materialize-textarea" ng-model="side.title" required></textarea>
                   <label for="side-body-{{$index}}">Body</label>
                 </div>
               </div>
-              <!-- <div class="row">
-                <div class="input-field col s12">
-                 <input id="quote-source-{{$index}}" type="text" ng-model="quote.source" required>
-                 <label for="quote-source-{{$index}}">Source</label>
-                </div>
-              </div> -->
-            </div>
-            <div class="row">
-              <button class="btn float-right add-quote-btn" ng-show="$last" ng-click="addNewQuote(candidate)" id="add-quote-btn" type="button">+ Side</button>
+
             </div>
           </div>
 
+          <div class="row">
+            <button class="btn float-right add-issue-side-btn" ng-click="addNewIssueSide(issue)" id="add-issue-side-btn" type="button">+ Side</button>
+          </div>
+
+        </div>
+
           <div class="modal-footer">
-              <button class="modal-action modal-close btn waves-effect" id="modal-cancel" name="action" type="reset" >Cancel</button>
+              <button class="modal-action modal-close btn waves-effect" id="modal-cancel" name="action" type="reset" ng-click="removeEmptyIssueSide(issue.issue_sides)">Cancel</button>
               <button class="modal-action modal-close btn waves-effect waves-light" id="modal-save" ng-disabled="issue_form.$invalid" type="submit" name="action" >Save</button>
           </div>
+
       </form>
 
     </div>

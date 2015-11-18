@@ -10,7 +10,7 @@
     function AdminIssuesController(Resources, MaterializeComponents, $scope, $state, $stateParams){
       $scope.issues = [];
       $scope.issue = {};
-      $scope.issue.issue_sides = [];
+      $scope.issue.issue_sides = [{}];
       $scope.addIssue = false;
       $scope.editIssue = false;
 
@@ -21,11 +21,12 @@
       IssueResources.get()
       .$promise.then(function(resp) { 
         $scope.issues = resp.issues; 
-        console.log('resp', resp.issues)
+        console.log('resp', resp.issues);
       });
 
       // Creates an issues
       $scope.save = function(){
+        $scope.removeEmptyIssueSide($scope.issue.issue_sides);
         IssueResources.save({issue: $scope.issue}, function(data){
 
           // Adds to issue list
@@ -65,6 +66,29 @@
 
         });
       };
+
+      // Add new issue_sides field in issue create modal
+			$scope.addNewIssueSide = function(issue) {
+				if (issue.issue_sides) {
+					var newItemNo = issue.issue_sides.length+1;
+				}
+				else {
+					issue.issue_sides = [];
+				}
+				issue.issue_sides.push({'tempId': newItemNo});
+				return false;
+			}
+
+			// Removes empty issue_sides from issue object
+			$scope.removeEmptyIssueSide = function(issue_sides) {
+				var i = issue_sides.length;
+				while (i--){
+					if (!issue_sides[i].title) {
+						issue_sides.splice(i, 1);
+					}
+				}
+			}
+
 
       // Clears the form when you cancel feedback as well
       $scope.clearFeedback = function(){
