@@ -11,6 +11,8 @@
       $scope.issues = [];
       $scope.issue = {};
       $scope.issue.issue_sides = [{}];
+      $scope.issue.issue_side = {};
+      $scope.issue.issue_side.issue_bullets = [{}];
       $scope.addIssue = false;
       $scope.editIssue = false;
 
@@ -39,6 +41,9 @@
 
           $scope.issue.title = "";
           $scope.issue.summary = "";
+          $scope.issue.background = "";
+          $scope.issue_form.issue_sides = {};
+          $scope.issue_form.issue_bullets = {};
           $scope.issue_form.$setPristine();
         });
       };
