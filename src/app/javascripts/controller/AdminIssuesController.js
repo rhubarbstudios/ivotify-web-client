@@ -11,8 +11,6 @@
       $scope.issues = [];
       $scope.issue = {};
       $scope.issue.issue_sides = [{}];
-      $scope.issue.issue_side = {};
-      $scope.issue.issue_side.issue_bullets = [{}];
       $scope.addIssue = false;
       $scope.editIssue = false;
 
@@ -28,6 +26,7 @@
 
       // Creates an issues
       $scope.save = function(){
+        console.log($scope.issue)
         $scope.removeEmptyIssueSide($scope.issue.issue_sides);
         IssueResources.save({issue: $scope.issue}, function(data){
 
@@ -43,7 +42,6 @@
           $scope.issue.summary = "";
           $scope.issue.background = "";
           $scope.issue_form.issue_sides = {};
-          $scope.issue_form.issue_bullets = {};
           $scope.issue_form.$setPristine();
         });
       };
@@ -82,7 +80,7 @@
 				}
 				issue.issue_sides.push({'tempId': newItemNo});
 				return false;
-			}
+			};
 
 			// Removes empty issue_sides from issue object
 			$scope.removeEmptyIssueSide = function(issue_sides) {
