@@ -5,9 +5,9 @@
     .module('ivotifyFrontend')
     .controller('AdminIssuesController', AdminIssuesController);
 
-    AdminIssuesController.$inject = ['Resources','MaterializeComponents','$scope', '$state', '$stateParams'];
+    AdminIssuesController.$inject = ['Resources','MaterializeComponents','$scope', '$state', '$stateParams', '$timeout'];
 
-    function AdminIssuesController(Resources, MaterializeComponents, $scope, $state, $stateParams){
+    function AdminIssuesController(Resources, MaterializeComponents, $scope, $state, $stateParams, $timeout){
       $scope.issues = [];
       $scope.issue = {};
       $scope.issue.issue_sides = [{}];
@@ -100,13 +100,13 @@
       };
 
       $scope.$on('ngRepeatFinished', function(){
-        MaterializeComponents.addModal();
-      })
+        MaterializeComponents.addCollapsible();
+      });
 
       // Allows me to use the modal inside of ng-repeat
   		$scope.initModals = function() {
   	  	MaterializeComponents.addModal();
-  		}
+  		};
 
   };
 

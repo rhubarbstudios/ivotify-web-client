@@ -1,17 +1,11 @@
-.admin.issues.index.page {
-
-  table {
-    tr {
-      th:first-child, th:last-child {
-        width: 20%;
-      }
-      #issuetitle {
-        font-size: 20px;
-      }
-    }
-  }
-
+.side-row {
+  width: 100%;
 }
+
+.collapsible-header {
+  text-align: center;
+}
+
 
 .new-side-container{
   margin: 1em 0;

@@ -37,41 +37,111 @@
 <!-- Index View of Issues -->
   <div class="container">
     <div>
-      <table id="issue-list" class="bordered responsive-table">
-        <tr>
-          <th>Issue Title</th>
-          <th>Issue Summary</th>
-          <th>Last Updated</th>
-        </tr>
-
-        <tr ng-repeat="issue in issues" repeat-done="initModals()">
-         <form>
-          <td id="issuetitle">
+      <div id="issue-list">
+        <div ng-repeat-start="issue in issues" repeat-done="initModals()">
+         <form name="issue_form_index">
+          <div id="issuetitle">
+            <br>
+            <br>
+            <span class="field-headers">Issue Title</span>
+            <br>
             <span ng-hide="editIssue">{{issue.title}}</span>
             <textarea ng-show="editIssue" type="text" ng-model="issue.title"></textarea>
-          </td>
+            <br>
+            <br>
+          </div>
 
-          <td>
+          <div>
+            <span class="field-headers">Issue Summary</span>
+            <br>
             <span ng-hide="editIssue" ta-bind="text" ng-model="issue.summary">{{issue.summary}}</span>
             <text-angular ng-show="editIssue" ta-toolbar="[
             ['h1','h2','h3','h4','h5','h6','p','quote'],
             ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="issue.summary" required>
             </text-angular>
-          </td>
+            <br>
+            <br>
+          </div>
 
-          <td>{{issue.updated_at | date:"MM/dd/yyyy 'at' h:mma" }} </td>
-          <!-- <td>{{issue.background}}</td> -->
-          <td>
+          <div>
+            <span class="field-headers">Issue Background</span>
+            <br>
+            <span ng-hide="editIssue" ta-bind="text" ng-model="issue.summary">{{issue.background}}</span>
+            <text-angular ng-show="editIssue" ta-toolbar="[
+            ['h1','h2','h3','h4','h5','h6','p','quote'],
+            ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="issue.summary" required>
+            </text-angular>
+            <br>
+            <br>
+          </div>
+
+          <span class="field-headers">Last Updated</span>
+          <div>{{issue.updated_at | date:"MM/dd/yyyy 'at' h:mma" }} </div>
+        </div>
+
+          <div ng-repeat-end>
+            <div class="side-row" colspan="4">
+              <ul class="collapsible" data-collapsible="expandable" rel="collapsible">
+                <li>
+                  <div class="collapsible-header">{{issue.title}} Sides</div>
+                  <div class="collapsible-body active">
+
+                      <div ng-repeat="side in issue.issue_sides" on-finish-render="ngRepeatFinished">
+                        <ng-form name="issue_form_index2">
+                        <br>
+                        <div>
+                          <span class="field-headers">Issue Side</span>
+                          <br>
+                          <span ng-hide="editIssue">{{side.title}}</span>
+                          <textarea ng-show="editIssue" type="text" ng-model="side.title" required></textarea>
+                        </div>
+                        <br>
+                        <div>
+                          <span class="field-headers">Bullets</span>
+                          <br>
+                          <span ng-hide="editIssue">{{side.bullets[0]}}</span>
+                          <textarea ng-show="editIssue" type="text" ng-model="side.bullets[0]" required></textarea>
+                          <br>
+                          <span ng-hide="editIssue">{{side.bullets[1]}}</span>
+                          <textarea ng-show="editIssue" type="text" ng-model="side.bullets[1]" required></textarea>
+                          <br>
+                          <span ng-hide="editIssue">{{side.bullets[2]}}</span>
+                          <textarea ng-show="editIssue" type="text" ng-model="side.bullets[2]" required></textarea>
+                        </div>
+                        <br>
+                        <div>
+                          <span class="field-headers">Last Updated:</span>
+                          <span>{{quote.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}</span>
+                        </div>
+                        <br>
+                        <hr class="quote-divider-admin">
+                        <br>
+                        <div ng-show="editIssue">
+                          <button class="btn" ng-show="$last" ng-click="addNewIssueSide(issue)" type="button">+</button>
+                        </div>
+                        <br>
+                      </ng-form>
+                      </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+
+
+          <div>
             <button class="btn" id="edit-all" ng-click="editIssue = true" ng-hide="editIssue">Edit</button>
             <button class="btn" ng-show="editIssue"  id="save-all" ng-click="update(issue); editIssue = false" type="submit">Save</button>
             <a class="btn" id="delete-button" rel="leanModal" href="#delete-modal" ng-click="deleteIndex($index, issue)" type="submit">Delete</a>
-          </td>
-        </form>
-        </tr>
+          </div>
+        <hr class="candidate-divider">
+        </div>
+      </form>
 
-      </table>
     </div>
   </div>
+
+
 
   <!-- Create Issue Modals -->
   <div class="modal" id="issue-modal">
@@ -123,15 +193,15 @@
                 </div>
                 <div class="input-field col s12">
                   <label for="side-bullet-{{$index}}">Bullet 1</label>
-                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[0]" required></textarea>
+                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[$index]" required></textarea>
                 </div>
                 <div class="input-field col s12">
                   <label for="side-bullet-{{$index}}">Bullet 2</label>
-                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[1]" required></textarea>
+                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[$index]" required></textarea>
                 </div>
                 <div class="input-field col s12">
                   <label for="side-bullet-{{$index}}">Bullet 3</label>
-                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[2]" required></textarea>
+                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[$index]" required></textarea>
                 </div>
               </div>
 
