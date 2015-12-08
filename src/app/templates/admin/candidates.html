@@ -38,22 +38,22 @@
   <div class="container">
       <div class="row" id="candidate-list">
         <div class="candidate-row" ng-repeat-start="candidate in candidates" repeat-done="initModals()">
-          <form name="candidate_edit_form" id="candidate_edit_form_{{$index}}" novalidate>
+          <ng-form name="candidate_edit_form" id="candidate_edit_form_{{$index}}" novalidate>
             <br>
             <div id="candidate-name">
               <span class="field-headers"> Name </span>
               <br>
               <span ng-hide="editCandidate">{{candidate.first_name}}</span>
-              <textarea ng-show="editCandidate" type="text" class="validate" ng-model="candidate.first_name" required></textarea>
+              <textarea ng-show="editCandidate" type="text" class="validate"  name="first_name" ng-model="candidate.first_name" required></textarea>
               <span ng-hide="editCandidate">{{candidate.last_name}}</span>
-              <textarea ng-show="editCandidate" type="text" class="validate" ng-model="candidate.last_name" required></textarea>
+              <textarea ng-show="editCandidate" type="text" class="validate" name="last_name" ng-model="candidate.last_name" required></textarea>
             </div>
             <br>
             <br>
             <div id="candidate-bio">
               <span class="field-headers"> Bio </span>
               <br>
-              <span ng-hide="editCandidate" ta-bind="text" ng-model="candidate.bio">{{candidate.bio}}</span>
+              <span ng-hide="editCandidate" ta-bind="text"  name="bio" ng-model="candidate.bio">{{candidate.bio}}</span>
               <text-angular ng-show="editCandidate" ta-toolbar="[
               ['h1','h2','h3','h4','h5','h6','p','quote'],
               ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="candidate.bio" required>
@@ -73,9 +73,8 @@
               <li>
                 <div class="collapsible-header">{{candidate.first_name}}'s Quotes</div>
                 <div class="collapsible-body active">
+                    <div ng-repeat="quote in candidate.quotes" on-finish-render="ngRepeatFinished" ng-form="candidate_edit_form" id="candidate_edit_form2_{{$index}}">
 
-                    <div ng-repeat="quote in candidate.quotes" on-finish-render="ngRepeatFinished">
-                      <ng-form name="candidate_edit_form2">
                       <div>
                         <span class="field-headers">Issue</span>
                         <br>
@@ -89,14 +88,14 @@
                         <span class="field-headers">Body</span>
                         <br>
                         <span ng-hide="editCandidate">{{quote.body}}</span>
-                        <textarea ng-show="editCandidate" type="text" ng-model="quote.body" required></textarea>
+                        <textarea ng-show="editCandidate" type="text" name="body" ng-model="quote.body" required></textarea>
                       </div>
                       <br>
                       <div>
                         <span class="field-headers">Source</span>
                         <br>
                         <span ng-hide="editCandidate">{{quote.source}}</span>
-                        <textarea ng-show="editCandidate" type="text" ng-model="quote.source" required></textarea>
+                        <textarea ng-show="editCandidate" type="text" name="source" ng-model="quote.source" required></textarea>
                       </div>
                       <br>
                       <div>
@@ -110,7 +109,6 @@
                         <button class="btn" ng-show="$last" ng-click="addNewQuote(candidate)" type="button">+</button>
                       </div>
                       <br>
-                    </ng-form>
                     </div>
                 </div>
               </li>
@@ -125,7 +123,7 @@
 
           <hr class="candidate-divider">
         </div>
-      </form>
+      </ng-form>
       </div>
   </div>
 

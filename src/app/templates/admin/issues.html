@@ -39,14 +39,14 @@
     <div>
       <div id="issue-list">
         <div ng-repeat-start="issue in issues" repeat-done="initModals()">
-         <form name="issue_form_index">
+         <form name="issue_form_index" novalidate ng-submit="save()">
           <div id="issuetitle">
             <br>
             <br>
             <span class="field-headers">Issue Title</span>
             <br>
             <span ng-hide="editIssue">{{issue.title}}</span>
-            <textarea ng-show="editIssue" type="text" ng-model="issue.title"></textarea>
+            <textarea ng-show="editIssue" type="text" ng-model="issue.title" required></textarea>
             <br>
             <br>
           </div>
@@ -99,19 +99,21 @@
                         <div>
                           <span class="field-headers">Bullets</span>
                           <br>
-                          <span ng-hide="editIssue">{{side.bullets[0]}}</span>
+                          <span ng-hide="editIssue"> {{side.bullets[0]}}</span>
                           <textarea ng-show="editIssue" type="text" ng-model="side.bullets[0]" required></textarea>
+                          <br>
                           <br>
                           <span ng-hide="editIssue">{{side.bullets[1]}}</span>
                           <textarea ng-show="editIssue" type="text" ng-model="side.bullets[1]" required></textarea>
                           <br>
+                          <br>
                           <span ng-hide="editIssue">{{side.bullets[2]}}</span>
-                          <textarea ng-show="editIssue" type="text" ng-model="side.bullets[2]" required></textarea>
+                          <textarea ng-show="editIssue" type="text" ng-model="side.bullets[2]"></textarea>
                         </div>
                         <br>
                         <div>
-                          <span class="field-headers">Last Updated:</span>
-                          <span>{{quote.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}</span>
+                          <!-- <span class="field-headers">Last Updated: </span>
+                          <span>{{issue_sides.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}</span> -->
                         </div>
                         <br>
                         <hr class="quote-divider-admin">
@@ -131,7 +133,7 @@
 
           <div>
             <button class="btn" id="edit-all" ng-click="editIssue = true" ng-hide="editIssue">Edit</button>
-            <button class="btn" ng-show="editIssue"  id="save-all" ng-click="update(issue); editIssue = false" type="submit">Save</button>
+            <button class="btn" ng-show="editIssue"  id="save-all" ng-click="update(issue); editIssue = false" ng-disabled="issue_form_index.$invalid" type="submit">Save</button>
             <a class="btn" id="delete-button" rel="leanModal" href="#delete-modal" ng-click="deleteIndex($index, issue)" type="submit">Delete</a>
           </div>
         <hr class="candidate-divider">
@@ -183,9 +185,11 @@
           </div>
 
           <div class="form-group">
+            <ng-form>
             <div data-ng-repeat="side in issue.issue_sides">
 
             <div class="new-side-container">
+
               <div class="row" ng-init="side.bullets = []">
                 <div class="input-field col s12">
                   <label for="side-body-{{$index}}">Title</label>
@@ -197,16 +201,17 @@
                 </div>
                 <div class="input-field col s12">
                   <label for="side-bullet-{{$index}}">Bullet 2</label>
-                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[1]" required></textarea>
+                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[1]"></textarea>
                 </div>
                 <div class="input-field col s12">
                   <label for="side-bullet-{{$index}}">Bullet 3</label>
-                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[2]" required></textarea>
+                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[2]"></textarea>
                 </div>
               </div>
 
             </div>
           </div>
+          </ng-form>
 
           <div class="row">
             <button class="btn float-right add-issue-side-btn" ng-click="addNewIssueSide(issue)" id="add-issue-side-btn" type="button">+ Side</button>
