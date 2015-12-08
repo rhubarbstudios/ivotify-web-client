@@ -21,12 +21,12 @@
       IssueResources.get()
       .$promise.then(function(resp) { 
         $scope.issues = resp.issues; 
-        console.log('resp', resp.issues);
+        // console.log('resp', resp.issues);
       });
 
       // Creates an issues
       $scope.save = function(){
-        console.log($scope.issue)
+        console.log('issue', $scope.issue)
         $scope.removeEmptyIssueSide($scope.issue.issue_sides);
         IssueResources.save({issue: $scope.issue}, function(data){
 

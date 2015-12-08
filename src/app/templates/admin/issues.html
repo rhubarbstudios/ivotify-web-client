@@ -182,26 +182,26 @@
             </div>
           </div>
 
-          <div class="form-group" >
+          <div class="form-group">
             <div data-ng-repeat="side in issue.issue_sides">
 
             <div class="new-side-container">
-              <div class="row">
+              <div class="row" ng-init="side.bullets = []">
                 <div class="input-field col s12">
                   <label for="side-body-{{$index}}">Title</label>
                   <textarea id="side-body-{{$index}}" class="materialize-textarea" ng-model="side.title" required></textarea>
                 </div>
                 <div class="input-field col s12">
                   <label for="side-bullet-{{$index}}">Bullet 1</label>
-                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[$index]" required></textarea>
+                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[0]" required></textarea>
                 </div>
                 <div class="input-field col s12">
                   <label for="side-bullet-{{$index}}">Bullet 2</label>
-                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[$index]" required></textarea>
+                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[1]" required></textarea>
                 </div>
                 <div class="input-field col s12">
                   <label for="side-bullet-{{$index}}">Bullet 3</label>
-                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[$index]" required></textarea>
+                  <textarea id="side-bullet-{{$index}}" class="materialize-textarea" ng-model="side.bullets[2]" required></textarea>
                 </div>
               </div>
 
