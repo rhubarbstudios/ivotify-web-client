@@ -1,5 +1,5 @@
 angular.module("ngConstants", [])
 
-.constant("apiUrl", "https://ivotify-api-staging.herokuapp.com/api/")
+.constant("apiUrl", "http://localhost:3001/api/")
 
 ;

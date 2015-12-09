@@ -5,10 +5,12 @@
     .module('ivotifyFrontend')
     .controller('AdminIssuesController', AdminIssuesController);
 
-    AdminIssuesController.$inject = ['Resources','MaterializeComponents','$scope', '$state', '$stateParams'];
+    AdminIssuesController.$inject = ['Resources','MaterializeComponents','$scope', '$state', '$stateParams', '$timeout'];
 
-    function AdminIssuesController(Resources, MaterializeComponents, $scope, $state, $stateParams){
+    function AdminIssuesController(Resources, MaterializeComponents, $scope, $state, $stateParams, $timeout){
       $scope.issues = [];
+      $scope.issue = {};
+      $scope.issue.issue_sides = [{}];
       $scope.addIssue = false;
       $scope.editIssue = false;
 
@@ -19,10 +21,13 @@
       IssueResources.get()
       .$promise.then(function(resp) { 
         $scope.issues = resp.issues; 
+        // console.log('resp', resp.issues);
       });
 
       // Creates an issues
       $scope.save = function(){
+        console.log('issue', $scope.issue)
+        $scope.removeEmptyIssueSide($scope.issue.issue_sides);
         IssueResources.save({issue: $scope.issue}, function(data){
 
           // Adds to issue list
@@ -35,6 +40,8 @@
 
           $scope.issue.title = "";
           $scope.issue.summary = "";
+          $scope.issue.background = "";
+          $scope.issue_form.issue_sides = {};
           $scope.issue_form.$setPristine();
         });
       };
@@ -63,6 +70,29 @@
         });
       };
 
+      // Add new issue_sides field in issue create modal
+			$scope.addNewIssueSide = function(issue) {
+				if (issue.issue_sides) {
+					var newItemNo = issue.issue_sides.length+1;
+				}
+				else {
+					issue.issue_sides = [];
+				}
+				issue.issue_sides.push({'tempId': newItemNo});
+				return false;
+			};
+
+			// Removes empty issue_sides from issue object
+			$scope.removeEmptyIssueSide = function(issue_sides) {
+				var i = issue_sides.length;
+				while (i--){
+					if (!issue_sides[i].title) {
+						issue_sides.splice(i, 1);
+					}
+				}
+			}
+
+
       // Clears the form when you cancel feedback as well
       $scope.clearFeedback = function(){
         $scope.feedback.body = "";
@@ -70,13 +100,13 @@
       };
 
       $scope.$on('ngRepeatFinished', function(){
-        MaterializeComponents.addModal();
-      })
+        MaterializeComponents.addCollapsible();
+      });
 
       // Allows me to use the modal inside of ng-repeat
   		$scope.initModals = function() {
   	  	MaterializeComponents.addModal();
-  		}
+  		};
 
   };
 

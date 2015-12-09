@@ -25,12 +25,8 @@
 			CandidateResources.get()
 			.$promise.then(function(resp){
 				$scope.candidates = resp.candidates;
+				console.log('resp', resp.candidates)
 			});
-
-			$timeout(function(){
-				$scope.candidates = filterFilter($scope.candidates, 'first_name');
-				console.log('$scope.candidates', $scope.candidates);
-			})
 
 			// Index of issues
 			IssueResources.get({})
@@ -45,11 +41,6 @@
 
 					// Adds to candidate list
 					$scope.candidates.unshift(data);
-
-					// Timeout for rendering dom elements before deleting
-					// setTimeout(function(){
-					// 	$scope.initModals();
-					// }, 500);
 
 					$scope.candidate_form.first_name = "";
 					$scope.candidate_form.last_name = "";

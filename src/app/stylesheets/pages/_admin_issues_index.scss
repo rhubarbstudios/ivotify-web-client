@@ -1,14 +1,54 @@
-.admin.issues.index.page {
-
-  table {
-    tr {
-      th:first-child, th:last-child {
-        width: 20%;
-      }
-      #issuetitle {
-        font-size: 20px;
-      }
-    }
-  }
-
+.side-row {
+  width: 100%;
 }
+
+.collapsible-header {
+  text-align: center;
+}
+
+
+.new-side-container{
+  margin: 1em 0;
+  padding: 1em 0;
+  border: 1px solid #DFDFDF;
+  border: 1px solid #DFDFDF;
+}
+
+.add-issue-side-btn {
+  margin-bottom: 2em;
+}
+
+.new-bullet-container{
+  margin: 1em 0;
+  padding: 1em 0;
+  border: 1px solid #DFDFDF;
+  border: 1px solid #DFDFDF;
+}
+
+.add-issue-bullet-btn {
+  margin-bottom: 2em;
+}
+
+.collapsible-body {
+  padding: 0 1em;
+}
+
+#add-issue_side {
+  background-color: $red;
+}
+
+// .summary-text {
+//   height: 8vh;
+// }
+//
+// .summary-text-box {
+//   height: 8vh;
+// }
+//
+// .background-text {
+//   height: 8vh;
+// }
+//
+// .background-text-box {
+//   height: 8vh;
+// }
