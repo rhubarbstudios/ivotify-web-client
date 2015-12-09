@@ -112,7 +112,7 @@
           </div>
 
           <div class="admin-button-bar">
-            <button class="btn" id="edit-all" ng-click="editCandidate = true; addNewQuote(candidate)" ng-hide="editCandidate">Edit</button>
+            <button class="btn" id="edit-all" ng-click="editCandidate = true" ng-hide="editCandidate">Edit</button>
             <button class="btn waves-effect waves-light" id="save-all" ng-show="editCandidate" ng-click="update(candidate); editCandidate = false" ng-disabled="candidate_edit_form.$invalid || candidate_edit_form2.$invalid" type="submit" name="action">Save</button>
             <a class="btn" id="delete-button" rel="leanModal" href="#delete-cand-modal" ng-click="getCandidateToDelete($index, candidate)" type="submit">Delete</a>
           </div>
