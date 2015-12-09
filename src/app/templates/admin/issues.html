@@ -66,10 +66,10 @@
           <div>
             <span class="field-headers">Issue Background</span>
             <br>
-            <span ng-hide="editIssue" ta-bind="text" ng-model="issue.summary">{{issue.background}}</span>
+            <span ng-hide="editIssue" ta-bind="text" ng-model="issue.background">{{issue.background}}</span>
             <text-angular ng-show="editIssue" ta-toolbar="[
             ['h1','h2','h3','h4','h5','h6','p','quote'],
-            ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="issue.summary" required>
+            ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="issue.background" required>
             </text-angular>
             <br>
             <br>
@@ -86,8 +86,7 @@
                   <div class="collapsible-header">{{issue.title}} Sides</div>
                   <div class="collapsible-body active">
 
-                      <div ng-repeat="side in issue.issue_sides" on-finish-render="ngRepeatFinished">
-                        <ng-form name="issue_form_index2">
+                      <div ng-repeat="side in issue.issue_sides" on-finish-render="ngRepeatFinished" ng-form="issue_form_index2">
                         <br>
                         <div>
                           <span class="field-headers">Issue Side</span>
@@ -122,7 +121,6 @@
                           <button class="btn" ng-show="$last" ng-click="addNewIssueSide(issue)" type="button">+</button>
                         </div>
                         <br>
-                      </ng-form>
                       </div>
                   </div>
                 </li>
@@ -133,7 +131,7 @@
 
           <div>
             <button class="btn" id="edit-all" ng-click="editIssue = true" ng-hide="editIssue">Edit</button>
-            <button class="btn" ng-show="editIssue"  id="save-all" ng-click="update(issue); editIssue = false" ng-disabled="issue_form_index.$invalid" type="submit">Save</button>
+            <button class="btn" ng-show="editIssue"  id="save-all" ng-click="update(issue); editIssue = false" ng-disabled="issue_form_index.$invalid || issue_form_index2.$invalid" type="submit">Save</button>
             <a class="btn" id="delete-button" rel="leanModal" href="#delete-modal" ng-click="deleteIndex($index, issue)" type="submit">Delete</a>
           </div>
         <hr class="candidate-divider">
