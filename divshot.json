@@ -1,8 +1,6 @@
 {
   "name": "ivotify-web-client",
   "root": "./dist",
-  "clean_urls": true
-},
-{
+  "clean_urls": true,
   "prerender": true
 }
