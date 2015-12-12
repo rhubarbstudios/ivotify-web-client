@@ -67,7 +67,7 @@
           <br>
           <span ng-hide="editIssue" ta-bind="text" ng-model="issue.background">{{issue.background}}</span>
           <text-angular ng-show="editIssue" ta-toolbar="[
-          ['h1','h2','h3','h4','h5','h6','p','quote'],
+          ['h1','h2','h3','h4','h5','h6','p','quote', 'ul'],
           ['bold','italics','underline','strikeThrough','justifyLeft','justifyCenter','justifyRight','indent']]" ng-model="issue.background" required>
           </text-angular>
           <br>
@@ -106,10 +106,9 @@
                         <span ng-hide="editIssue">{{side.bullets[2]}}</span>
                         <textarea ng-show="editIssue" type="text" ng-model="side.bullets[2]"></textarea>
                       </div>
-                      <br>
                       <div>
-                        <!-- <span class="field-headers">Last Updated: </span>
-                        <span>{{issue_sides.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}</span> -->
+                        <span class="field-headers">Last Updated: </span>
+                        <span>{{side.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}</span>
                       </div>
                       <br>
                       <hr class="quote-divider-admin">
