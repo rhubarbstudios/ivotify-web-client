@@ -69,9 +69,10 @@
                 <p ta-bind="text" ng-model="item.background" id="issue-background-body">{{item.background}}</p>
               </div>
               <div class="issue-side" ng-repeat="side in item.issue_sides">
-                <p class="issue-side-title">{{side.title}}</p>
+                <p class="issue-side-title">{{side.title | uppercase}}</p>
                 <p class="issue-bullet"><span class="issue-bullets-bullet">• </span>{{side.bullets[0]}}</p>
-                <p class="issue-bullet"><span class="issue-bullets-bullet">• </span>{{side.bullets[1]}}</p>
+                <p class="issue-bullet" ng-if="side.bullets[1]"><span class="issue-bullets-bullet">• </span>{{side.bullets[1]}}</p>
+                <p class="issue-bullet" ng-if="side.bullets[2]"><span class="issue-bullets-bullet">• </span>{{side.bullets[2]}}</p>
               </div>
               <!-- <div class="summary">
                 <p ta-bind="text" ng-model="item.summary" class="item-summary">{{item.summary}}</p>
