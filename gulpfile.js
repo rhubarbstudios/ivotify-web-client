@@ -46,3 +46,7 @@ gulp.task('set-dev-node-env', function() {
 gulp.task('set-prod-node-env', function() {
     return process.env.NODE_ENV = 'production';
 });
+
+gulp.task('set-local-node-env', function() {
+    return process.env.NODE_ENV = 'local';
+});
