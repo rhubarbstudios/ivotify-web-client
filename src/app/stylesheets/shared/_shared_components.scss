@@ -284,19 +284,19 @@
   z-index: 4;
 
   @media #{$small-and-down} {
-  top: 10vh;
-  left: 4vw;
-  width: 80px;
+    top: 10vh;
+    left: 4vw;
+    width: 80px;
   }
   @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width) {
-  top: 10vh;
-  left: 9%;
-  width: 89px;
+    top: 10vh;
+    left: 9%;
+    width: 89px;
   }
   @media #{$large-and-up} {
-  top: 30.5vh;
-  left: 1vw;
-  width: 4.7vw;
+    top: 30.5vh;
+    left: 1vw;
+    width: 4.7vw;
   }
 }
 
