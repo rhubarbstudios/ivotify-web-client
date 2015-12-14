@@ -262,22 +262,44 @@
 
 .situtation-bar {
   margin-bottom: 12px;
-  font-size: 2.5vh;
-  background-color: $lightgrey;
+  font-size: 1.2vw;
   color: $darkgrey;
   font-family: $futura-stack;
   letter-spacing: 1.1px;
-  line-height: 5.5vh;
-  height: 5vh;
+  line-height: 6.5vh;
+  height: 6vh;
   @media #{$medium-and-down} {
   line-height: 5.5vh;
-  margin-top: 11.5vh;
+  margin-top: 12.5vh;
   padding-top: 3px;
   font-size: 3vh;
   padding-bottom: 3px;
   height: 6vh;
   }
 }
+
+.situation-image {
+  position: fixed;
+  height: auto;
+  z-index: 4;
+
+  @media #{$small-and-down} {
+  top: 10vh;
+  left: 4vw;
+  width: 80px;
+  }
+  @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width) {
+  top: 10vh;
+  left: 9%;
+  width: 89px;
+  }
+  @media #{$large-and-up} {
+  top: 30.5vh;
+  left: 1vw;
+  width: 4.7vw;
+  }
+}
+
 
 #back-arrow {
   width: auto;

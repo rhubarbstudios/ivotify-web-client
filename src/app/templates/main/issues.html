@@ -65,7 +65,10 @@
 
             <!-- Issue Outline Box -->
             <div class="scroll-summary" ng-show="showOutline">
-              <p class="situtation-bar"> THE SITUATION </p>
+              <p class="situtation-bar" ng-style="set_header(item)">
+                <img class="situation-image" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Issue+Icons/{{item.title}}.png">
+                 THE SITUATION
+               </p>
               <div class="outline">
                 <div class="issue-background">
                   <p class="background-title">BACKGROUND</p>
@@ -96,7 +99,10 @@
 
             <!-- Issue Summary Box -->
             <div class="scroll-summary" ng-hide="showOutline">
-              <p class="situtation-bar"> THE SITUATION </p>
+              <p class="situtation-bar" ng-style="set_header(item)">
+                <img class="situation-image" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Issue+Icons/{{item.title}}.png">
+                 THE SITUATION
+               </p>
               <div class="summary">
                 <p ta-bind="text" ng-model="item.summary" class="item-summary">{{item.summary}}</p>
 
