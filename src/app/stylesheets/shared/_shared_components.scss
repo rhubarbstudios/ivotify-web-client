@@ -177,6 +177,37 @@
   position: static;
 }
 
+.issue-side:nth-of-type(odd) {
+  margin-top: 1.5vh;
+}
+
+#more-button {
+  background-color: $red;
+  color: white;
+  width: 10vw;
+  padding: 0;
+  box-shadow: none;
+  font-size:2.3vh;
+  height: 5.5vh;
+  letter-spacing: 1.1px;
+  margin-top: 2vh;
+  font-family: $futura-book-stack;
+  border-radius: 5px;
+}
+
+#less-button {
+  background-color: $red;
+  color: white;
+  width: 10vw;
+  padding: 0;
+  box-shadow: none;
+  font-size:2.3vh;
+  height: 5.5vh;
+  letter-spacing: 1.1px;
+  margin-top: 2vh;
+  font-family: $futura-book-stack;
+  border-radius: 5px;
+}
 
 .issue-side-title {
   padding-left: 1.2vw;
