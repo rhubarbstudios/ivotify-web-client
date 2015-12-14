@@ -132,6 +132,10 @@
   text-align: left;
   overflow: scroll;
   position: static;
+  @media #{$medium-and-down} {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
 }
 
 #issue-background-body {
@@ -143,6 +147,9 @@
   text-align: left;
   color: $darkgrey;
   font-family: $futura-light-stack;
+  @media #{$medium-and-down} {
+    font-size: 1.3em;
+  }
 }
 
 .issue-bullet {
@@ -155,6 +162,9 @@
   text-align: left;
   color: $darkgrey;
   font-family: $futura-light-stack;
+  @media #{$medium-and-down} {
+    font-size: 1.3em;
+  }
 }
 
 .background-title {
@@ -165,7 +175,9 @@
   font-size: 1em;
   color: black;
   padding-right: 1vw;
-
+  @media #{$medium-and-down} {
+    font-size: 1.5em;
+  }
 }
 
 .issue-side {
@@ -175,10 +187,23 @@
   text-align: left !important;
   overflow: scroll;
   position: static;
+  @media #{$medium-and-down} {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
 }
 
 .issue-side:nth-of-type(odd) {
   margin-top: 1.5vh;
+}
+
+.outline {
+  overflow: scroll;
+  position: static;
+    @media #{$large-and-up} {
+    height: 48vh;
+    padding-bottom: 24px;
+    }
 }
 
 #more-button {
@@ -193,6 +218,12 @@
   margin-top: 2vh;
   font-family: $futura-book-stack;
   border-radius: 5px;
+  @media #{$medium-and-down} {
+    width: 42vw;
+    height: 7.5vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+  }
 }
 
 #less-button {
@@ -207,6 +238,12 @@
   margin-top: 2vh;
   font-family: $futura-book-stack;
   border-radius: 5px;
+  @media #{$medium-and-down} {
+    width: 42vw;
+    height: 7.5vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+  }
 }
 
 .issue-side-title {
@@ -218,6 +255,9 @@
   font-size: 1em;
   color: black;
   padding-right: 1vw;
+  @media #{$medium-and-down} {
+    font-size: 1.5em;
+  }
 }
 
 .situtation-bar {
