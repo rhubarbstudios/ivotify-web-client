@@ -201,7 +201,7 @@
   overflow: scroll;
   position: static;
     @media #{$large-and-up} {
-    height: 48vh;
+    height: 61vh;
     padding-bottom: 24px;
     }
 }
@@ -291,7 +291,7 @@
   @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width) {
     top: 10vh;
     left: 9%;
-    width: 89px;
+    width: 14.5vw;
   }
   @media #{$large-and-up} {
     top: 30.5vh;
@@ -353,6 +353,36 @@
   right: .2vw;
   position: relative;
 }
+
+#next-issue-desktop-summary {
+  font-size: 0.9em;
+  text-transform: none !important;
+  height: 4vh;
+  width: 10vw;
+  padding: 0;
+  float: right;
+  line-height: 4vh;
+  margin-top: 8%;
+  margin-bottom: 10px;
+  background-color: $red !important;
+  border-radius: 0px 0px 0px 0px !important;
+  color: white;
+  text-align: center;
+}
+
+#next-issue-desktop-summary:hover {
+  border-bottom: 2px solid white;
+}
+
+#next-arrow-issue-summary {
+  width: auto;
+  height: 2vh;
+  float: right;
+  top: 1vh;
+  right: .2vw;
+  position: relative;
+}
+
 
 #next-arrow-candidate {
   width: auto;

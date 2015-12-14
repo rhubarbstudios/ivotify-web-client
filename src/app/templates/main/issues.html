@@ -94,6 +94,12 @@
                   <!-- <button class="btn" id="share-mobile"> SHARE </button> -->
                   <button class="btn" id="give-feedback-mobile" ui-sref='main.feedback_issue_mobile'> GIVE FEEDBACK </button>
                 </div>
+                <div class="hide-on-med-and-down">
+                    <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll(); random(candidates);">
+                      Next Issue
+                      <img class="right-align" id="next-arrow-issue" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
+                    </button>
+                </div>
               </div>
             </div>
 
@@ -119,10 +125,10 @@
               </div>
             </div>
 
-            <div class="hide-on-med-and-down">
-                <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll(); random(candidates);">
+            <div class="hide-on-med-and-down" ng-hide="showOutline">
+                <button class="btn" id="next-issue-desktop-summary" ng-click="itemNext($index + 1); topScroll(); random(candidates);">
                   Next Issue
-                  <img class="right-align" id="next-arrow-issue" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
+                  <img class="right-align" id="next-arrow-issue-summary" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
                 </button>
             </div>
           </div>
