@@ -125,24 +125,181 @@
     }
 }
 
+.issue-background {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-top: 0;
+  text-align: left;
+  overflow: scroll;
+  position: static;
+  @media #{$medium-and-down} {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}
+
+#issue-background-body {
+  padding-left: 1.2vw;
+  padding-right: 1vw;
+  margin-top: 0;
+  font-size: .94em;
+  letter-spacing: .3px;
+  text-align: left;
+  color: $darkgrey;
+  font-family: $futura-light-stack;
+  @media #{$medium-and-down} {
+    font-size: 1.3em;
+  }
+}
+
+.issue-bullet {
+  padding-left: 1.2vw;
+  padding-right: 1vw;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: .94em;
+  letter-spacing: .3px;
+  text-align: left;
+  color: $darkgrey;
+  font-family: $futura-light-stack;
+  @media #{$medium-and-down} {
+    font-size: 1.3em;
+  }
+}
+
+.background-title {
+  padding-left: 1.2vw;
+  font-family: $futura-book-stack;
+  margin-bottom: -2vh;
+  letter-spacing: 1px;
+  font-size: 1em;
+  color: black;
+  padding-right: 1vw;
+  @media #{$medium-and-down} {
+    font-size: 1.5em;
+  }
+}
+
+.issue-side {
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-top: 0;
+  text-align: left !important;
+  overflow: scroll;
+  position: static;
+  @media #{$medium-and-down} {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}
+
+.issue-side:nth-of-type(odd) {
+  margin-top: 1.5vh;
+}
+
+.outline {
+  overflow: scroll;
+  position: static;
+    @media #{$large-and-up} {
+    height: 61vh;
+    padding-bottom: 24px;
+    }
+}
+
+#more-button {
+  background-color: $red;
+  color: white;
+  width: 10vw;
+  padding: 0;
+  box-shadow: none;
+  font-size:2.3vh;
+  height: 5.5vh;
+  letter-spacing: 1.1px;
+  margin-top: 2vh;
+  font-family: $futura-book-stack;
+  border-radius: 5px;
+  @media #{$medium-and-down} {
+    width: 42vw;
+    height: 7.5vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+  }
+}
+
+#less-button {
+  background-color: $red;
+  color: white;
+  width: 10vw;
+  padding: 0;
+  box-shadow: none;
+  font-size:2.3vh;
+  height: 5.5vh;
+  letter-spacing: 1.1px;
+  margin-top: 2vh;
+  font-family: $futura-book-stack;
+  border-radius: 5px;
+  @media #{$medium-and-down} {
+    width: 42vw;
+    height: 7.5vh;
+    margin-left: 2vw;
+    margin-bottom: 2vh;
+  }
+}
+
+.issue-side-title {
+  padding-left: 1.2vw;
+  font-family: $futura-book-stack;
+  margin-top: 0vh;
+  margin-bottom: 0vh;
+  letter-spacing: 1px;
+  font-size: 1em;
+  color: black;
+  padding-right: 1vw;
+  @media #{$medium-and-down} {
+    font-size: 1.5em;
+  }
+}
+
 .situtation-bar {
   margin-bottom: 12px;
-  font-size: 2.5vh;
-  background-color: $lightgrey;
+  font-size: 1.2vw;
   color: $darkgrey;
   font-family: $futura-stack;
   letter-spacing: 1.1px;
-  line-height: 5.5vh;
-  height: 5vh;
+  line-height: 6.5vh;
+  height: 6vh;
   @media #{$medium-and-down} {
   line-height: 5.5vh;
-  margin-top: 11.5vh;
+  margin-top: 12.5vh;
   padding-top: 3px;
   font-size: 3vh;
   padding-bottom: 3px;
   height: 6vh;
   }
 }
+
+.situation-image {
+  position: fixed;
+  height: auto;
+  z-index: 4;
+
+  @media #{$small-and-down} {
+    top: 10vh;
+    left: 4vw;
+    width: 80px;
+  }
+  @media (min-width: $tablet-min-width) and (max-width: $desktop-min-width) {
+    top: 10vh;
+    left: 9%;
+    width: 14.5vw;
+  }
+  @media #{$large-and-up} {
+    top: 30.5vh;
+    left: 1vw;
+    width: 4.7vw;
+  }
+}
+
 
 #back-arrow {
   width: auto;
@@ -196,6 +353,36 @@
   right: .2vw;
   position: relative;
 }
+
+#next-issue-desktop-summary {
+  font-size: 0.9em;
+  text-transform: none !important;
+  height: 4vh;
+  width: 10vw;
+  padding: 0;
+  float: right;
+  line-height: 4vh;
+  margin-top: 8%;
+  margin-bottom: 10px;
+  background-color: $red !important;
+  border-radius: 0px 0px 0px 0px !important;
+  color: white;
+  text-align: center;
+}
+
+#next-issue-desktop-summary:hover {
+  border-bottom: 2px solid white;
+}
+
+#next-arrow-issue-summary {
+  width: auto;
+  height: 2vh;
+  float: right;
+  top: 1vh;
+  right: .2vw;
+  position: relative;
+}
+
 
 #next-arrow-candidate {
   width: auto;

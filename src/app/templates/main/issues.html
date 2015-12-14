@@ -60,25 +60,77 @@
 
               <!-- Next Arrow Mobile -->
               <a class="hide-on-large-only" ng-click="itemNext($index + 1); topScroll()"><img id="next-arrow" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt=""> </a>
-          
+
             </h6>
-            <div class="scroll-summary">
-              <p class="situtation-bar"> THE SITUATION </p>
+
+            <!-- Issue Outline Box -->
+            <div class="scroll-summary" ng-show="showOutline">
+              <p class="situtation-bar" ng-style="set_header(item)">
+                <img class="situation-image" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Issue+Icons/{{item.title}}.png">
+                 THE SITUATION
+               </p>
+              <div class="outline">
+                <div class="issue-background">
+                  <p class="background-title">BACKGROUND</p>
+                  <p ta-bind="text" ng-model="item.background" id="issue-background-body">{{item.background}}</p>
+                </div>
+                <div class="issue-side" ng-repeat="side in item.issue_sides">
+                  <p class="issue-side-title">{{side.title | uppercase}}</p>
+                  <p class="issue-bullet"><span class="issue-bullets-bullet">• </span>{{side.bullets[0]}}</p>
+                  <p class="issue-bullet" ng-if="side.bullets[1]"><span class="issue-bullets-bullet">• </span>{{side.bullets[1]}}</p>
+                  <p class="issue-bullet" ng-if="side.bullets[2]"><span class="issue-bullets-bullet">• </span>{{side.bullets[2]}}</p>
+                </div>
+
+                <!-- Desktop Buttons -->
+                <div class="center-align">
+                  <!-- <button class="btn" id="share-mobile"> SHARE </button> -->
+                  <button class="btn" id="more-button" ng-click="showOutline = false"> MORE </button>
+                </div>
+
+                <hr class="quote-divider hide-on-large-only">
+
+                <!-- Mobile Buttons -->
+                <div class="center-align hide-on-large-only">
+                  <!-- <button class="btn" id="share-mobile"> SHARE </button> -->
+                  <button class="btn" id="give-feedback-mobile" ui-sref='main.feedback_issue_mobile'> GIVE FEEDBACK </button>
+                </div>
+                <div class="hide-on-med-and-down">
+                    <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll(); random(candidates);">
+                      Next Issue
+                      <img class="right-align" id="next-arrow-issue" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
+                    </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Issue Summary Box -->
+            <div class="scroll-summary" ng-hide="showOutline">
+              <p class="situtation-bar" ng-style="set_header(item)">
+                <img class="situation-image" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Issue+Icons/{{item.title}}.png">
+                 THE SITUATION
+               </p>
               <div class="summary">
                 <p ta-bind="text" ng-model="item.summary" class="item-summary">{{item.summary}}</p>
-              </div>
-              <div class="center-align hide-on-large-only" id="button-box-mobile">
-                <!-- <button class="btn" id="share-mobile"> SHARE </button> -->
-                <button class="btn" id="give-feedback-mobile" ui-sref='main.feedback_issue_mobile'> GIVE FEEDBACK </button>
+
+                <!-- Desktop Buttons -->
+                <div class="center-align">
+                  <button class="btn" id="less-button" ng-click="showOutline = true"> LESS </button>
+                </div>
+
+                <!-- Mobile Buttons -->
+                <div class="center-align hide-on-large-only">
+                  <!-- <button class="btn" id="share-mobile"> SHARE </button> -->
+                  <button class="btn" id="give-feedback-mobile" ui-sref='main.feedback_issue_mobile'> GIVE FEEDBACK </button>
+                </div>
               </div>
             </div>
-            <div class="hide-on-med-and-down">
-                <button class="btn" id="next-issue-desktop" ng-click="itemNext($index + 1); topScroll(); random(candidates);">
+
+            <div class="hide-on-med-and-down" ng-hide="showOutline">
+                <button class="btn" id="next-issue-desktop-summary" ng-click="itemNext($index + 1); topScroll(); random(candidates);">
                   Next Issue
-                  <img class="right-align" id="next-arrow-issue" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
+                  <img class="right-align" id="next-arrow-issue-summary" ng-src="https://s3-us-west-1.amazonaws.com/ivotify-images/Next.svg" alt="">
                 </button>
             </div>
-          </div>
           </div>
         </div>
       </div>
